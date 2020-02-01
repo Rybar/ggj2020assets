@@ -1,0 +1,36 @@
+{
+	"name": "ev_space",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "ev_camera"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "ev_player"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 921481258458818
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 934245008053181,
+					"parameters": {
+						"variable": "zoomLevel",
+						"value": "BASE_ZOOM"
+					}
+				}
+			],
+			"sid": 955147365464293
+		}
+	],
+	"sid": 102742149839166
+}

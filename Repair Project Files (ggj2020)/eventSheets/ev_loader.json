@@ -1,0 +1,89 @@
+{
+	"name": "ev_loader",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "isLoaderComplete",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 968172308641691
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 992840175413421
+				}
+			],
+			"actions": [
+				{
+					"id": "set-object-time-scale",
+					"objectClass": "System",
+					"sid": 728009581339846,
+					"parameters": {
+						"object": "SysObj",
+						"time-scale": "1"
+					}
+				}
+			],
+			"sid": 727957169560006
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-loader-layout-complete",
+					"objectClass": "System",
+					"sid": 478370454623148
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 676576175654355,
+					"parameters": {
+						"variable": "isLoaderComplete",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 998628761030059
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 899022226152252,
+					"parameters": {
+						"variable": "isLoaderComplete"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 347922484052588
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 186345270391983,
+					"parameters": {
+						"layout": "lay_space"
+					}
+				}
+			],
+			"sid": 284005080007176
+		}
+	],
+	"sid": 263375731273127
+}

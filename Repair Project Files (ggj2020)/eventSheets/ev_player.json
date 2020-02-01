@@ -1,0 +1,348 @@
+{
+	"name": "ev_player",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 241748603201764
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "player_anim",
+					"sid": 465883377385760,
+					"parameters": {
+						"x": "player_base.X",
+						"y": "player_base.Y"
+					}
+				}
+			],
+			"sid": 914220584197158
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Gamepad",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 575518790988567,
+							"parameters": {
+								"gamepad": "0",
+								"button": "d-pad-down"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "player_base",
+							"sid": 213121758178697,
+							"parameters": {
+								"instance-variable": "isCrouching",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 353970814117523
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 948701794825067,
+							"parameters": {
+								"gamepad": "0",
+								"button": "d-pad-down"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "player_base",
+							"sid": 213619088307168,
+							"parameters": {
+								"instance-variable": "isCrouching",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 617221069659756
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 865918500864153,
+							"parameters": {
+								"gamepad": "0",
+								"button": "d-pad-left"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "player_base",
+							"sid": 549759622384548,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 424614335878968
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 563600725196223,
+							"parameters": {
+								"gamepad": "0",
+								"button": "d-pad-right"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "player_base",
+							"sid": 266051940706711,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 560188160438501
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 633898020509532,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-a"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "player_base",
+							"sid": 902763714730367,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						}
+					],
+					"sid": 707306685598762
+				}
+			],
+			"sid": 305367303219703
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Crouching",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "player_base",
+							"sid": 256218709330252,
+							"parameters": {
+								"instance-variable": "isCrouching"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "player_base",
+							"sid": 283230275195069,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 620400580223005
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 607514565543231
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "player_base",
+							"sid": 411224314946345,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 188640382219482
+				}
+			],
+			"sid": 760157679773339
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Animation",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-enabled",
+							"objectClass": "player_base",
+							"sid": 910273434713221,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [],
+					"sid": 854503939951843,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-moving",
+									"objectClass": "player_base",
+									"sid": 972613913013165,
+									"behaviorType": "Platform"
+								},
+								{
+									"id": "is-jumping",
+									"objectClass": "player_base",
+									"sid": 327225002358747,
+									"behaviorType": "Platform",
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "player_anim",
+									"sid": 889583663106376,
+									"parameters": {
+										"animation": "\"run\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 802329420429130
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-jumping",
+									"objectClass": "player_base",
+									"sid": 905465452625758,
+									"behaviorType": "Platform"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "player_anim",
+									"sid": 363786191544780,
+									"parameters": {
+										"animation": "\"jump\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 575324931715728
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-moving",
+									"objectClass": "player_base",
+									"sid": 924308317074907,
+									"behaviorType": "Platform",
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "player_anim",
+									"sid": 818539507336009,
+									"parameters": {
+										"animation": "\"idle\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 912077942982493
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 590527296669645
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "player_anim",
+							"sid": 301847057341391,
+							"parameters": {
+								"animation": "\"idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 940659418535621
+				}
+			],
+			"sid": 566218327472240
+		}
+	],
+	"sid": 263282355959929
+}

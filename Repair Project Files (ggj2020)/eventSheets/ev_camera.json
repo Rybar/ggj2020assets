@@ -1,0 +1,155 @@
+{
+	"name": "ev_camera",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "CAM_SMOOTH_FAC",
+			"type": "number",
+			"initialValue": "0.3",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 636519686671811
+		},
+		{
+			"eventType": "variable",
+			"name": "ZOOM_SMOOTH_FAC",
+			"type": "number",
+			"initialValue": "0.18",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 131059721652157
+		},
+		{
+			"eventType": "variable",
+			"name": "ZOOMED_IN",
+			"type": "number",
+			"initialValue": "2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 372714559386370
+		},
+		{
+			"eventType": "variable",
+			"name": "ZOOMED_OUT",
+			"type": "number",
+			"initialValue": "0.5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 188718554980520
+		},
+		{
+			"eventType": "variable",
+			"name": "BASE_ZOOM",
+			"type": "number",
+			"initialValue": "3",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 357216929255717
+		},
+		{
+			"eventType": "variable",
+			"name": "zoomLevel",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 830221754080349
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "camera",
+					"sid": 798134134501578,
+					"parameters": {
+						"instance-variable": "isEnabled"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "scroll-to-position",
+					"objectClass": "System",
+					"sid": 729532125269428,
+					"parameters": {
+						"x": "lerp(scrollx, camera.X, CAM_SMOOTH_FAC)",
+						"y": "lerp(scrolly, camera.Y, CAM_SMOOTH_FAC)"
+					}
+				},
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "screen_boundary",
+					"sid": 810396470843500,
+					"parameters": {
+						"object": "camera",
+						"image-point-optional": "0"
+					}
+				}
+			],
+			"sid": 598720451697297
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Zoom",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "camera",
+							"sid": 707914764652335,
+							"parameters": {
+								"instance-variable": "isZoomEnabled"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layout-scale",
+							"objectClass": "System",
+							"sid": 573793709277721,
+							"parameters": {
+								"scale": "lerp(LayoutScale, zoomLevel, ZOOM_SMOOTH_FAC)"
+							}
+						}
+					],
+					"sid": 874154441832888
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 230769624953168
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layout-scale",
+							"objectClass": "System",
+							"sid": 582807556277780,
+							"parameters": {
+								"scale": "BASE_ZOOM"
+							}
+						}
+					],
+					"sid": 175153171576955
+				}
+			],
+			"sid": 881280521236630
+		}
+	],
+	"sid": 537747933757102
+}

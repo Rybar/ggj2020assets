@@ -1,0 +1,40 @@
+{
+	"name": "lay_repair",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"instances": [],
+			"sid": 624787230823624,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		}
+	],
+	"sid": 400925266059162,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 2562,
+	"height": 1440,
+	"unboundedScrolling": false,
+	"eventSheet": "ev_repair"
+}

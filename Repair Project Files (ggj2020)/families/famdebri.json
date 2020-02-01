@@ -1,0 +1,15 @@
+{
+	"name": "famDebri",
+	"plugin-id": "Sprite",
+	"sid": 819667695184161,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"debri_large",
+		"debri_med",
+		"debri_small",
+		"debri_moving_large",
+		"debri_moving_small"
+	]
+}

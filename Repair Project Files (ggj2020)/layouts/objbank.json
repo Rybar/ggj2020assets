@@ -1,29 +1,42 @@
 {
-	"name": "lay_loader",
+	"name": "ObjBank",
 	"layers": [
 		{
 			"name": "Layer 0",
 			"overriden": 0,
 			"instances": [
 				{
-					"type": "SysObj",
+					"type": "shipController",
 					"properties": {
-						"initially-visible": false,
+						"initially-visible": true,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
-						"enable-collisions": false,
+						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 5,
-					"instanceVariables": {},
+					"uid": 10,
+					"instanceVariables": {
+						"isActive": false,
+						"id": 0,
+						"dirX": 0,
+						"dirY": 0
+					},
 					"behaviors": {
-						"Timer": {
-							"properties": {}
+						"8Direction": {
+							"properties": {
+								"max-speed": 1000,
+								"acceleration": 200,
+								"deceleration": 0,
+								"directions": "dir-8",
+								"set-angle": "no",
+								"default-controls": false,
+								"enabled": true
+							}
 						}
 					},
 					"world": {
-						"x": -62,
-						"y": -46,
+						"x": 570,
+						"y": 129,
 						"width": 32,
 						"height": 32,
 						"originX": 0.5,
@@ -39,7 +52,7 @@
 					}
 				}
 			],
-			"sid": 785122529503395,
+			"sid": 954426050278798,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"color": [
@@ -62,41 +75,13 @@
 			"useRenderCells": false,
 			"blendMode": "normal",
 			"global": false
-		},
-		{
-			"name": "Layer 1",
-			"overriden": 0,
-			"instances": [],
-			"sid": 610446250947320,
-			"effectTypes": [],
-			"isInitiallyVisible": true,
-			"color": [
-				1,
-				1,
-				1,
-				1
-			],
-			"backgroundColor": [
-				0.3686274509803922,
-				0.3686274509803922,
-				0.3686274509803922,
-				1
-			],
-			"isTransparent": true,
-			"parallaxX": 1,
-			"parallaxY": 1,
-			"scaleRate": 1,
-			"forceOwnTexture": false,
-			"useRenderCells": false,
-			"blendMode": "normal",
-			"global": false
 		}
 	],
-	"sid": 286009910091524,
+	"sid": 824036389328566,
 	"nonworld-instances": [],
 	"effectTypes": [],
-	"width": 1281,
-	"height": 720,
-	"unboundedScrolling": true,
-	"eventSheet": "ev_loader"
+	"width": 2562,
+	"height": 1440,
+	"unboundedScrolling": false,
+	"eventSheet": null
 }

@@ -1,27 +1,39 @@
 {
-	"name": "camera",
+	"name": "shipController",
 	"plugin-id": "Sprite",
-	"sid": 150067270904715,
-	"isGlobal": false,
+	"sid": 747658291947729,
+	"isGlobal": true,
 	"instanceVariables": [
 		{
-			"name": "isEnabled",
+			"name": "isActive",
 			"type": "boolean",
 			"desc": "",
-			"sid": 227167745928883
+			"sid": 488090683206219
 		},
 		{
-			"name": "isZoomEnabled",
-			"type": "boolean",
+			"name": "id",
+			"type": "number",
 			"desc": "",
-			"sid": 525124874857056
+			"sid": 902103648937904
+		},
+		{
+			"name": "dirX",
+			"type": "number",
+			"desc": "",
+			"sid": 288372961092796
+		},
+		{
+			"name": "dirY",
+			"type": "number",
+			"desc": "",
+			"sid": 821357405046701
 		}
 	],
 	"behaviorTypes": [
 		{
-			"behaviorId": "scrollto",
-			"name": "ScrollTo",
-			"sid": 385733462667349
+			"behaviorId": "EightDir",
+			"name": "8Direction",
+			"sid": 163548823448791
 		}
 	],
 	"effectTypes": [],
@@ -37,12 +49,12 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1,
+						"imageSpriteId": 26,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 639832672697346,
+				"sid": 818426419757444,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

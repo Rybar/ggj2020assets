@@ -1,29 +1,10 @@
 {
-	"name": "camera",
+	"name": "ship_spawn_loc",
 	"plugin-id": "Sprite",
-	"sid": 150067270904715,
+	"sid": 533686927538735,
 	"isGlobal": false,
-	"instanceVariables": [
-		{
-			"name": "isEnabled",
-			"type": "boolean",
-			"desc": "",
-			"sid": 227167745928883
-		},
-		{
-			"name": "isZoomEnabled",
-			"type": "boolean",
-			"desc": "",
-			"sid": 525124874857056
-		}
-	],
-	"behaviorTypes": [
-		{
-			"behaviorId": "scrollto",
-			"name": "ScrollTo",
-			"sid": 385733462667349
-		}
-	],
+	"instanceVariables": [],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -37,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1,
+						"imageSpriteId": 36,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 639832672697346,
+				"sid": 398782974809769,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

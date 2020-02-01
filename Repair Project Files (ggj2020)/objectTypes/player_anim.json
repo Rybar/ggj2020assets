@@ -2,7 +2,7 @@
 	"name": "player_anim",
 	"plugin-id": "Sprite",
 	"sid": 368016739326925,
-	"isGlobal": false,
+	"isGlobal": true,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
@@ -119,11 +119,34 @@
 						"width": 16,
 						"height": 16,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 0.875,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 37,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 384651174417790,
+				"name": "crouch",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 2
+			},
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.875,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -131,17 +154,75 @@
 						"width": 16,
 						"height": 16,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 0.875,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 36,
+						"imageSpriteId": 9,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 384651174417790,
-				"name": "crouch",
+				"sid": 818953397179941,
+				"name": "repair",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 4
+			},
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.875,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 28,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 628793163620450,
+				"name": "fall",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 4
+			},
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.875,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 31,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.875,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 32,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 615063668048510,
+				"name": "crawl",
 				"isLooping": true,
 				"isPingPong": false,
 				"repeatCount": 1,

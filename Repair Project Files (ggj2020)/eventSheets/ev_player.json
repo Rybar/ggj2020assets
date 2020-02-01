@@ -2,6 +2,106 @@
 	"name": "ev_player",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "PLAYER_SPEED_NORM",
+			"type": "number",
+			"initialValue": "250",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 424448391776954
+		},
+		{
+			"eventType": "variable",
+			"name": "PLAYER_SPEED_CROUCH",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 453471464845002
+		},
+		{
+			"eventType": "variable",
+			"name": "PLAYER_JUMPSTR_NORM",
+			"type": "number",
+			"initialValue": "300",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 577501879859603
+		},
+		{
+			"eventType": "variable",
+			"name": "PLAYER_JUMPSTR_CROUCH",
+			"type": "number",
+			"initialValue": "200",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 240199988321711
+		},
+		{
+			"eventType": "variable",
+			"name": "GAME_STATE_FALLING",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 641242354689719
+		},
+		{
+			"eventType": "variable",
+			"name": "GAME_STATE_PILOTING",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 148176831675037
+		},
+		{
+			"eventType": "variable",
+			"name": "PLAYER_MAX_HP",
+			"type": "number",
+			"initialValue": "3",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 619542988559660
+		},
+		{
+			"eventType": "variable",
+			"name": "spaceLayoutGameplayState",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "0 = falling, 1 = piloting",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 358957929072161
+		},
+		{
+			"eventType": "variable",
+			"name": "SHIP_ACCEL",
+			"type": "number",
+			"initialValue": "200",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 337938430256037
+		},
+		{
+			"eventType": "variable",
+			"name": "isInvulnerable",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 367676618940155
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -21,12 +121,105 @@
 					}
 				}
 			],
-			"sid": 914220584197158
+			"sid": 914220584197158,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "player_base",
+							"sid": 223729048730893,
+							"parameters": {
+								"instance-variable": "isCrouching"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-max-speed",
+							"objectClass": "player_base",
+							"sid": 247973242644602,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "PLAYER_SPEED_CROUCH"
+							}
+						},
+						{
+							"id": "set-jump-strength",
+							"objectClass": "player_base",
+							"sid": 716974132772966,
+							"behaviorType": "Platform",
+							"parameters": {
+								"jump-strength": "PLAYER_JUMPSTR_CROUCH"
+							}
+						}
+					],
+					"sid": 180950993041843
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "player_base",
+							"sid": 356263166695418,
+							"parameters": {
+								"instance-variable": "isCrouching"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-max-speed",
+							"objectClass": "player_base",
+							"sid": 840356932403275,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "PLAYER_SPEED_NORM"
+							}
+						},
+						{
+							"id": "set-jump-strength",
+							"objectClass": "player_base",
+							"sid": 195169779270452,
+							"behaviorType": "Platform",
+							"parameters": {
+								"jump-strength": "PLAYER_JUMPSTR_NORM"
+							}
+						}
+					],
+					"sid": 251978214091063
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "player_base",
+					"sid": 205783136277267
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "player_base",
+					"sid": 433628398354187,
+					"parameters": {
+						"instance-variable": "health",
+						"value": "PLAYER_MAX_HP"
+					}
+				}
+			],
+			"sid": 259535866505123
 		},
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Gamepad",
+			"title": "Player movement",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -52,6 +245,12 @@
 								"instance-variable": "isCrouching",
 								"value": "true"
 							}
+						},
+						{
+							"id": "fall-through",
+							"objectClass": "player_base",
+							"sid": 344130541634497,
+							"behaviorType": "Platform"
 						}
 					],
 					"sid": 353970814117523
@@ -105,6 +304,15 @@
 							"parameters": {
 								"control": "left"
 							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "player_base",
+							"sid": 873829017654280,
+							"parameters": {
+								"instance-variable": "isMovingRight",
+								"value": "false"
+							}
 						}
 					],
 					"sid": 424614335878968
@@ -131,6 +339,15 @@
 							"parameters": {
 								"control": "right"
 							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "player_base",
+							"sid": 522777852579116,
+							"parameters": {
+								"instance-variable": "isMovingRight",
+								"value": "true"
+							}
 						}
 					],
 					"sid": 560188160438501
@@ -146,6 +363,15 @@
 								"gamepad": "0",
 								"button": "button-a"
 							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "player_base",
+							"sid": 249736595609503,
+							"parameters": {
+								"object": "shipController"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -160,6 +386,105 @@
 						}
 					],
 					"sid": 707306685598762
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 227621796451583,
+							"parameters": {
+								"gamepad": "0",
+								"axis": "left-analog-x-axis",
+								"comparison": 4,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "player_base",
+							"sid": 798160765930876,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "player_base",
+							"sid": 628055380132209,
+							"parameters": {
+								"instance-variable": "isMovingRight",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 324579378057540
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 408177941034418,
+							"parameters": {
+								"gamepad": "0",
+								"axis": "left-analog-x-axis",
+								"comparison": 2,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "player_base",
+							"sid": 366154608661313,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "player_base",
+							"sid": 685986681971230,
+							"parameters": {
+								"instance-variable": "isMovingRight",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 851878996679840
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "shipController",
+							"sid": 552674589474216,
+							"parameters": {
+								"instance-variable": "isActive"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "player_base",
+							"sid": 203961938740819,
+							"parameters": {
+								"x": "shipController.X",
+								"y": "shipController.Y"
+							}
+						}
+					],
+					"sid": 830849248572526
 				}
 			],
 			"sid": 305367303219703
@@ -243,39 +568,66 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "is-moving",
+									"id": "is-boolean-instance-variable-set",
 									"objectClass": "player_base",
-									"sid": 972613913013165,
-									"behaviorType": "Platform"
+									"sid": 251431203362951,
+									"parameters": {
+										"instance-variable": "isMovingRight"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "player_anim",
+									"sid": 902604103085912,
+									"parameters": {
+										"state": "not-mirrored"
+									}
+								}
+							],
+							"sid": 559386644592717
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "player_base",
+									"sid": 369123633208075,
+									"parameters": {
+										"instance-variable": "isMovingRight"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "player_anim",
+									"sid": 167642325230064,
+									"parameters": {
+										"state": "mirrored"
+									}
+								}
+							],
+							"sid": 949518219478551
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "player_base",
+									"sid": 721394692725006,
+									"parameters": {
+										"instance-variable": "isCrouching"
+									}
 								},
 								{
-									"id": "is-jumping",
+									"id": "is-moving",
 									"objectClass": "player_base",
-									"sid": 327225002358747,
-									"behaviorType": "Platform",
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation",
-									"objectClass": "player_anim",
-									"sid": 889583663106376,
-									"parameters": {
-										"animation": "\"run\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 802329420429130
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-jumping",
-									"objectClass": "player_base",
-									"sid": 905465452625758,
+									"sid": 874479917379689,
 									"behaviorType": "Platform"
 								}
 							],
@@ -283,22 +635,30 @@
 								{
 									"id": "set-animation",
 									"objectClass": "player_anim",
-									"sid": 363786191544780,
+									"sid": 113611139498664,
 									"parameters": {
-										"animation": "\"jump\"",
+										"animation": "\"crawl\"",
 										"from": "beginning"
 									}
 								}
 							],
-							"sid": 575324931715728
+							"sid": 561800709810578
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "player_base",
+									"sid": 293538519412755,
+									"parameters": {
+										"instance-variable": "isCrouching"
+									}
+								},
+								{
 									"id": "is-moving",
 									"objectClass": "player_base",
-									"sid": 924308317074907,
+									"sid": 955352020778693,
 									"behaviorType": "Platform",
 									"isInverted": true
 								}
@@ -307,14 +667,129 @@
 								{
 									"id": "set-animation",
 									"objectClass": "player_anim",
-									"sid": 818539507336009,
+									"sid": 347570180487168,
 									"parameters": {
-										"animation": "\"idle\"",
+										"animation": "\"crouch\"",
 										"from": "beginning"
 									}
 								}
 							],
-							"sid": 912077942982493
+							"sid": 886608392301473
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 895924464498482
+								}
+							],
+							"actions": [],
+							"sid": 259465014502294,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-moving",
+											"objectClass": "player_base",
+											"sid": 707567884496904,
+											"behaviorType": "Platform"
+										},
+										{
+											"id": "is-jumping",
+											"objectClass": "player_base",
+											"sid": 603391299537451,
+											"behaviorType": "Platform",
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "player_anim",
+											"sid": 964924855338769,
+											"parameters": {
+												"animation": "\"run\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 666232100445532
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-jumping",
+											"objectClass": "player_base",
+											"sid": 317081129522096,
+											"behaviorType": "Platform"
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "player_anim",
+											"sid": 187109914211667,
+											"parameters": {
+												"animation": "\"jump\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 587897939194477,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-falling",
+											"objectClass": "player_base",
+											"sid": 600919939908402,
+											"behaviorType": "Platform"
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "player_anim",
+											"sid": 214343139164245,
+											"parameters": {
+												"animation": "\"fall\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 744041677802110
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-moving",
+											"objectClass": "player_base",
+											"sid": 597242758934230,
+											"behaviorType": "Platform",
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "player_anim",
+											"sid": 947612993016705,
+											"parameters": {
+												"animation": "\"idle\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 384097359655549
+								}
+							]
 						}
 					]
 				},
@@ -342,6 +817,310 @@
 				}
 			],
 			"sid": 566218327472240
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Ship controls",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "shipController",
+							"sid": 344372498313979
+						}
+					],
+					"actions": [
+						{
+							"id": "set-acceleration",
+							"objectClass": "shipController",
+							"sid": 491937270796873,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"acceleration": "SHIP_ACCEL"
+							}
+						}
+					],
+					"sid": 341745050384229
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Activate ship",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "shipController",
+									"sid": 552714340182090,
+									"parameters": {
+										"instance-variable": "isActive"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 886206379198210
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "player_base",
+									"sid": 415910874472860,
+									"behaviorType": "Platform",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "player_base",
+									"sid": 423802826550437,
+									"parameters": {
+										"x": "shipController.X",
+										"y": "shipController.Y"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 454483151911738,
+									"parameters": {
+										"variable": "zoomLevel",
+										"value": "ZOOMED_OUT"
+									}
+								}
+							],
+							"sid": 780642409012874
+						}
+					],
+					"sid": 439491808654925
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Ship movement",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "shipController",
+									"sid": 902525577132129,
+									"parameters": {
+										"instance-variable": "isActive"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "shipController",
+									"sid": 611054825061171,
+									"parameters": {
+										"instance-variable": "dirX",
+										"value": "Gamepad.Axis(0, 0) / 100"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "shipController",
+									"sid": 915552265053195,
+									"parameters": {
+										"instance-variable": "dirY",
+										"value": "Gamepad.Axis(0, 1) / 100"
+									}
+								}
+							],
+							"sid": 210488695218392,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 745170260851091,
+											"parameters": {
+												"gamepad": "0",
+												"axis": "left-analog-x-axis",
+												"comparison": 4,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "shipController",
+											"sid": 391924534397474,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"control": "right"
+											}
+										}
+									],
+									"sid": 326087954890515
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 108229902140817,
+											"parameters": {
+												"gamepad": "0",
+												"axis": "left-analog-x-axis",
+												"comparison": 2,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "shipController",
+											"sid": 170337743031352,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"control": "left"
+											}
+										}
+									],
+									"sid": 736142571537243
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 425330585417403,
+											"parameters": {
+												"gamepad": "0",
+												"axis": "left-analog-y-axis",
+												"comparison": 2,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "shipController",
+											"sid": 281264644073840,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"control": "up"
+											}
+										}
+									],
+									"sid": 843050880286876
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 360963622185030,
+											"parameters": {
+												"gamepad": "0",
+												"axis": "left-analog-y-axis",
+												"comparison": 4,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "shipController",
+											"sid": 652840433627092,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"control": "down"
+											}
+										}
+									],
+									"sid": 409909337589149
+								}
+							]
+						}
+					],
+					"sid": 857630001975342
+				}
+			],
+			"sid": 824279731104129
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player death",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "player_base",
+							"sid": 114134303266372,
+							"parameters": {
+								"instance-variable": "health",
+								"comparison": 3,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 312985956979750,
+							"parameters": {
+								"variable": "isInvulnerable"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 797532418151154
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "player_base",
+							"sid": 494741302615990,
+							"parameters": {
+								"instance-variable": "health",
+								"value": "PLAYER_MAX_HP"
+							}
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 974216456481215
+						}
+					],
+					"sid": 967036427426341
+				}
+			],
+			"sid": 909935578718493
 		}
 	],
 	"sid": 263282355959929

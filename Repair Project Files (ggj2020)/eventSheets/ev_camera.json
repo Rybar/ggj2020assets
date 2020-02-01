@@ -5,7 +5,7 @@
 			"eventType": "variable",
 			"name": "CAM_SMOOTH_FAC",
 			"type": "number",
-			"initialValue": "0.3",
+			"initialValue": "0.4",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -25,7 +25,7 @@
 			"eventType": "variable",
 			"name": "ZOOMED_IN",
 			"type": "number",
-			"initialValue": "2",
+			"initialValue": "1.7",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -35,7 +35,7 @@
 			"eventType": "variable",
 			"name": "ZOOMED_OUT",
 			"type": "number",
-			"initialValue": "0.5",
+			"initialValue": "0.8",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -60,40 +60,6 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 830221754080349
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-boolean-instance-variable-set",
-					"objectClass": "camera",
-					"sid": 798134134501578,
-					"parameters": {
-						"instance-variable": "isEnabled"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "scroll-to-position",
-					"objectClass": "System",
-					"sid": 729532125269428,
-					"parameters": {
-						"x": "lerp(scrollx, camera.X, CAM_SMOOTH_FAC)",
-						"y": "lerp(scrolly, camera.Y, CAM_SMOOTH_FAC)"
-					}
-				},
-				{
-					"id": "set-position-to-another-object",
-					"objectClass": "screen_boundary",
-					"sid": 810396470843500,
-					"parameters": {
-						"object": "camera",
-						"image-point-optional": "0"
-					}
-				}
-			],
-			"sid": 598720451697297
 		},
 		{
 			"eventType": "group",
@@ -124,7 +90,35 @@
 							}
 						}
 					],
-					"sid": 874154441832888
+					"sid": 874154441832888,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-between-values",
+									"objectClass": "System",
+									"sid": 960351386483691,
+									"parameters": {
+										"value": "LayoutScale",
+										"lower-bound": "zoomLevel - 0.05",
+										"upper-bound": "zoomLevel + 0.05"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layout-scale",
+									"objectClass": "System",
+									"sid": 586669807551019,
+									"parameters": {
+										"scale": "zoomLevel"
+									}
+								}
+							],
+							"sid": 902276364638368
+						}
+					]
 				},
 				{
 					"eventType": "block",

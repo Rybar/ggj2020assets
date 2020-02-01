@@ -1,27 +1,14 @@
 {
-	"name": "camera",
+	"name": "JUMP_thru",
 	"plugin-id": "Sprite",
-	"sid": 150067270904715,
+	"sid": 370921002659840,
 	"isGlobal": false,
-	"instanceVariables": [
-		{
-			"name": "isEnabled",
-			"type": "boolean",
-			"desc": "",
-			"sid": 227167745928883
-		},
-		{
-			"name": "isZoomEnabled",
-			"type": "boolean",
-			"desc": "",
-			"sid": 525124874857056
-		}
-	],
+	"instanceVariables": [],
 	"behaviorTypes": [
 		{
-			"behaviorId": "scrollto",
-			"name": "ScrollTo",
-			"sid": 385733462667349
+			"behaviorId": "jumpthru",
+			"name": "Jumpthru",
+			"sid": 551827420579803
 		}
 	],
 	"effectTypes": [],
@@ -30,19 +17,19 @@
 			{
 				"frames": [
 					{
-						"width": 32,
-						"height": 32,
+						"width": 8,
+						"height": 8,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1,
+						"imageSpriteId": 56,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 639832672697346,
+				"sid": 770949277308346,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

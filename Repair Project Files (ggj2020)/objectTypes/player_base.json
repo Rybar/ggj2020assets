@@ -2,7 +2,7 @@
 	"name": "player_base",
 	"plugin-id": "Sprite",
 	"sid": 343705774812923,
-	"isGlobal": false,
+	"isGlobal": true,
 	"instanceVariables": [
 		{
 			"name": "isCrouching",
@@ -15,6 +15,24 @@
 			"type": "boolean",
 			"desc": "",
 			"sid": 490084268811840
+		},
+		{
+			"name": "speed_norm",
+			"type": "number",
+			"desc": "",
+			"sid": 959801592713077
+		},
+		{
+			"name": "speed_crouch",
+			"type": "number",
+			"desc": "",
+			"sid": 923411649489095
+		},
+		{
+			"name": "health",
+			"type": "number",
+			"desc": "",
+			"sid": 510055796599344
 		}
 	],
 	"behaviorTypes": [

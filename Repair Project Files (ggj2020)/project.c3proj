@@ -31,9 +31,33 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "AdvancedRandom",
+			"name": "Advanced Random",
+			"author": "Scirra",
+			"version": "r182.2",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Platform",
 			"name": "Platform",
+			"author": "Scirra",
+			"version": "r182.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "EightDir",
+			"name": "8 Direction",
+			"author": "Scirra",
+			"version": "r182.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
 			"author": "Scirra",
 			"version": "r182.2",
 			"bundled": false
@@ -53,6 +77,38 @@
 			"author": "Scirra",
 			"version": "r182.2",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Rotate",
+			"name": "Rotate",
+			"author": "Scirra",
+			"version": "r182.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "wrap",
+			"name": "Wrap",
+			"author": "Scirra",
+			"version": "r182.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"version": "r182.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "jumpthru",
+			"name": "Jump-thru",
+			"author": "Scirra",
+			"version": "r182.2",
+			"bundled": false
 		}
 	],
 	"uniqueId": "x18al704qvv",
@@ -63,16 +119,36 @@
 			"camera",
 			"SysObj",
 			"ground",
-			"screen_boundary"
+			"screen_boundary",
+			"debri_small",
+			"dock",
+			"AdvancedRandom",
+			"ship_spawn_loc",
+			"debri_moving_small",
+			"debri_med",
+			"debri_large",
+			"debriSpawnZone",
+			"debriMovingSpawnZone",
+			"debri_moving_large",
+			"JUMP_thru"
 		],
 		"subfolders": [
 			{
 				"items": [
 					"player_anim",
-					"player_base"
+					"player_base",
+					"shipController",
+					"playerSpawnLoc"
 				],
 				"subfolders": [],
 				"name": "Player"
+			},
+			{
+				"items": [
+					"trigger"
+				],
+				"subfolders": [],
+				"name": "Triggers"
 			}
 		]
 	},
@@ -87,14 +163,17 @@
 		}
 	],
 	"families": {
-		"items": [],
+		"items": [
+			"famDebri"
+		],
 		"subfolders": []
 	},
 	"layouts": {
 		"items": [
 			"lay_space",
 			"lay_loader",
-			"lay_repair"
+			"lay_repair",
+			"ObjBank"
 		],
 		"subfolders": []
 	},
@@ -104,7 +183,8 @@
 			"ev_loader",
 			"ev_repair",
 			"ev_camera",
-			"ev_player"
+			"ev_player",
+			"ev_triggers"
 		],
 		"subfolders": []
 	},
@@ -132,6 +212,11 @@
 		"icon": {
 			"items": [
 				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 149021782019492
+				},
+				{
 					"name": "loading-logo.png",
 					"type": "image/png",
 					"sid": 676918741181496
@@ -147,24 +232,19 @@
 					"sid": 635738620168026
 				},
 				{
-					"name": "icon-16.png",
-					"type": "image/png",
-					"sid": 149021782019492
-				},
-				{
 					"name": "icon-128.png",
 					"type": "image/png",
 					"sid": 735437178307756
 				},
 				{
-					"name": "icon-512.png",
-					"type": "image/png",
-					"sid": 702187529548816
-				},
-				{
 					"name": "icon-256.png",
 					"type": "image/png",
 					"sid": 523372505781484
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 702187529548816
 				}
 			],
 			"subfolders": []
@@ -190,7 +270,7 @@
 		"authorEmail": "",
 		"authorWebsite": "",
 		"appId": "",
-		"pixelRounding": true,
+		"pixelRounding": false,
 		"useLoaderLayout": true,
 		"fullscreenMode": "letterbox-integer-scale",
 		"fullscreenQuality": "high",

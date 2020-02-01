@@ -1,27 +1,19 @@
 {
-	"name": "camera",
+	"name": "debri_moving_large",
 	"plugin-id": "Sprite",
-	"sid": 150067270904715,
+	"sid": 435039571182520,
 	"isGlobal": false,
-	"instanceVariables": [
-		{
-			"name": "isEnabled",
-			"type": "boolean",
-			"desc": "",
-			"sid": 227167745928883
-		},
-		{
-			"name": "isZoomEnabled",
-			"type": "boolean",
-			"desc": "",
-			"sid": 525124874857056
-		}
-	],
+	"instanceVariables": [],
 	"behaviorTypes": [
 		{
-			"behaviorId": "scrollto",
-			"name": "ScrollTo",
-			"sid": 385733462667349
+			"behaviorId": "wrap",
+			"name": "Wrap",
+			"sid": 735068737740571
+		},
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 445493502130121
 		}
 	],
 	"effectTypes": [],
@@ -30,19 +22,19 @@
 			{
 				"frames": [
 					{
-						"width": 32,
-						"height": 32,
+						"width": 48,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1,
+						"imageSpriteId": 54,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 639832672697346,
+				"sid": 513735471246912,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

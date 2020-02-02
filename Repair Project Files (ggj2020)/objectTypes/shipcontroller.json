@@ -33,6 +33,12 @@
 			"type": "number",
 			"desc": "",
 			"sid": 115693144997398
+		},
+		{
+			"name": "canActivate",
+			"type": "boolean",
+			"desc": "",
+			"sid": 808989416416221
 		}
 	],
 	"behaviorTypes": [

@@ -344,28 +344,47 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
+					"actions": [],
+					"sid": 895053605826412,
+					"children": [
 						{
-							"id": "start-timer",
-							"objectClass": "SysObj",
-							"sid": 438706254631163,
-							"behaviorType": "Timer",
-							"parameters": {
-								"duration": "timeToFreeze",
-								"type": "once",
-								"tag": "\"freeze_frame\""
-							}
-						},
-						{
-							"id": "set-time-scale",
-							"objectClass": "System",
-							"sid": 966549842231234,
-							"parameters": {
-								"time-scale": "0"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 159003274147320,
+									"parameters": {
+										"first-value": "fadeTex.Count",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "start-timer",
+									"objectClass": "SysObj",
+									"sid": 278397864423078,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "timeToFreeze",
+										"type": "once",
+										"tag": "\"freeze_frame\""
+									}
+								},
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 825613110900354,
+									"parameters": {
+										"time-scale": "0"
+									}
+								}
+							],
+							"sid": 277627924765788
 						}
-					],
-					"sid": 895053605826412
+					]
 				},
 				{
 					"eventType": "block",

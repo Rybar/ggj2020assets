@@ -996,6 +996,62 @@
 						}
 					],
 					"sid": 940659418535621
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "player_base",
+							"sid": 979048082994086,
+							"parameters": {
+								"instance-variable": "isRepairing"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "player_base",
+							"sid": 516267029115421,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "player_anim",
+							"sid": 695116611226626,
+							"parameters": {
+								"animation": "\"repair\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 342471976558411
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 680174410012869
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "player_base",
+							"sid": 873932572529143,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 968746425484393
 				}
 			],
 			"sid": 566218327472240
@@ -1013,14 +1069,14 @@
 						{
 							"id": "on-created",
 							"objectClass": "shipController",
-							"sid": 344372498313979
+							"sid": 984036491588106
 						}
 					],
 					"actions": [
 						{
 							"id": "set-acceleration",
 							"objectClass": "shipController",
-							"sid": 491937270796873,
+							"sid": 556533001375597,
 							"behaviorType": "8Direction",
 							"parameters": {
 								"acceleration": "SHIP_ACCEL"
@@ -1029,7 +1085,7 @@
 						{
 							"id": "set-enabled",
 							"objectClass": "shipController",
-							"sid": 107228229454952,
+							"sid": 843875799410162,
 							"behaviorType": "8Direction",
 							"parameters": {
 								"state": "disabled"
@@ -1038,14 +1094,39 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "shipController",
-							"sid": 717898277078843,
+							"sid": 224028831799832,
 							"parameters": {
 								"instance-variable": "dmgPercent",
 								"value": "0"
 							}
 						}
 					],
-					"sid": 341745050384229
+					"sid": 120258418584630
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "shipController",
+							"sid": 327037121600887,
+							"parameters": {
+								"instance-variable": "isActive"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "player_base",
+							"sid": 554242185650519,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						}
+					],
+					"sid": 919287060543065
 				},
 				{
 					"eventType": "group",

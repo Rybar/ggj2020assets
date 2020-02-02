@@ -39,6 +39,12 @@
 			"type": "boolean",
 			"desc": "",
 			"sid": 245781220858690
+		},
+		{
+			"name": "isRepairing",
+			"type": "boolean",
+			"desc": "",
+			"sid": 588805595784661
 		}
 	],
 	"behaviorTypes": [

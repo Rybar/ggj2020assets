@@ -47,6 +47,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r182.2",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Flash",
 			"name": "Flash",
@@ -141,6 +149,14 @@
 			"author": "Scirra",
 			"version": "r182.2",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "blacknwhite",
+			"name": "Black & white",
+			"author": "Scirra",
+			"version": "r182.2",
+			"bundled": false
 		}
 	],
 	"uniqueId": "x18al704qvv",
@@ -156,7 +172,11 @@
 			"debri_large",
 			"debriSpawnZone",
 			"debriMovingSpawnZone",
-			"debri_moving_large"
+			"debri_moving_large",
+			"textTitle",
+			"repairObj",
+			"repairProgressBar",
+			"repairProgressBarBG"
 		],
 		"subfolders": [
 			{
@@ -224,6 +244,13 @@
 				"ship_jumpthru_1"
 			],
 			"selectMode": "normal"
+		},
+		{
+			"members": [
+				"repairProgressBar",
+				"repairProgressBarBG"
+			],
+			"selectMode": "normal"
 		}
 	],
 	"families": {
@@ -237,7 +264,8 @@
 			"lay_space",
 			"lay_loader",
 			"lay_repair",
-			"ObjBank"
+			"ObjBank",
+			"lay_title"
 		],
 		"subfolders": []
 	},
@@ -248,7 +276,8 @@
 			"ev_repair",
 			"ev_camera",
 			"ev_player",
-			"ev_triggers"
+			"ev_triggers",
+			"ev_title"
 		],
 		"subfolders": []
 	},
@@ -270,7 +299,13 @@
 			"subfolders": []
 		},
 		"font": {
-			"items": [],
+			"items": [
+				{
+					"name": "ChevyRay - Express.ttf",
+					"type": "application/font-sfnt",
+					"sid": 105587069533785
+				}
+			],
 			"subfolders": []
 		},
 		"icon": {
@@ -281,11 +316,6 @@
 					"sid": 149021782019492
 				},
 				{
-					"name": "icon-64.png",
-					"type": "image/png",
-					"sid": 919260237549963
-				},
-				{
 					"name": "loading-logo.png",
 					"type": "image/png",
 					"sid": 676918741181496
@@ -294,6 +324,11 @@
 					"name": "icon-32.png",
 					"type": "image/png",
 					"sid": 635738620168026
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 919260237549963
 				},
 				{
 					"name": "icon-128.png",

@@ -59,7 +59,8 @@
 						"speed_norm": 200,
 						"speed_crouch": 100,
 						"health": 0,
-						"isInvulnerable": false
+						"isInvulnerable": false,
+						"isRepairing": false
 					},
 					"behaviors": {
 						"Platform": {

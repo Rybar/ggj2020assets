@@ -2,430 +2,507 @@
 	"name": "ev_repair",
 	"events": [
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 819008577941190
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "FadeIn",
-					"sid": 104091885666280,
-					"parameters": [
-						"FADE_TIME"
-					]
-				},
-				{
-					"id": "set-layout-scale",
-					"objectClass": "System",
-					"sid": 865711395403787,
-					"parameters": {
-						"scale": "BASE_ZOOM"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 684166332007699,
-					"parameters": {
-						"variable": "zoomLevel",
-						"value": "BASE_ZOOM"
-					}
-				},
-				{
-					"id": "set-position",
-					"objectClass": "player_base",
-					"sid": 155915987809753,
-					"parameters": {
-						"x": "playerSpawnLoc.X",
-						"y": "playerSpawnLoc.Y"
-					}
-				},
-				{
-					"id": "move-to-layer",
-					"objectClass": "player_anim",
-					"sid": 507424473390679,
-					"parameters": {
-						"layer": "\"Player\""
-					}
-				},
-				{
-					"id": "destroy",
-					"objectClass": "ship_col_1",
-					"sid": 608021430774798
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 148987588689877,
-					"parameters": {
-						"variable": "curShipIndex",
-						"value": "0"
-					}
-				}
-			],
-			"sid": 405136459482298,
+			"eventType": "variable",
+			"name": "repairSpeed",
+			"type": "number",
+			"initialValue": "25",
+			"comment": "Per second",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 592110588384774
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Initialize",
+			"description": "",
+			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-two-values",
+							"id": "on-start-of-layout",
 							"objectClass": "System",
-							"sid": 972906452822988,
-							"parameters": {
-								"first-value": "player_base.Count",
-								"comparison": 0,
-								"second-value": "0"
-							}
+							"sid": 894610914742768
 						}
 					],
 					"actions": [
 						{
-							"id": "create-object",
+							"callFunction": "FadeIn",
+							"sid": 838641564803455,
+							"parameters": [
+								"FADE_TIME"
+							]
+						},
+						{
+							"id": "set-layout-scale",
 							"objectClass": "System",
-							"sid": 659952017536839,
+							"sid": 189097394709820,
 							"parameters": {
-								"object-to-create": "player_base",
-								"layer": "\"Player\"",
-								"x": "playerSpawnLoc.X",
-								"y": "playerSpawnLoc.Y"
+								"scale": "BASE_ZOOM"
 							}
 						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 798414666117070,
+							"sid": 862048976541501,
 							"parameters": {
-								"variable": "spaceLayoutGameplayState",
-								"value": "GAME_STATE_PILOTING"
-							}
-						},
-						{
-							"id": "set-object-time-scale",
-							"objectClass": "System",
-							"sid": 399706029481044,
-							"parameters": {
-								"object": "SysObj",
-								"time-scale": "1"
-							}
-						},
-						{
-							"id": "createPermutationTable",
-							"objectClass": "AdvancedRandom",
-							"sid": 500968068495984,
-							"parameters": {
-								"length": "NUM_SHIPS",
-								"offset": "0"
-							}
-						},
-						{
-							"id": "destroy",
-							"objectClass": "shipController",
-							"sid": 319536857425248
-						}
-					],
-					"sid": 415319521521211
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 748988954769627,
-							"parameters": {
-								"object-to-create": "shipController",
-								"layer": "\"Ship\"",
-								"x": "ship_spawn_loc.X",
-								"y": "ship_spawn_loc.Y"
-							}
-						},
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "shipController",
-							"sid": 905834849920088,
-							"parameters": {
-								"instance-variable": "isActive",
-								"value": "false"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "shipController",
-							"sid": 332844871000365,
-							"parameters": {
-								"instance-variable": "id",
-								"value": "AdvancedRandom.Permutation(curShipIndex)"
-							}
-						}
-					],
-					"sid": 113770588159126
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 803297834800861,
-							"parameters": {
-								"variable": "curShipIndex",
-								"comparison": 0,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 682813764226186,
-							"parameters": {
-								"object-to-create": "ship_col_1",
-								"layer": "\"Ship\"",
-								"x": "ship_spawn_loc.X - 140",
-								"y": "ship_spawn_loc.Y - 174"
-							}
-						},
-						{
-							"id": "set-position-to-another-object",
-							"objectClass": "ship_BG2_1",
-							"sid": 997964635271420,
-							"parameters": {
-								"object": "ship_col_1",
-								"image-point-optional": "0"
-							}
-						},
-						{
-							"id": "set-position-to-another-object",
-							"objectClass": "ship_BG_1",
-							"sid": 781176638189392,
-							"parameters": {
-								"object": "ship_col_1",
-								"image-point-optional": "0"
-							}
-						},
-						{
-							"id": "set-position-to-another-object",
-							"objectClass": "ship_jumpthru_1",
-							"sid": 354095504232908,
-							"parameters": {
-								"object": "ship_col_1",
-								"image-point-optional": "0"
+								"variable": "zoomLevel",
+								"value": "BASE_ZOOM"
 							}
 						},
 						{
 							"id": "set-position",
-							"objectClass": "ship_entire_collider_1",
-							"sid": 975305764379436,
+							"objectClass": "player_base",
+							"sid": 566218539240408,
 							"parameters": {
-								"x": "ship_col_1.X + 145",
-								"y": "ship_col_1.Y + 92"
+								"x": "playerSpawnLoc.X",
+								"y": "playerSpawnLoc.Y"
 							}
 						},
 						{
-							"id": "pin-to-object",
-							"objectClass": "ship_BG2_1",
-							"sid": 165172320040614,
-							"behaviorType": "Pin",
+							"id": "move-to-layer",
+							"objectClass": "player_anim",
+							"sid": 325502509882809,
 							"parameters": {
-								"pin-to": "ship_col_1",
-								"mode": "position-angle"
+								"layer": "\"Player\""
 							}
 						},
 						{
-							"id": "pin-to-object",
-							"objectClass": "ship_BG_1",
-							"sid": 991384781549153,
-							"behaviorType": "Pin",
-							"parameters": {
-								"pin-to": "ship_col_1",
-								"mode": "position-angle"
-							}
-						},
-						{
-							"id": "pin-to-object",
-							"objectClass": "ship_jumpthru_1",
-							"sid": 329692185890037,
-							"behaviorType": "Pin",
-							"parameters": {
-								"pin-to": "ship_col_1",
-								"mode": "position-angle"
-							}
-						},
-						{
-							"id": "pin-to-object",
-							"objectClass": "ship_entire_collider_1",
-							"sid": 884137486904219,
-							"behaviorType": "Pin",
-							"parameters": {
-								"pin-to": "ship_col_1",
-								"mode": "position-angle"
-							}
-						},
-						{
-							"id": "move-to-top",
-							"objectClass": "ship_BG_1",
-							"sid": 810804995516412
-						},
-						{
-							"id": "move-to-top",
-							"objectClass": "ship_BG2_1",
-							"sid": 279903062139371
-						},
-						{
-							"id": "move-to-top",
+							"id": "destroy",
 							"objectClass": "ship_col_1",
-							"sid": 471878620966027
+							"sid": 447550952054682
 						},
 						{
-							"id": "move-to-top",
-							"objectClass": "ship_jumpthru_1",
-							"sid": 152725151791840
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 776606511801112,
+							"parameters": {
+								"variable": "curShipIndex",
+								"value": "0"
+							}
 						}
 					],
-					"sid": 300748285151090
+					"sid": 157000113480237,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 754576145278720,
+									"parameters": {
+										"first-value": "SysObj.Count",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 114444102600851,
+									"parameters": {
+										"object-to-create": "SysObj",
+										"layer": "\"BG\"",
+										"x": "0",
+										"y": "0"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "SysObj",
+									"sid": 251703940694505,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 203606924076507
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 397337001299730,
+									"parameters": {
+										"first-value": "player_base.Count",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 701869585622692,
+									"parameters": {
+										"object-to-create": "player_base",
+										"layer": "\"Player\"",
+										"x": "playerSpawnLoc.X",
+										"y": "playerSpawnLoc.Y"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 591994900391367,
+									"parameters": {
+										"variable": "spaceLayoutGameplayState",
+										"value": "GAME_STATE_PILOTING"
+									}
+								},
+								{
+									"id": "set-object-time-scale",
+									"objectClass": "System",
+									"sid": 457082343888529,
+									"parameters": {
+										"object": "SysObj",
+										"time-scale": "1"
+									}
+								},
+								{
+									"id": "createPermutationTable",
+									"objectClass": "AdvancedRandom",
+									"sid": 665776975709320,
+									"parameters": {
+										"length": "NUM_SHIPS",
+										"offset": "0"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "shipController",
+									"sid": 106589949816154
+								}
+							],
+							"sid": 727468435088492
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 319062976976940,
+									"parameters": {
+										"object-to-create": "shipController",
+										"layer": "\"Ship\"",
+										"x": "ship_spawn_loc.X",
+										"y": "ship_spawn_loc.Y"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "shipController",
+									"sid": 543430002035228,
+									"parameters": {
+										"instance-variable": "isActive",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "shipController",
+									"sid": 782188385091267,
+									"parameters": {
+										"instance-variable": "id",
+										"value": "AdvancedRandom.Permutation(curShipIndex)"
+									}
+								}
+							],
+							"sid": 464470911753029
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 546441704092299,
+									"parameters": {
+										"variable": "curShipIndex",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 307461714004162,
+									"parameters": {
+										"object-to-create": "ship_col_1",
+										"layer": "\"Ship\"",
+										"x": "ship_spawn_loc.X - 140",
+										"y": "ship_spawn_loc.Y - 174"
+									}
+								},
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "ship_BG2_1",
+									"sid": 745170848446417,
+									"parameters": {
+										"object": "ship_col_1",
+										"image-point-optional": "0"
+									}
+								},
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "ship_BG_1",
+									"sid": 237064160123355,
+									"parameters": {
+										"object": "ship_col_1",
+										"image-point-optional": "0"
+									}
+								},
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "ship_jumpthru_1",
+									"sid": 641673082592039,
+									"parameters": {
+										"object": "ship_col_1",
+										"image-point-optional": "0"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "ship_entire_collider_1",
+									"sid": 166722207206325,
+									"parameters": {
+										"x": "ship_col_1.X + 145",
+										"y": "ship_col_1.Y + 92"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ship_entire_collider_1",
+									"sid": 823619501902178,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "pin-to-object",
+									"objectClass": "ship_BG2_1",
+									"sid": 388940488220492,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "ship_col_1",
+										"mode": "position-angle"
+									}
+								},
+								{
+									"id": "pin-to-object",
+									"objectClass": "ship_BG_1",
+									"sid": 901579485279095,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "ship_col_1",
+										"mode": "position-angle"
+									}
+								},
+								{
+									"id": "pin-to-object",
+									"objectClass": "ship_jumpthru_1",
+									"sid": 795003001078129,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "ship_col_1",
+										"mode": "position-angle"
+									}
+								},
+								{
+									"id": "pin-to-object",
+									"objectClass": "ship_entire_collider_1",
+									"sid": 702831136814509,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "ship_col_1",
+										"mode": "position-angle"
+									}
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "ship_BG_1",
+									"sid": 522695551370197
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "ship_BG2_1",
+									"sid": 810415405059819
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "ship_col_1",
+									"sid": 595358374426757
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "ship_jumpthru_1",
+									"sid": 213294535294315
+								}
+							],
+							"sid": 827298589290553
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 682878037933349,
+									"parameters": {
+										"variable": "curShipIndex",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 273267111079205
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 793502130115771,
+									"parameters": {
+										"variable": "curShipIndex",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 109536814236352
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 878232750641463,
+									"parameters": {
+										"variable": "curShipIndex",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 284227909429757
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 364904674056132,
+									"parameters": {
+										"variable": "curShipIndex",
+										"comparison": 0,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 645447364910916
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 169931613176056,
+									"parameters": {
+										"variable": "curShipIndex",
+										"comparison": 0,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 472400676183366
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 906245839864847,
+									"parameters": {
+										"variable": "curShipIndex",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 962630491649591
+						}
+					]
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 530039019346340,
-							"parameters": {
-								"variable": "curShipIndex",
-								"comparison": 0,
-								"value": "1"
-							}
+							"id": "on-created",
+							"objectClass": "repairProgressBar",
+							"sid": 390946925160620
 						}
 					],
-					"actions": [],
-					"sid": 402609710802993
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 997543290721987,
-							"parameters": {
-								"variable": "curShipIndex",
-								"comparison": 0,
-								"value": "2"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 962597490377334
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 755239340552140,
-							"parameters": {
-								"variable": "curShipIndex",
-								"comparison": 0,
-								"value": "3"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 317587289302570
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 982506262087606,
-							"parameters": {
-								"variable": "curShipIndex",
-								"comparison": 0,
-								"value": "4"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 353926942310167
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 709582506019494,
-							"parameters": {
-								"variable": "curShipIndex",
-								"comparison": 0,
-								"value": "5"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 625855588823156
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
 					"actions": [
 						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 820223618790143,
+							"id": "set-effect-enabled",
+							"objectClass": "repairProgressBar",
+							"sid": 283351773701323,
 							"parameters": {
-								"variable": "curShipIndex",
-								"value": "1"
+								"mode": "disable",
+								"effect": "\"BlackWhite\""
 							}
 						}
 					],
-					"sid": 550159204261546
-				}
-			]
-		},
-		{
-			"eventType": "comment",
-			"text": "Find the ship wheel"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 189609723370941
+					"sid": 760160876500305
 				}
 			],
-			"actions": [],
-			"sid": 365287281184137,
+			"sid": 194434902478915
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Flight controller to ship wheel",
+			"description": "",
+			"isActiveOnStart": true,
 			"children": [
+				{
+					"eventType": "comment",
+					"text": "Find the ship wheel"
+				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "for",
+							"id": "trigger-once-while-true",
 							"objectClass": "System",
-							"sid": 371465049940474,
-							"parameters": {
-								"name": "\"tileX\"",
-								"start-index": "0",
-								"end-index": "200"
-							}
+							"sid": 874524486552638
 						}
 					],
 					"actions": [],
-					"sid": 910042786725495,
+					"sid": 418248498983162,
 					"children": [
 						{
 							"eventType": "block",
@@ -433,90 +510,333 @@
 								{
 									"id": "for",
 									"objectClass": "System",
-									"sid": 259500980983732,
+									"sid": 756206675851002,
 									"parameters": {
-										"name": "\"tileY\"",
+										"name": "\"tileX\"",
 										"start-index": "0",
-										"end-index": "500"
+										"end-index": "200"
 									}
 								}
 							],
 							"actions": [],
-							"sid": 536781972519257,
+							"sid": 285624085057103,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-tile-at",
-											"objectClass": "ship_BG2_1",
-											"sid": 763387262739169,
-											"parameters": {
-												"tile-x": "loopindex(\"tileX\")",
-												"tile-y": "loopindex(\"tileY\")",
-												"comparison": 0,
-												"tile": "332"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-collisions-enabled",
-											"objectClass": "shipController",
-											"sid": 690939807732400,
-											"parameters": {
-												"collisions": "disabled"
-											}
-										},
-										{
-											"id": "set-position",
-											"objectClass": "shipController",
-											"sid": 860782297403459,
-											"parameters": {
-												"x": "ship_BG2_1.TileToPositionX(loopindex(\"tileX\")) + 8",
-												"y": "ship_BG2_1.TileToPositionY(loopindex(\"tileY\")) + 8"
-											}
-										},
-										{
-											"id": "pin-to-object",
-											"objectClass": "ship_col_1",
-											"sid": 531956494406004,
-											"behaviorType": "Pin",
-											"parameters": {
-												"pin-to": "shipController",
-												"mode": "position-only"
-											}
-										},
-										{
-											"id": "set-collisions-enabled",
-											"objectClass": "shipController",
-											"sid": 622478005352769,
-											"parameters": {
-												"collisions": "enabled"
-											}
-										},
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 171442723180823,
-											"parameters": {
-												"type": "log",
-												"message": "\"found the tile at x = \" & ship_BG2_1.TileToPositionX(loopindex(\"tileX\")) & \" and Y = \" & ship_BG2_1.TileToPositionY(loopindex(\"tileY\"))"
-											}
-										},
-										{
-											"id": "stop-loop",
+											"id": "for",
 											"objectClass": "System",
-											"sid": 746299073407761
+											"sid": 531895791356302,
+											"parameters": {
+												"name": "\"tileY\"",
+												"start-index": "0",
+												"end-index": "500"
+											}
 										}
 									],
-									"sid": 473944590219907
+									"actions": [],
+									"sid": 730620559353208,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-tile-at",
+													"objectClass": "ship_BG2_1",
+													"sid": 585379494524067,
+													"parameters": {
+														"tile-x": "loopindex(\"tileX\")",
+														"tile-y": "loopindex(\"tileY\")",
+														"comparison": 0,
+														"tile": "332"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-collisions-enabled",
+													"objectClass": "shipController",
+													"sid": 877054843205931,
+													"parameters": {
+														"collisions": "disabled"
+													}
+												},
+												{
+													"id": "set-position",
+													"objectClass": "shipController",
+													"sid": 540914217441415,
+													"parameters": {
+														"x": "ship_BG2_1.TileToPositionX(loopindex(\"tileX\")) + 8",
+														"y": "ship_BG2_1.TileToPositionY(loopindex(\"tileY\")) + 8"
+													}
+												},
+												{
+													"id": "pin-to-object",
+													"objectClass": "ship_col_1",
+													"sid": 650575789412710,
+													"behaviorType": "Pin",
+													"parameters": {
+														"pin-to": "shipController",
+														"mode": "position-only"
+													}
+												},
+												{
+													"id": "set-collisions-enabled",
+													"objectClass": "shipController",
+													"sid": 628351080862642,
+													"parameters": {
+														"collisions": "enabled"
+													}
+												},
+												{
+													"id": "log",
+													"objectClass": "Browser",
+													"sid": 305822671423138,
+													"parameters": {
+														"type": "log",
+														"message": "\"Wheel: found the tile at x = \" & ship_BG2_1.TileToPositionX(loopindex(\"tileX\")) & \" and Y = \" & ship_BG2_1.TileToPositionY(loopindex(\"tileY\"))"
+													}
+												},
+												{
+													"id": "stop-loop",
+													"objectClass": "System",
+													"sid": 866178194814743
+												}
+											],
+											"sid": 258651065942892
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Find the repair objs"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 340395911010313
+						}
+					],
+					"actions": [],
+					"sid": 964974362556390,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "repairCount",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 337381962312724
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 292228073616239,
+									"parameters": {
+										"name": "\"tileX\"",
+										"start-index": "0",
+										"end-index": "200"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 443696458784966,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 191508649159457,
+											"parameters": {
+												"name": "\"tileY\"",
+												"start-index": "0",
+												"end-index": "500"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 980655691844298,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-tile-at",
+													"objectClass": "ship_BG2_1",
+													"sid": 234824446074121,
+													"parameters": {
+														"tile-x": "loopindex(\"tileX\")",
+														"tile-y": "loopindex(\"tileY\")",
+														"comparison": 0,
+														"tile": "44"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "log",
+													"objectClass": "Browser",
+													"sid": 291249264221225,
+													"parameters": {
+														"type": "log",
+														"message": "\"Repair obj: found the tile at x = \" & ship_BG2_1.TileToPositionX(loopindex(\"tileX\")) & \" and Y = \" & ship_BG2_1.TileToPositionY(loopindex(\"tileY\"))"
+													}
+												},
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 756153203017426,
+													"parameters": {
+														"object-to-create": "repairObj",
+														"layer": "\"Ship\"",
+														"x": "ship_BG2_1.TileToPositionX(loopindex(\"tileX\"))",
+														"y": "ship_BG2_1.TileToPositionY(loopindex(\"tileY\"))"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "repairObj",
+													"sid": 810710440203726,
+													"parameters": {
+														"instance-variable": "id",
+														"value": "repairCount"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "repairObj",
+													"sid": 101547740608211,
+													"parameters": {
+														"instance-variable": "repairProg",
+														"value": "0"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "repairObj",
+													"sid": 450168890253632,
+													"parameters": {
+														"instance-variable": "rndAnim",
+														"value": "floor(random(1, 3))"
+													}
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "repairObj",
+													"sid": 333015631939932,
+													"parameters": {
+														"animation": "Self.rndAnim & \"_broken\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "pin-to-object",
+													"objectClass": "repairObj",
+													"sid": 431196100484958,
+													"behaviorType": "Pin",
+													"parameters": {
+														"pin-to": "ship_col_1",
+														"mode": "position-angle"
+													}
+												},
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 600294538491158,
+													"parameters": {
+														"object-to-create": "repairProgressBar",
+														"layer": "\"Ship\"",
+														"x": "ship_BG2_1.TileToPositionX(loopindex(\"tileX\")) - 16",
+														"y": "ship_BG2_1.TileToPositionY(loopindex(\"tileY\")) - 12"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "repairProgressBar",
+													"sid": 878155713806287,
+													"parameters": {
+														"instance-variable": "id",
+														"value": "repairCount"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "repairProgressBar",
+													"sid": 209745139381201,
+													"parameters": {
+														"instance-variable": "originalWidth",
+														"value": "Self.Width"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "repairProgressBar",
+													"sid": 212710444513794,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-position-to-another-object",
+													"objectClass": "repairProgressBarBG",
+													"sid": 349883195890862,
+													"parameters": {
+														"object": "repairProgressBar",
+														"image-point-optional": "0"
+													}
+												},
+												{
+													"id": "move-to-object",
+													"objectClass": "repairProgressBarBG",
+													"sid": 547139547918539,
+													"parameters": {
+														"where": "behind",
+														"object": "repairProgressBar"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "repairProgressBarBG",
+													"sid": 403203096839417,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 325918642910208,
+													"parameters": {
+														"variable": "repairCount",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 373185588607947
+										}
+									]
 								}
 							]
 						}
 					]
 				}
-			]
+			],
+			"sid": 741097980812758
 		},
 		{
 			"eventType": "block",
@@ -618,38 +938,470 @@
 			"sid": 436585212316107
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "Check if can activate wheel",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "on-button-released",
-					"objectClass": "Gamepad",
-					"sid": 705747133962098,
-					"parameters": {
-						"gamepad": "0",
-						"button": "button-a"
-					}
+					"eventType": "variable",
+					"name": "foundBroken",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 157871356186092
 				},
 				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "player_base",
-					"sid": 104213982370628,
-					"parameters": {
-						"object": "shipController"
-					}
-				}
-			],
-			"actions": [
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 842176760314214,
+							"parameters": {
+								"object": "repairObj"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 964773402295646,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "repairObj",
+									"sid": 822865025686757,
+									"parameters": {
+										"instance-variable": "repairProg",
+										"comparison": 2,
+										"value": "100"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 686434132510811,
+									"parameters": {
+										"variable": "foundBroken",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 583149446203700
+						}
+					]
+				},
 				{
-					"id": "set-boolean-instvar",
-					"objectClass": "shipController",
-					"sid": 500240215342582,
-					"parameters": {
-						"instance-variable": "isActive",
-						"value": "true"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 844738136124876,
+							"parameters": {
+								"variable": "foundBroken"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "shipController",
+							"sid": 296659821712504,
+							"parameters": {
+								"instance-variable": "canActivate",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 801497335516171
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 873041043432774
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "shipController",
+							"sid": 646816177146698,
+							"parameters": {
+								"instance-variable": "canActivate",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 590746664102585
 				}
 			],
-			"sid": 779374221221774
+			"sid": 450137823106553
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Activate the ship",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-released",
+							"objectClass": "Gamepad",
+							"sid": 521088560703492,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-b"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "player_base",
+							"sid": 732413204277668,
+							"parameters": {
+								"object": "shipController"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "shipController",
+							"sid": 595481833166248,
+							"parameters": {
+								"instance-variable": "canActivate"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "shipController",
+							"sid": 901199924631741,
+							"parameters": {
+								"instance-variable": "isActive",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 438107431753572
+				}
+			],
+			"sid": 248718649681996
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Progress bar",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 136009953276517,
+							"parameters": {
+								"object": "repairProgressBar"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-width",
+							"objectClass": "repairProgressBar",
+							"sid": 135536607087771,
+							"parameters": {
+								"width": "Self.originalWidth * (Self.prog / 100)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "repairProgressBar",
+							"sid": 784878320940653,
+							"parameters": {
+								"instance-variable": "prog",
+								"value": "clamp(Self.prog, 0, 100)"
+							}
+						}
+					],
+					"sid": 314704623939655
+				}
+			],
+			"sid": 293951223222752
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Repair ship part",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 666609831607436,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-b"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "player_base",
+							"sid": 385319546638632,
+							"parameters": {
+								"object": "repairObj"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-instvar",
+							"objectClass": "repairObj",
+							"sid": 824782327004497,
+							"parameters": {
+								"instance-variable": "repairProg",
+								"value": "repairSpeed * dt"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "repairObj",
+							"sid": 803904217689194,
+							"parameters": {
+								"instance-variable": "repairProg",
+								"value": "clamp(Self.repairProg, 0, 100)"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "player_base",
+							"sid": 314922230568970,
+							"parameters": {
+								"instance-variable": "isRepairing",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 781050142099252,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "repairProgressBar",
+									"sid": 242175288006758,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "repairObj.id"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "repairProgressBar",
+									"sid": 900657327679875,
+									"parameters": {
+										"instance-variable": "prog",
+										"value": "repairObj.repairProg"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "repairProgressBar",
+									"sid": 511247738023540,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "repairProgressBarBG",
+									"sid": 821955998137648,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 642946770569167
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-released",
+							"objectClass": "Gamepad",
+							"sid": 203447463668037,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-b"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "player_base",
+							"sid": 629397765620329,
+							"parameters": {
+								"instance-variable": "isRepairing",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "repairProgressBar",
+							"sid": 352444844158151,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "repairProgressBarBG",
+							"sid": 117878873207969,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 499619049196084
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "repairProgressBar",
+							"sid": 259020692372488,
+							"parameters": {
+								"instance-variable": "prog",
+								"comparison": 5,
+								"value": "100"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "repairProgressBar",
+							"sid": 322709004809130,
+							"parameters": {
+								"instance-variable": "isDone"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "repairProgressBar",
+							"sid": 760827722689614,
+							"parameters": {
+								"instance-variable": "isDone",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "repairProgressBar",
+							"sid": 147039082877260,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"BlackWhite\""
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "SysObj",
+							"sid": 842707517663672,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "0.2",
+								"type": "once",
+								"tag": "\"progEffect\""
+							}
+						}
+					],
+					"sid": 196537849662222,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "repairObj",
+									"sid": 811692859628526,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "repairProgressBar.id"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "repairObj",
+									"sid": 365902985210669,
+									"parameters": {
+										"animation": "Self.rndAnim & \"_fixed\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 652441339337687
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "SysObj",
+							"sid": 738533147551511,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"progEffect\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "repairProgressBar",
+							"sid": 733006892981881,
+							"parameters": {
+								"mode": "disable",
+								"effect": "\"BlackWhite\""
+							}
+						}
+					],
+					"sid": 653151215675474
+				}
+			],
+			"sid": 770917563332131
 		},
 		{
 			"eventType": "include",

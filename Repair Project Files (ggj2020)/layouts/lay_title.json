@@ -1,33 +1,46 @@
 {
-	"name": "lay_loader",
+	"name": "lay_title",
 	"layers": [
 		{
-			"name": "Layer 0",
+			"name": "BG",
 			"overriden": 0,
 			"instances": [
 				{
-					"type": "SysObj",
+					"type": "textTitle",
 					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": false,
-						"live-preview": false
+						"text": "Press A to Start",
+						"enable-bbcode": true,
+						"font": "ChevyRay - Express",
+						"size": 40,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
 					},
-					"uid": 5,
+					"uid": 32,
 					"instanceVariables": {},
 					"behaviors": {
-						"Timer": {
+						"Flash": {
 							"properties": {}
 						}
 					},
 					"world": {
-						"x": -62,
-						"y": -46,
-						"width": 32,
-						"height": 32,
-						"originX": 0.5,
-						"originY": 0.5,
+						"x": 165,
+						"y": 458,
+						"width": 951,
+						"height": 176,
+						"originX": 0,
+						"originY": 0,
 						"color": [
 							1,
 							1,
@@ -39,7 +52,7 @@
 					}
 				}
 			],
-			"sid": 785122529503395,
+			"sid": 296032737321337,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"color": [
@@ -49,9 +62,9 @@
 				1
 			],
 			"backgroundColor": [
-				0,
-				0,
-				0,
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
 				1
 			],
 			"isTransparent": false,
@@ -64,10 +77,10 @@
 			"global": false
 		},
 		{
-			"name": "Layer 1",
+			"name": "Fade",
 			"overriden": 0,
 			"instances": [],
-			"sid": 610446250947320,
+			"sid": 213242307801194,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"color": [
@@ -83,8 +96,8 @@
 				1
 			],
 			"isTransparent": true,
-			"parallaxX": 1,
-			"parallaxY": 1,
+			"parallaxX": 0,
+			"parallaxY": 0,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
 			"useRenderCells": false,
@@ -92,11 +105,11 @@
 			"global": false
 		}
 	],
-	"sid": 286009910091524,
+	"sid": 350674681404804,
 	"nonworld-instances": [],
 	"effectTypes": [],
 	"width": 1281,
 	"height": 720,
-	"unboundedScrolling": true,
-	"eventSheet": "ev_loader"
+	"unboundedScrolling": false,
+	"eventSheet": "ev_title"
 }

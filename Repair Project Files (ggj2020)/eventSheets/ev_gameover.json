@@ -1,0 +1,146 @@
+{
+	"name": "ev_gameover",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 357863722231521
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 217286615655708,
+					"parameters": {
+						"variable": "hasPressed",
+						"value": "true"
+					}
+				},
+				{
+					"id": "flash",
+					"objectClass": "textTitle",
+					"sid": 750308333991288,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": "0.4",
+						"off-time": "0.2",
+						"duration": "1.2"
+					}
+				},
+				{
+					"callFunction": "FadeIn",
+					"sid": 270224938450813,
+					"parameters": [
+						"FADE_TIME"
+					]
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 902633261802210,
+					"parameters": {
+						"seconds": "0.3"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 922619906820805,
+					"parameters": {
+						"variable": "hasPressed",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 211924830817791
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-button-down",
+					"objectClass": "Gamepad",
+					"sid": 610419193883476,
+					"parameters": {
+						"gamepad": "0",
+						"button": "button-a"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 392767722299956,
+					"parameters": {
+						"variable": "hasPressed"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 922581485734368,
+					"parameters": {
+						"variable": "hasPressed",
+						"value": "true"
+					}
+				},
+				{
+					"callFunction": "FadeOut",
+					"sid": 269287285419304,
+					"parameters": [
+						"FADE_TIME"
+					]
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 283949513787522,
+					"parameters": {
+						"seconds": "FADE_TIME"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 409688716178002,
+					"parameters": {
+						"layout": "lay_title"
+					}
+				}
+			],
+			"sid": 721366778893574
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-flash-ended",
+					"objectClass": "textTitle",
+					"sid": 241162160620559,
+					"behaviorType": "Flash"
+				}
+			],
+			"actions": [
+				{
+					"id": "flash",
+					"objectClass": "textTitle",
+					"sid": 891605028146161,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": "0.4",
+						"off-time": "0.2",
+						"duration": "1.2"
+					}
+				}
+			],
+			"sid": 776654749172256
+		}
+	],
+	"sid": 106053121177802
+}

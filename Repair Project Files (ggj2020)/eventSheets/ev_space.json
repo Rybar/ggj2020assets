@@ -799,49 +799,8 @@
 					],
 					"actions": [
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 546423344394819,
-							"parameters": {
-								"variable": "spaceLayoutGameplayState",
-								"value": "GAME_STATE_FALLING"
-							}
-						},
-						{
-							"id": "destroy",
-							"objectClass": "shipController",
-							"sid": 339253594580060
-						},
-						{
-							"id": "destroy",
-							"objectClass": "ship_col_1",
-							"sid": 815553567629953
-						},
-						{
-							"id": "set-enabled",
-							"objectClass": "player_base",
-							"sid": 333460402253454,
-							"behaviorType": "Platform",
-							"parameters": {
-								"state": "enabled"
-							}
-						},
-						{
-							"id": "set-collisions-enabled",
-							"objectClass": "player_base",
-							"sid": 694125588196309,
-							"parameters": {
-								"collisions": "enabled"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 622204459282135,
-							"parameters": {
-								"variable": "zoomLevel",
-								"value": "BASE_ZOOM"
-							}
+							"callFunction": "DestroyShipAndReset",
+							"sid": 641698590296270
 						}
 					],
 					"sid": 262350446453438
@@ -905,6 +864,7 @@
 						{
 							"callFunction": "StartFreezeFrame",
 							"sid": 898741029171152,
+							"disabled": true,
 							"parameters": [
 								"0.1"
 							]
@@ -1016,7 +976,8 @@
 							]
 						}
 					],
-					"sid": 597269274916965
+					"sid": 597269274916965,
+					"disabled": true
 				}
 			],
 			"sid": 812969214847925

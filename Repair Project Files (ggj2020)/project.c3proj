@@ -176,7 +176,8 @@
 			"textTitle",
 			"repairObj",
 			"repairProgressBar",
-			"repairProgressBarBG"
+			"repairProgressBarBG",
+			"textGameOver"
 		],
 		"subfolders": [
 			{
@@ -265,7 +266,8 @@
 			"lay_loader",
 			"lay_repair",
 			"ObjBank",
-			"lay_title"
+			"lay_title",
+			"lay_gameover"
 		],
 		"subfolders": []
 	},
@@ -277,7 +279,8 @@
 			"ev_camera",
 			"ev_player",
 			"ev_triggers",
-			"ev_title"
+			"ev_title",
+			"ev_gameover"
 		],
 		"subfolders": []
 	},

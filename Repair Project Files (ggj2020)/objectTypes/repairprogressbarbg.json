@@ -2,9 +2,15 @@
 	"name": "repairProgressBarBG",
 	"plugin-id": "Sprite",
 	"sid": 156007883872619,
-	"isGlobal": false,
+	"isGlobal": true,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 300136739702173
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [

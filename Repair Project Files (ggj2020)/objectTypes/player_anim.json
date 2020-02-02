@@ -104,19 +104,7 @@
 						"height": 23,
 						"originX": 0.5238095238095238,
 						"originY": 0.8695652173913043,
-						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run1.png",
-						"exportFormat": "png",
-						"exportQuality": 0.8,
-						"imageSpriteId": 63,
-						"useCollisionPoly": true,
-						"duration": 1
-					},
-					{
-						"width": 21,
-						"height": 23,
-						"originX": 0.5238095238095238,
-						"originY": 0.8695652173913043,
-						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run2.png",
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-Jump19.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 64,
@@ -128,7 +116,7 @@
 						"height": 23,
 						"originX": 0.5238095238095238,
 						"originY": 0.8695652173913043,
-						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run3.png",
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run1.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 65,
@@ -140,7 +128,7 @@
 						"height": 23,
 						"originX": 0.5238095238095238,
 						"originY": 0.8695652173913043,
-						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run4.png",
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run2.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 66,
@@ -152,7 +140,7 @@
 						"height": 23,
 						"originX": 0.5238095238095238,
 						"originY": 0.8695652173913043,
-						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run5.png",
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run3.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 67,
@@ -164,7 +152,7 @@
 						"height": 23,
 						"originX": 0.5238095238095238,
 						"originY": 0.8695652173913043,
-						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run6.png",
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run4.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 68,
@@ -176,7 +164,7 @@
 						"height": 23,
 						"originX": 0.5238095238095238,
 						"originY": 0.8695652173913043,
-						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run7.png",
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run5.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 69,
@@ -188,7 +176,7 @@
 						"height": 23,
 						"originX": 0.5238095238095238,
 						"originY": 0.8695652173913043,
-						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run8.png",
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run6.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 70,
@@ -200,7 +188,7 @@
 						"height": 23,
 						"originX": 0.5238095238095238,
 						"originY": 0.8695652173913043,
-						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run9.png",
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run7.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 71,
@@ -212,10 +200,34 @@
 						"height": 23,
 						"originX": 0.5238095238095238,
 						"originY": 0.8695652173913043,
-						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run10.png",
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run8.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 72,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run9.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 84,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run10.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 85,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
@@ -238,7 +250,7 @@
 						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-Jump19.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 73,
+						"imageSpriteId": 86,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
@@ -261,7 +273,7 @@
 						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-crawl11.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 75,
+						"imageSpriteId": 87,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
@@ -277,26 +289,50 @@
 			{
 				"frames": [
 					{
-						"width": 16,
-						"height": 16,
+						"width": 21,
+						"height": 23,
 						"originX": 0.5238095238095238,
 						"originY": 0.8695652173913043,
-						"originalSource": "",
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-fix27.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8,
+						"imageSpriteId": 88,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
 					{
-						"width": 16,
-						"height": 16,
+						"width": 21,
+						"height": 23,
 						"originX": 0.5238095238095238,
 						"originY": 0.8695652173913043,
-						"originalSource": "",
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-fix28.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9,
+						"imageSpriteId": 89,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-fix29.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 90,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-fix30.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 91,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
@@ -307,7 +343,7 @@
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 4
+				"speed": 6
 			},
 			{
 				"frames": [
@@ -319,7 +355,7 @@
 						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-Fall20.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 74,
+						"imageSpriteId": 92,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
@@ -342,7 +378,7 @@
 						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-crawl11.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 76,
+						"imageSpriteId": 93,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -354,7 +390,7 @@
 						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-crawl12.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 77,
+						"imageSpriteId": 100,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -366,7 +402,7 @@
 						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-crawl13.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 78,
+						"imageSpriteId": 102,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -378,7 +414,7 @@
 						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-crawl14.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 79,
+						"imageSpriteId": 104,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -390,7 +426,7 @@
 						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-crawl15.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 80,
+						"imageSpriteId": 105,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -402,7 +438,7 @@
 						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-crawl16.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 81,
+						"imageSpriteId": 106,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -414,7 +450,7 @@
 						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-crawl17.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 82,
+						"imageSpriteId": 107,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -426,7 +462,7 @@
 						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-crawl18.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 83,
+						"imageSpriteId": 108,
 						"useCollisionPoly": true,
 						"duration": 1
 					}

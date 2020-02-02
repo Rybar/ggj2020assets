@@ -2,7 +2,7 @@
 	"name": "repairProgressBar",
 	"plugin-id": "Sprite",
 	"sid": 940399004722161,
-	"isGlobal": false,
+	"isGlobal": true,
 	"instanceVariables": [
 		{
 			"name": "id",
@@ -29,7 +29,13 @@
 			"sid": 554829805818521
 		}
 	],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 803422991061815
+		}
+	],
 	"effectTypes": [
 		{
 			"effectId": "blacknwhite",

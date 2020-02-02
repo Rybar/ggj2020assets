@@ -12,6 +12,40 @@
 			],
 			"actions": [
 				{
+					"id": "fade-volume",
+					"objectClass": "Audio",
+					"sid": 483026893580408,
+					"parameters": {
+						"tag": "\"SBaseJumpMusic\"",
+						"db": "-100",
+						"duration": "2",
+						"ending": "stop"
+					}
+				},
+				{
+					"id": "play-by-name",
+					"objectClass": "Audio",
+					"sid": 274219520178602,
+					"parameters": {
+						"folder": "music",
+						"audio-file-name": "\"wind\"",
+						"loop": "looping",
+						"volume": "-100",
+						"tag-optional": "\"wind\""
+					}
+				},
+				{
+					"id": "fade-volume",
+					"objectClass": "Audio",
+					"sid": 855524494456124,
+					"parameters": {
+						"tag": "\"wind\"",
+						"db": "0",
+						"duration": "3",
+						"ending": "keep-playing"
+					}
+				},
+				{
 					"id": "set-layout-scale",
 					"objectClass": "System",
 					"sid": 408134646244278,
@@ -98,6 +132,17 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "fade-volume",
+					"objectClass": "Audio",
+					"sid": 995995775672870,
+					"parameters": {
+						"tag": "\"wind\"",
+						"db": "-100",
+						"duration": "FADE_TIME",
+						"ending": "stop"
+					}
+				},
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",

@@ -65,7 +65,7 @@
 			"eventType": "variable",
 			"name": "PLAYER_MAX_HP",
 			"type": "number",
-			"initialValue": "5",
+			"initialValue": "7",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,

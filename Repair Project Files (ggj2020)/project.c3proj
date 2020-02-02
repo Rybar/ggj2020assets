@@ -332,7 +332,18 @@
 			"subfolders": []
 		},
 		"music": {
-			"items": [],
+			"items": [
+				{
+					"name": "wind.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 178417772120595
+				},
+				{
+					"name": "SBaseJumpMusic.mp3",
+					"type": "audio/mpeg",
+					"sid": 162554735857478
+				}
+			],
 			"subfolders": []
 		},
 		"video": {
@@ -412,7 +423,7 @@
 		"appId": "",
 		"pixelRounding": false,
 		"useLoaderLayout": true,
-		"fullscreenMode": "letterbox-integer-scale",
+		"fullscreenMode": "letterbox-scale",
 		"fullscreenQuality": "high",
 		"viewportFit": "auto",
 		"backgroundColor": [
@@ -444,7 +455,7 @@
 		"downscaling": "medium",
 		"maxSpriteSheetSize": 2048,
 		"loaderStyle": "progress",
-		"preloadSounds": false,
+		"preloadSounds": true,
 		"clearBackground": true,
 		"enhancedAccelerationPrecision": true
 	},

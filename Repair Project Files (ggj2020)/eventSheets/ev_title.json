@@ -22,6 +22,29 @@
 			],
 			"actions": [
 				{
+					"id": "play-by-name",
+					"objectClass": "Audio",
+					"sid": 204574911129107,
+					"parameters": {
+						"folder": "music",
+						"audio-file-name": "\"SBaseJumpMusic\"",
+						"loop": "looping",
+						"volume": "-100",
+						"tag-optional": "\"SBaseJumpMusic\""
+					}
+				},
+				{
+					"id": "fade-volume",
+					"objectClass": "Audio",
+					"sid": 837852374856850,
+					"parameters": {
+						"tag": "\"SBaseJumpMusic\"",
+						"db": "-30",
+						"duration": "3",
+						"ending": "keep-playing"
+					}
+				},
+				{
 					"callFunction": "FadeIn",
 					"sid": 317553634308460,
 					"parameters": [
@@ -151,6 +174,18 @@
 					"sid": 792137065579553,
 					"parameters": {
 						"layout": "lay_space"
+					}
+				},
+				{
+					"id": "play-by-name",
+					"objectClass": "Audio",
+					"sid": 942865759508351,
+					"parameters": {
+						"folder": "sounds",
+						"audio-file-name": "\"jump\"",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"jump\""
 					}
 				}
 			],

@@ -1,0 +1,57 @@
+{
+	"name": "shipWhole",
+	"plugin-id": "Sprite",
+	"sid": 687166884195027,
+	"isGlobal": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 288,
+						"height": 192,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\ship01.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 150,
+						"collisionPoly": {
+							"points": [
+								0.1388888888888889,
+								0.20833333333333334,
+								0.5,
+								0,
+								0.8576388888888888,
+								0.20833333333333334,
+								0.9131944444444444,
+								0.5,
+								0.96875,
+								0.953125,
+								0.5,
+								0.8697916666666666,
+								0.027777777777777776,
+								0.953125,
+								0.08333333333333333,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 528889631079392,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -55,6 +55,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"version": "r182.2",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Flash",
 			"name": "Flash",
@@ -184,7 +192,9 @@
 			"stars",
 			"tileMapPlanetSurface",
 			"wheelHighlight",
-			"repairHighlight"
+			"repairHighlight",
+			"shipWhole",
+			"Audio"
 		],
 		"subfolders": [
 			{
@@ -297,7 +307,28 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "engine.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 766979363745450
+				},
+				{
+					"name": "fixed.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 866014356150351
+				},
+				{
+					"name": "jump.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 416868031641376
+				},
+				{
+					"name": "junkhit.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 277906201711326
+				}
+			],
 			"subfolders": []
 		},
 		"music": {

@@ -1,0 +1,15 @@
+{
+	"name": "textGameOver",
+	"plugin-id": "Text",
+	"sid": 704075092111357,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 297407680344722
+		}
+	],
+	"effectTypes": []
+}

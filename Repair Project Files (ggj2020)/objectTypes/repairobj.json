@@ -2,7 +2,7 @@
 	"name": "repairObj",
 	"plugin-id": "Sprite",
 	"sid": 354957405403992,
-	"isGlobal": false,
+	"isGlobal": true,
 	"instanceVariables": [
 		{
 			"name": "id",
@@ -36,14 +36,194 @@
 			{
 				"frames": [
 					{
-						"width": 8,
-						"height": 8,
+						"width": 12,
+						"height": 18,
 						"originX": 0.5,
-						"originY": 0.5,
-						"originalSource": "",
+						"originY": 0.6666666666666666,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\panel-fire1.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 14,
+						"imageSpriteId": 28,
+						"collisionPoly": {
+							"points": [
+								0.16666666666666666,
+								0.6666666666666666,
+								0.8333333333333334,
+								0.6666666666666666,
+								0.8333333333333334,
+								1,
+								0.16666666666666666,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 12,
+						"height": 18,
+						"originX": 0.5,
+						"originY": 0.6666666666666666,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\panel-fire2.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 29,
+						"collisionPoly": {
+							"points": [
+								0.16666666666666666,
+								0.6666666666666666,
+								0.8333333333333334,
+								0.6666666666666666,
+								0.8333333333333334,
+								1,
+								0.16666666666666666,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 12,
+						"height": 18,
+						"originX": 0.5,
+						"originY": 0.6666666666666666,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\panel-fire3.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 30,
+						"collisionPoly": {
+							"points": [
+								0.16666666666666666,
+								0.6666666666666666,
+								0.8333333333333334,
+								0.6666666666666666,
+								0.8333333333333334,
+								1,
+								0.16666666666666666,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 12,
+						"height": 18,
+						"originX": 0.5,
+						"originY": 0.6666666666666666,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\panel-fire4.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 31,
+						"collisionPoly": {
+							"points": [
+								0.16666666666666666,
+								0.6666666666666666,
+								0.8333333333333334,
+								0.6666666666666666,
+								0.8333333333333334,
+								1,
+								0.16666666666666666,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 12,
+						"height": 18,
+						"originX": 0.5,
+						"originY": 0.6666666666666666,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\panel-fire5.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 32,
+						"collisionPoly": {
+							"points": [
+								0.16666666666666666,
+								0.6666666666666666,
+								0.8333333333333334,
+								0.6666666666666666,
+								0.8333333333333334,
+								1,
+								0.16666666666666666,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 12,
+						"height": 18,
+						"originX": 0.5,
+						"originY": 0.6666666666666666,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\panel-fire6.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 33,
+						"collisionPoly": {
+							"points": [
+								0.16666666666666666,
+								0.6666666666666666,
+								0.8333333333333334,
+								0.6666666666666666,
+								0.8333333333333334,
+								1,
+								0.16666666666666666,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 12,
+						"height": 18,
+						"originX": 0.5,
+						"originY": 0.6666666666666666,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\panel-fire7.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 35,
+						"collisionPoly": {
+							"points": [
+								0.16666666666666666,
+								0.6666666666666666,
+								0.8333333333333334,
+								0.6666666666666666,
+								0.8333333333333334,
+								1,
+								0.16666666666666666,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 12,
+						"height": 18,
+						"originX": 0.5,
+						"originY": 0.6666666666666666,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\panel-fire8.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 37,
+						"collisionPoly": {
+							"points": [
+								0.16666666666666666,
+								0.6666666666666666,
+								0.8333333333333334,
+								0.6666666666666666,
+								0.8333333333333334,
+								1,
+								0.16666666666666666,
+								1
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
@@ -54,19 +234,31 @@
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 5
+				"speed": 14
 			},
 			{
 				"frames": [
 					{
-						"width": 8,
-						"height": 8,
+						"width": 12,
+						"height": 18,
 						"originX": 0.5,
-						"originY": 0.5,
-						"originalSource": "",
+						"originY": 0.6666666666666666,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\panel-shorted11.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 26,
+						"imageSpriteId": 38,
+						"collisionPoly": {
+							"points": [
+								0.16666666666666666,
+								0.6666666666666666,
+								0.8333333333333334,
+								0.6666666666666666,
+								0.8333333333333334,
+								1,
+								0.16666666666666666,
+								1
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
@@ -82,14 +274,194 @@
 			{
 				"frames": [
 					{
-						"width": 8,
-						"height": 8,
+						"width": 12,
+						"height": 18,
 						"originX": 0.5,
-						"originY": 0.5,
-						"originalSource": "",
+						"originY": 0.6666666666666666,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\panel-shorted9.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 23,
+						"imageSpriteId": 40,
+						"collisionPoly": {
+							"points": [
+								0.16666666666666666,
+								0.6666666666666666,
+								0.8333333333333334,
+								0.6666666666666666,
+								0.8333333333333334,
+								1,
+								0.16666666666666666,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 12,
+						"height": 18,
+						"originX": 0.5,
+						"originY": 0.6666666666666666,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\panel-shorted10.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 41,
+						"collisionPoly": {
+							"points": [
+								0.16666666666666666,
+								0.6666666666666666,
+								0.8333333333333334,
+								0.6666666666666666,
+								0.8333333333333334,
+								1,
+								0.16666666666666666,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 12,
+						"height": 18,
+						"originX": 0.5,
+						"originY": 0.6666666666666666,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\panel-shorted11.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 43,
+						"collisionPoly": {
+							"points": [
+								0.16666666666666666,
+								0.6666666666666666,
+								0.8333333333333334,
+								0.6666666666666666,
+								0.8333333333333334,
+								1,
+								0.16666666666666666,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 12,
+						"height": 18,
+						"originX": 0.5,
+						"originY": 0.6666666666666666,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\panel-shorted12.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 45,
+						"collisionPoly": {
+							"points": [
+								0.16666666666666666,
+								0.6666666666666666,
+								0.8333333333333334,
+								0.6666666666666666,
+								0.8333333333333334,
+								1,
+								0.16666666666666666,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 12,
+						"height": 18,
+						"originX": 0.5,
+						"originY": 0.6666666666666666,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\panel-shorted13.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 47,
+						"collisionPoly": {
+							"points": [
+								0.16666666666666666,
+								0.6666666666666666,
+								0.8333333333333334,
+								0.6666666666666666,
+								0.8333333333333334,
+								1,
+								0.16666666666666666,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 12,
+						"height": 18,
+						"originX": 0.5,
+						"originY": 0.6666666666666666,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\panel-shorted14.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 49,
+						"collisionPoly": {
+							"points": [
+								0.16666666666666666,
+								0.6666666666666666,
+								0.8333333333333334,
+								0.6666666666666666,
+								0.8333333333333334,
+								1,
+								0.16666666666666666,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 12,
+						"height": 18,
+						"originX": 0.5,
+						"originY": 0.6666666666666666,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\panel-shorted15.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 51,
+						"collisionPoly": {
+							"points": [
+								0.16666666666666666,
+								0.6666666666666666,
+								0.8333333333333334,
+								0.6666666666666666,
+								0.8333333333333334,
+								1,
+								0.16666666666666666,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 12,
+						"height": 18,
+						"originX": 0.5,
+						"originY": 0.6666666666666666,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\panel-shorted16.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 55,
+						"collisionPoly": {
+							"points": [
+								0.16666666666666666,
+								0.6666666666666666,
+								0.8333333333333334,
+								0.6666666666666666,
+								0.8333333333333334,
+								1,
+								0.16666666666666666,
+								1
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
@@ -100,19 +472,31 @@
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 5
+				"speed": 10
 			},
 			{
 				"frames": [
 					{
-						"width": 8,
-						"height": 8,
+						"width": 12,
+						"height": 18,
 						"originX": 0.5,
-						"originY": 0.5,
-						"originalSource": "",
+						"originY": 0.6666666666666666,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\panel-shorted12.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 27,
+						"imageSpriteId": 56,
+						"collisionPoly": {
+							"points": [
+								0.16666666666666666,
+								0.6666666666666666,
+								0.8333333333333334,
+								0.6666666666666666,
+								0.8333333333333334,
+								1,
+								0.16666666666666666,
+								1
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}

@@ -89,22 +89,17 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 671084612198697
-								},
-								{
-									"id": "is-boolean-instance-variable-set",
-									"objectClass": "shipController",
-									"sid": 379263198841706,
-									"parameters": {
-										"instance-variable": "isActive"
-									},
-									"isInverted": true
+									"sid": 368986395750368
 								}
 							],
 							"actions": [
 								{
+									"callFunction": "DestroyShipAndReset",
+									"sid": 716419489507914
+								},
+								{
 									"callFunction": "FadeOut",
-									"sid": 874353681503090,
+									"sid": 990592347997434,
 									"parameters": [
 										"FADE_TIME"
 									]
@@ -112,30 +107,21 @@
 								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 369234098633063,
+									"sid": 940460525616322,
 									"parameters": {
 										"seconds": "FADE_TIME"
 									}
 								},
 								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 425515494991690,
-									"parameters": {
-										"variable": "spaceLayoutGameplayState",
-										"value": "GAME_STATE_PILOTING"
-									}
-								},
-								{
 									"id": "go-to-layout",
 									"objectClass": "System",
-									"sid": 286104838678497,
+									"sid": 514660028292396,
 									"parameters": {
-										"layout": "lay_repair"
+										"layout": "lay_gameover"
 									}
 								}
 							],
-							"sid": 576210095396466
+							"sid": 537003381081958
 						}
 					]
 				},
@@ -239,6 +225,83 @@
 					"sid": 429790748467291
 				}
 			]
+		},
+		{
+			"functionName": "DestroyShipAndReset",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 932001790017374,
+					"parameters": {
+						"variable": "spaceLayoutGameplayState",
+						"value": "GAME_STATE_FALLING"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "shipController",
+					"sid": 209595516667886
+				},
+				{
+					"id": "destroy",
+					"objectClass": "ship_col_1",
+					"sid": 402037458682852
+				},
+				{
+					"id": "destroy",
+					"objectClass": "repairObj",
+					"sid": 487446653079063
+				},
+				{
+					"id": "destroy",
+					"objectClass": "repairProgressBar",
+					"sid": 665233747752667
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "player_base",
+					"sid": 501458326100610,
+					"behaviorType": "Platform",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "player_base",
+					"sid": 784691551529992,
+					"parameters": {
+						"collisions": "enabled"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 479629878633527,
+					"parameters": {
+						"variable": "zoomLevel",
+						"value": "BASE_ZOOM"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "player_base",
+					"sid": 148646834947776,
+					"parameters": {
+						"instance-variable": "isInvulnerable",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 986655341973310
 		}
 	],
 	"sid": 269161011555763

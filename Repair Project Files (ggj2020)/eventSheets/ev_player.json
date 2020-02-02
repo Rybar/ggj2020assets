@@ -690,6 +690,37 @@
 						}
 					],
 					"sid": 830849248572526
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-floor",
+							"objectClass": "player_base",
+							"sid": 174341150713176,
+							"behaviorType": "Platform"
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 870227551288569
+						}
+					],
+					"actions": [
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 619223922204459,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "\"land\"",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"land\""
+							}
+						}
+					],
+					"sid": 198637903678477
 				}
 			],
 			"sid": 305367303219703

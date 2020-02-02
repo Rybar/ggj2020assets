@@ -275,6 +275,11 @@
 					"sid": 665233747752667
 				},
 				{
+					"id": "destroy",
+					"objectClass": "shipWhole",
+					"sid": 347201469768540
+				},
+				{
 					"id": "set-enabled",
 					"objectClass": "player_base",
 					"sid": 501458326100610,

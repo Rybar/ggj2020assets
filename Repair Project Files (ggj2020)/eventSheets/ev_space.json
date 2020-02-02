@@ -941,6 +941,15 @@
 							"sid": 641698590296270
 						},
 						{
+							"id": "set-instvar-value",
+							"objectClass": "player_base",
+							"sid": 368056961477449,
+							"parameters": {
+								"instance-variable": "health",
+								"value": "PLAYER_MAX_HP"
+							}
+						},
+						{
 							"id": "create-object",
 							"objectClass": "System",
 							"sid": 687231813563541,

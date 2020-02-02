@@ -2549,12 +2549,12 @@
 						{
 							"id": "play-by-name",
 							"objectClass": "Audio",
-							"sid": 175488977538716,
+							"sid": 282240722810772,
 							"parameters": {
 								"folder": "sounds",
 								"audio-file-name": "\"fixed\"",
 								"loop": "not-looping",
-								"volume": "0",
+								"volume": "-20",
 								"tag-optional": "\"fixed\""
 							}
 						}

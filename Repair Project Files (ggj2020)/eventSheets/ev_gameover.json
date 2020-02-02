@@ -37,10 +37,10 @@
 				{
 					"id": "fade-volume",
 					"objectClass": "Audio",
-					"sid": 855524494456124,
+					"sid": 203836357989596,
 					"parameters": {
 						"tag": "\"wind\"",
-						"db": "0",
+						"db": "-20",
 						"duration": "3",
 						"ending": "keep-playing"
 					}

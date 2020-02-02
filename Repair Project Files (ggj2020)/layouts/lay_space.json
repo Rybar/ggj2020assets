@@ -70,7 +70,7 @@
 								"deceleration": 3000,
 								"jump-strength": 300,
 								"gravity": 1400,
-								"max-fall-speed": 200,
+								"max-fall-speed": 270,
 								"double-jump": false,
 								"jump-sustain": 75,
 								"default-controls": true,

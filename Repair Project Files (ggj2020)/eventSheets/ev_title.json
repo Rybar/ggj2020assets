@@ -36,10 +36,10 @@
 				{
 					"id": "fade-volume",
 					"objectClass": "Audio",
-					"sid": 837852374856850,
+					"sid": 720140599069700,
 					"parameters": {
 						"tag": "\"SBaseJumpMusic\"",
-						"db": "-30",
+						"db": "-20",
 						"duration": "3",
 						"ending": "keep-playing"
 					}

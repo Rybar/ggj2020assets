@@ -1,0 +1,32 @@
+{
+	"name": "ship_jumpthru_1",
+	"plugin-id": "Tilemap",
+	"sid": 696831165371384,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "jumpthru",
+			"name": "Jumpthru",
+			"sid": 691203679697411
+		},
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 381779189973267
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 128,
+		"height": 448,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 92,
+		"useCollisionPoly": true
+	},
+	"tile-collision-polys": {}
+}

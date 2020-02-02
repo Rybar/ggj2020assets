@@ -34,6 +34,11 @@
 			"behaviorId": "EightDir",
 			"name": "8Direction",
 			"sid": 163548823448791
+		},
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 198853454236762
 		}
 	],
 	"effectTypes": [],

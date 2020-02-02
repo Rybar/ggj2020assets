@@ -5,7 +5,7 @@
 			"eventType": "variable",
 			"name": "PLAYER_SPEED_NORM",
 			"type": "number",
-			"initialValue": "250",
+			"initialValue": "125",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -15,7 +15,7 @@
 			"eventType": "variable",
 			"name": "PLAYER_SPEED_CROUCH",
 			"type": "number",
-			"initialValue": "100",
+			"initialValue": "50",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -25,7 +25,7 @@
 			"eventType": "variable",
 			"name": "PLAYER_JUMPSTR_NORM",
 			"type": "number",
-			"initialValue": "300",
+			"initialValue": "360",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -35,7 +35,7 @@
 			"eventType": "variable",
 			"name": "PLAYER_JUMPSTR_CROUCH",
 			"type": "number",
-			"initialValue": "200",
+			"initialValue": "300",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -245,15 +245,103 @@
 								"instance-variable": "isCrouching",
 								"value": "true"
 							}
-						},
-						{
-							"id": "fall-through",
-							"objectClass": "player_base",
-							"sid": 344130541634497,
-							"behaviorType": "Platform"
 						}
 					],
 					"sid": 353970814117523
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 564744634951868,
+							"parameters": {
+								"gamepad": "0",
+								"axis": "left-analog-y-axis",
+								"comparison": 4,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "player_base",
+							"sid": 331899697787755,
+							"parameters": {
+								"instance-variable": "isCrouching",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 745502921774587
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 727536907566861,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-a"
+							}
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 276396156866965,
+							"parameters": {
+								"gamepad": "0",
+								"button": "d-pad-down"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "fall-through",
+							"objectClass": "player_base",
+							"sid": 330100457081646,
+							"behaviorType": "Platform"
+						}
+					],
+					"sid": 371392893668972
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 506097073613401,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-a"
+							}
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 246784850946304,
+							"parameters": {
+								"gamepad": "0",
+								"axis": "left-analog-y-axis",
+								"comparison": 4,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "fall-through",
+							"objectClass": "player_base",
+							"sid": 436897651213576,
+							"behaviorType": "Platform"
+						}
+					],
+					"sid": 355348435461702
 				},
 				{
 					"eventType": "block",
@@ -267,6 +355,17 @@
 								"button": "d-pad-down"
 							},
 							"isInverted": true
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 868356239813596,
+							"parameters": {
+								"gamepad": "0",
+								"axis": "left-analog-y-axis",
+								"comparison": 3,
+								"value": "0"
+							}
 						}
 					],
 					"actions": [
@@ -650,7 +749,7 @@
 								{
 									"id": "is-boolean-instance-variable-set",
 									"objectClass": "player_base",
-									"sid": 293538519412755,
+									"sid": 701021759700838,
 									"parameters": {
 										"instance-variable": "isCrouching"
 									}
@@ -658,7 +757,7 @@
 								{
 									"id": "is-moving",
 									"objectClass": "player_base",
-									"sid": 955352020778693,
+									"sid": 831069460470393,
 									"behaviorType": "Platform",
 									"isInverted": true
 								}
@@ -667,22 +766,26 @@
 								{
 									"id": "set-animation",
 									"objectClass": "player_anim",
-									"sid": 347570180487168,
+									"sid": 887643072414104,
 									"parameters": {
 										"animation": "\"crouch\"",
 										"from": "beginning"
 									}
 								}
 							],
-							"sid": 886608392301473
+							"sid": 677825080253365
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 895924464498482
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "player_base",
+									"sid": 843159355471036,
+									"parameters": {
+										"instance-variable": "isCrouching"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [],

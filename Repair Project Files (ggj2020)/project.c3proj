@@ -16,6 +16,14 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Tilemap",
+			"name": "Tilemap",
+			"author": "Scirra",
+			"version": "r182.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "gamepad",
 			"name": "Gamepad",
 			"author": "Scirra",
@@ -56,6 +64,30 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
+			"author": "Scirra",
+			"version": "r182.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"version": "r182.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "jumpthru",
+			"name": "Jump-thru",
+			"author": "Scirra",
+			"version": "r182.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "scrollto",
 			"name": "Scroll To",
 			"author": "Scirra",
@@ -66,14 +98,6 @@
 			"type": "behavior",
 			"id": "Timer",
 			"name": "Timer",
-			"author": "Scirra",
-			"version": "r182.2",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "solid",
-			"name": "Solid",
 			"author": "Scirra",
 			"version": "r182.2",
 			"bundled": false
@@ -101,14 +125,6 @@
 			"author": "Scirra",
 			"version": "r182.2",
 			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "jumpthru",
-			"name": "Jump-thru",
-			"author": "Scirra",
-			"version": "r182.2",
-			"bundled": false
 		}
 	],
 	"uniqueId": "x18al704qvv",
@@ -129,8 +145,7 @@
 			"debri_large",
 			"debriSpawnZone",
 			"debriMovingSpawnZone",
-			"debri_moving_large",
-			"JUMP_thru"
+			"debri_moving_large"
 		],
 		"subfolders": [
 			{
@@ -149,6 +164,22 @@
 				],
 				"subfolders": [],
 				"name": "Triggers"
+			},
+			{
+				"items": [],
+				"subfolders": [
+					{
+						"items": [
+							"ship_BG_1",
+							"ship_BG2_1",
+							"ship_col_1",
+							"ship_jumpthru_1"
+						],
+						"subfolders": [],
+						"name": "Varation 1"
+					}
+				],
+				"name": "Ships"
 			}
 		]
 	},
@@ -158,6 +189,15 @@
 			"members": [
 				"player_anim",
 				"player_base"
+			],
+			"selectMode": "normal"
+		},
+		{
+			"members": [
+				"ship_BG2_1",
+				"ship_BG_1",
+				"ship_col_1",
+				"ship_jumpthru_1"
 			],
 			"selectMode": "normal"
 		}

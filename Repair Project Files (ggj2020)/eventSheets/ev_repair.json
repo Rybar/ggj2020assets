@@ -31,18 +31,27 @@
 				{
 					"id": "set-position",
 					"objectClass": "player_base",
-					"sid": 764533565965614,
+					"sid": 155915987809753,
 					"parameters": {
-						"x": "LayoutWidth / 2",
-						"y": "0"
+						"x": "playerSpawnLoc.X",
+						"y": "playerSpawnLoc.Y"
 					}
 				},
 				{
 					"id": "move-to-layer",
 					"objectClass": "player_anim",
-					"sid": 609861690334486,
+					"sid": 507424473390679,
 					"parameters": {
-						"layer": "\"fg\""
+						"layer": "\"Player\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 226163610655930,
+					"parameters": {
+						"variable": "curShipIndex",
+						"value": "0"
 					}
 				}
 			],
@@ -66,10 +75,10 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 692863043262281,
+							"sid": 659952017536839,
 							"parameters": {
 								"object-to-create": "player_base",
-								"layer": "\"FG\"",
+								"layer": "\"Player\"",
 								"x": "playerSpawnLoc.X",
 								"y": "playerSpawnLoc.Y"
 							}
@@ -116,10 +125,10 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 903398415627767,
+							"sid": 748988954769627,
 							"parameters": {
 								"object-to-create": "shipController",
-								"layer": "\"FG\"",
+								"layer": "\"Ship\"",
 								"x": "ship_spawn_loc.X",
 								"y": "ship_spawn_loc.Y"
 							}
@@ -168,8 +177,160 @@
 							}
 						}
 					],
-					"actions": [],
-					"sid": 559825857455348
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 481777980556662,
+							"parameters": {
+								"object-to-create": "ship_col_1",
+								"layer": "\"Ship\"",
+								"x": "ship_spawn_loc.X - 100",
+								"y": "ship_spawn_loc.Y - 200"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "ship_BG2_1",
+							"sid": 853894092614645,
+							"parameters": {
+								"object": "ship_col_1",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "ship_BG_1",
+							"sid": 224435789964209,
+							"parameters": {
+								"object": "ship_col_1",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "ship_jumpthru_1",
+							"sid": 570256328191459,
+							"parameters": {
+								"object": "ship_col_1",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "pin-to-object",
+							"objectClass": "ship_BG2_1",
+							"sid": 831064013573245,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "ship_col_1",
+								"mode": "position-angle"
+							}
+						},
+						{
+							"id": "pin-to-object",
+							"objectClass": "ship_BG_1",
+							"sid": 911977209088954,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "ship_col_1",
+								"mode": "position-angle"
+							}
+						},
+						{
+							"id": "pin-to-object",
+							"objectClass": "ship_jumpthru_1",
+							"sid": 143162205649499,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "ship_col_1",
+								"mode": "position-angle"
+							}
+						}
+					],
+					"sid": 559825857455348,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 785229191727891,
+									"parameters": {
+										"name": "\"tileX\"",
+										"start-index": "0",
+										"end-index": "200"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 698007055127061,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 658809424059910,
+											"parameters": {
+												"name": "\"tileY\"",
+												"start-index": "0",
+												"end-index": "500"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 120460533116037,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-tile-at",
+													"objectClass": "ship_BG2_1",
+													"sid": 999977759236732,
+													"parameters": {
+														"tile-x": "loopindex(\"tileX\")",
+														"tile-y": "loopindex(\"tileY\")",
+														"comparison": 0,
+														"tile": "332"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-position",
+													"objectClass": "shipController",
+													"sid": 238858402719097,
+													"parameters": {
+														"x": "ship_BG2_1.TileToPositionX(loopindex(\"tileX\"))",
+														"y": "ship_BG2_1.TileToPositionY(loopindex(\"tileY\"))"
+													}
+												},
+												{
+													"id": "stop-loop",
+													"objectClass": "System",
+													"sid": 512727822407705
+												},
+												{
+													"id": "pin-to-object",
+													"objectClass": "ship_col_1",
+													"sid": 265747143959372,
+													"behaviorType": "Pin",
+													"parameters": {
+														"pin-to": "shipController",
+														"mode": "position-angle"
+													}
+												}
+											],
+											"sid": 858015029936823
+										}
+									]
+								}
+							]
+						}
+					]
 				},
 				{
 					"eventType": "block",

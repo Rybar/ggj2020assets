@@ -28,10 +28,13 @@
 								"acceleration": 200,
 								"deceleration": 0,
 								"directions": "dir-8",
-								"set-angle": "no",
+								"set-angle": "smooth",
 								"default-controls": false,
 								"enabled": true
 							}
+						},
+						"Pin": {
+							"properties": {}
 						}
 					},
 					"world": {

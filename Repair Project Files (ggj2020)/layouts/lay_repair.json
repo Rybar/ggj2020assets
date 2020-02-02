@@ -1161,41 +1161,6 @@
 					}
 				},
 				{
-					"type": "JUMP_thru",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 8,
-					"instanceVariables": {},
-					"behaviors": {
-						"Jumpthru": {
-							"properties": {
-								"enabled": true
-							}
-						}
-					},
-					"world": {
-						"x": 1034.3496143897628,
-						"y": 1359.1564846811655,
-						"width": 423.3228492060475,
-						"height": 7.169354301587873,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "playerSpawnLoc",
 					"properties": {
 						"initially-visible": false,
@@ -1226,6 +1191,282 @@
 				}
 			],
 			"sid": 337827402940380,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		},
+		{
+			"name": "Ship",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "ship_BG_1",
+					"properties": {
+						"initially-visible": true,
+						"tile-width": 8,
+						"tile-height": 8,
+						"tile-x-offset": 0,
+						"tile-y-offset": 0,
+						"tile-x-spacing": 0,
+						"tile-y-spacing": 0,
+						"tile-x-drawing-offset": 0,
+						"tile-y-drawing-offset": 0,
+						"drawing-mode": "top-to-right"
+					},
+					"uid": 12,
+					"instanceVariables": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {}
+						}
+					},
+					"ownData": {
+						"tilemapData": {
+							"width": 78,
+							"height": 250,
+							"max-width": 249,
+							"max-height": 381,
+							"data": "3234x0,10x58,371x0,10x58,371x0,10x58,371x0,10x58,369x0,12x58,369x0,12x58,360x0,18x55,362x0,19x55,361x0,20x55,360x0,21x55,59,2x58,357x0,21x55,59,2x58,357x0,21x55,59,2x58,357x0,21x55,3x58,357x0,21x55,360x0,21x55,360x0,21x55,360x0,21x55,360x0,21x55,360x0,21x55,360x0,21x55,360x0,21x55,360x0,21x55,360x0,21x55,360x0,21x55,360x0,21x55,360x0,21x55,59,2x58,357x0,21x55,59,2x58,357x0,21x55,59,2x58,357x0,21x55,59,2x58,358x0,20x55,362x0,19x55,363x0,18x55,372x0,12x58,369x0,12x58,371x0,10x58,371x0,10x58,371x0,10x58,77909x0"
+						},
+						"tile-width": 8,
+						"tile-height": 8,
+						"tile-x-offset": 0,
+						"tile-y-offset": 0,
+						"tile-x-spacing": 0,
+						"tile-y-spacing": 0
+					},
+					"world": {
+						"x": 2533,
+						"y": -243,
+						"width": 630,
+						"height": 2000,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ship_BG2_1",
+					"properties": {
+						"initially-visible": true,
+						"tile-width": 8,
+						"tile-height": 8,
+						"tile-x-offset": 0,
+						"tile-y-offset": 0,
+						"tile-x-spacing": 0,
+						"tile-y-spacing": 0,
+						"tile-x-drawing-offset": 0,
+						"tile-y-drawing-offset": 0,
+						"drawing-mode": "top-to-right"
+					},
+					"uid": 13,
+					"instanceVariables": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {}
+						}
+					},
+					"ownData": {
+						"tilemapData": {
+							"width": 78,
+							"height": 250,
+							"max-width": 249,
+							"max-height": 852,
+							"data": "14660x0,45,3412x0,45,2564x0,45,3407x0,45,5949x0,333,349,850x0,334,350,181298x0"
+						},
+						"tile-width": 8,
+						"tile-height": 8,
+						"tile-x-offset": 0,
+						"tile-y-offset": 0,
+						"tile-x-spacing": 0,
+						"tile-y-spacing": 0
+					},
+					"world": {
+						"x": 2533,
+						"y": -243,
+						"width": 630,
+						"height": 2000,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ship_col_1",
+					"properties": {
+						"initially-visible": true,
+						"tile-width": 8,
+						"tile-height": 8,
+						"tile-x-offset": 0,
+						"tile-y-offset": 0,
+						"tile-x-spacing": 0,
+						"tile-y-spacing": 0,
+						"tile-x-drawing-offset": 0,
+						"tile-y-drawing-offset": 0,
+						"drawing-mode": "top-to-right"
+					},
+					"uid": 14,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Pin": {
+							"properties": {}
+						}
+					},
+					"ownData": {
+						"tilemapData": {
+							"width": 78,
+							"height": 250,
+							"max-width": 249,
+							"max-height": 351,
+							"data": "5089x0,13x57,4x0,57,332x0,2x57,2x0,57,4x0,57,3x0,57,4x0,57,331x0,2x57,3x0,57,4x0,57,3x0,57,4x0,57,330x0,2x57,4x0,57,4x0,57,3x0,57,4x0,57,330x0,57,5x0,57,4x0,57,3x0,57,4x0,57,330x0,57,5x0,57,4x0,57,3x0,57,4x0,57,330x0,57,5x0,57,4x0,57,3x0,57,4x0,57,330x0,57,5x0,57,4x0,57,3x0,57,4x0,57,330x0,57,5x0,57,4x0,57,3x0,57,4x0,57,330x0,57,5x0,57,4x0,57,3x0,57,4x0,57,330x0,57,10x0,57,3x0,57,4x0,57,330x0,57,14x0,57,4x0,57,330x0,57,5x0,57,8x0,57,4x0,57,330x0,57,5x0,57,8x0,57,4x0,57,330x0,5x57,0,57,8x0,57,4x0,57,330x0,5x57,0,57,4x0,57,3x0,57,4x0,57,330x0,5x57,0,57,4x0,57,3x0,57,4x0,57,330x0,5x57,0,57,4x0,57,3x0,57,4x0,57,330x0,3x57,3x0,57,4x0,57,8x0,57,330x0,57,5x0,57,4x0,57,8x0,57,330x0,57,5x0,57,4x0,57,8x0,57,330x0,57,5x0,57,4x0,57,8x0,57,330x0,2x57,4x0,57,4x0,57,3x0,57,4x0,57,331x0,2x57,3x0,57,4x0,57,3x0,57,4x0,57,332x0,2x57,2x0,4x57,0,57,3x0,2x57,3x0,57,333x0,18x57,73517x0"
+						},
+						"tile-width": 8,
+						"tile-height": 8,
+						"tile-x-offset": 0,
+						"tile-y-offset": 0,
+						"tile-x-spacing": 0,
+						"tile-y-spacing": 0
+					},
+					"world": {
+						"x": 2533,
+						"y": -243,
+						"width": 630,
+						"height": 2000,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ship_jumpthru_1",
+					"properties": {
+						"initially-visible": true,
+						"tile-width": 8,
+						"tile-height": 8,
+						"tile-x-offset": 0,
+						"tile-y-offset": 0,
+						"tile-x-spacing": 0,
+						"tile-y-spacing": 0,
+						"tile-x-drawing-offset": 0,
+						"tile-y-drawing-offset": 0,
+						"drawing-mode": "top-to-right"
+					},
+					"uid": 15,
+					"instanceVariables": {},
+					"behaviors": {
+						"Jumpthru": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Pin": {
+							"properties": {}
+						}
+					},
+					"ownData": {
+						"tilemapData": {
+							"width": 78,
+							"height": 250,
+							"max-width": 472,
+							"max-height": 371,
+							"data": "9082x0,257,370x0,257,4x0,257,370x0,257,370x0,257,370x0,257,1487x0,257,370x0,257,370x0,257,370x0,257,161939x0"
+						},
+						"tile-width": 8,
+						"tile-height": 8,
+						"tile-x-offset": 0,
+						"tile-y-offset": 0,
+						"tile-x-spacing": 0,
+						"tile-y-spacing": 0
+					},
+					"world": {
+						"x": 2533,
+						"y": -243,
+						"width": 630,
+						"height": 2000,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 171359173729342,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		},
+		{
+			"name": "Player",
+			"overriden": 0,
+			"instances": [],
+			"sid": 478964514666136,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"color": [

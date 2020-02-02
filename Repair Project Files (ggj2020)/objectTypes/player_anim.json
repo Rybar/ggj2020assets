@@ -11,26 +11,74 @@
 			{
 				"frames": [
 					{
-						"width": 16,
-						"height": 16,
-						"originX": 0.5,
-						"originY": 0.875,
-						"originalSource": "",
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-idle21.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 16,
+						"imageSpriteId": 57,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
 					{
-						"width": 16,
-						"height": 16,
-						"originX": 0.5,
-						"originY": 0.875,
-						"originalSource": "",
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-idle22.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 13,
+						"imageSpriteId": 58,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-idle23.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 59,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-idle24.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 60,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-idle25.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 61,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-idle26.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 62,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
@@ -41,43 +89,127 @@
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 4
+				"speed": 5
 			},
 			{
 				"frames": [
 					{
-						"width": 16,
-						"height": 16,
-						"originX": 0.5,
-						"originY": 0.875,
-						"originalSource": "",
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run1.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 14,
+						"imageSpriteId": 63,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
 					{
-						"width": 16,
-						"height": 16,
-						"originX": 0.5,
-						"originY": 0.875,
-						"originalSource": "",
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run2.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 17,
+						"imageSpriteId": 64,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
 					{
-						"width": 16,
-						"height": 16,
-						"originX": 0.5,
-						"originY": 0.875,
-						"originalSource": "",
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run3.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 15,
+						"imageSpriteId": 65,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run4.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 66,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run5.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 67,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run6.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 68,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run7.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 69,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run8.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 70,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run9.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 71,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-run10.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 72,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
@@ -88,19 +220,19 @@
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 6
+				"speed": 15
 			},
 			{
 				"frames": [
 					{
-						"width": 16,
-						"height": 16,
-						"originX": 0.5,
-						"originY": 0.875,
-						"originalSource": "",
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-Jump19.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 18,
+						"imageSpriteId": 73,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
@@ -116,14 +248,14 @@
 			{
 				"frames": [
 					{
-						"width": 16,
-						"height": 16,
-						"originX": 0.5,
-						"originY": 0.875,
-						"originalSource": "",
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-crawl11.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 37,
+						"imageSpriteId": 75,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
@@ -141,8 +273,8 @@
 					{
 						"width": 16,
 						"height": 16,
-						"originX": 0.5,
-						"originY": 0.875,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
@@ -153,8 +285,8 @@
 					{
 						"width": 16,
 						"height": 16,
-						"originX": 0.5,
-						"originY": 0.875,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
@@ -174,14 +306,14 @@
 			{
 				"frames": [
 					{
-						"width": 16,
-						"height": 16,
-						"originX": 0.5,
-						"originY": 0.875,
-						"originalSource": "",
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-Fall20.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 28,
+						"imageSpriteId": 74,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
@@ -197,26 +329,98 @@
 			{
 				"frames": [
 					{
-						"width": 16,
-						"height": 16,
-						"originX": 0.5,
-						"originY": 0.875,
-						"originalSource": "",
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-crawl11.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 31,
+						"imageSpriteId": 76,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
 					{
-						"width": 16,
-						"height": 16,
-						"originX": 0.5,
-						"originY": 0.875,
-						"originalSource": "",
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-crawl12.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 32,
+						"imageSpriteId": 77,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-crawl13.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 78,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-crawl14.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 79,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-crawl15.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 80,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-crawl16.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 81,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-crawl17.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 82,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 21,
+						"height": 23,
+						"originX": 0.5238095238095238,
+						"originY": 0.8695652173913043,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\shipmonkey-crawl18.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 83,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
@@ -227,7 +431,7 @@
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 2
+				"speed": 10
 			}
 		],
 		"subfolders": []

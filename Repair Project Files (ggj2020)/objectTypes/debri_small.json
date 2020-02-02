@@ -24,26 +24,54 @@
 			{
 				"frames": [
 					{
-						"width": 32,
-						"height": 32,
+						"width": 319,
+						"height": 322,
 						"originX": 0.5,
 						"originY": 0.5,
-						"originalSource": "",
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\asteroids-small1.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 12,
+						"imageSpriteId": 138,
+						"collisionPoly": {
+							"points": [
+								0.43573667711598757,
+								0.4491459627329193,
+								0.4902037617554859,
+								0.4456521739130434,
+								0.5076410658307209,
+								0.4817546583850932,
+								0.46904388714733536,
+								0.5178571428571429,
+								0.4373040752351097,
+								0.49456521739130443
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1
 					},
 					{
-						"width": 32,
-						"height": 32,
+						"width": 319,
+						"height": 322,
 						"originX": 0.5,
 						"originY": 0.5,
-						"originalSource": "",
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\asteroids-small2.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 19,
+						"imageSpriteId": 139,
+						"collisionPoly": {
+							"points": [
+								0.4474921630094044,
+								0.4475931677018633,
+								0.5023510971786833,
+								0.42430124223602483,
+								0.5309561128526644,
+								0.4786490683229814,
+								0.48785266457680265,
+								0.5267857142857142,
+								0.4423981191222571,
+								0.5155279503105589
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}

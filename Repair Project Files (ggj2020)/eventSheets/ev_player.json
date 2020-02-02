@@ -1163,6 +1163,14 @@
 							],
 							"actions": [
 								{
+									"id": "set-visible",
+									"objectClass": "wheelHighlight",
+									"sid": 521735312019654,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
 									"id": "set-enabled",
 									"objectClass": "ship_col_1",
 									"sid": 796757429280354,
@@ -1254,15 +1262,6 @@
 									"sid": 276315041844787,
 									"parameters": {
 										"collisions": "enabled"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 454483151911738,
-									"parameters": {
-										"variable": "zoomLevel",
-										"value": "ZOOMED_OUT"
 									}
 								}
 							],
@@ -1834,6 +1833,35 @@
 						}
 					],
 					"sid": 888829196477040
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "shipController",
+							"sid": 153946691244662,
+							"parameters": {
+								"instance-variable": "canActivate"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 492782793338114
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "wheelHighlight",
+							"sid": 682046171764518,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 149399843725729
 				}
 			],
 			"sid": 824279731104129
@@ -2422,6 +2450,56 @@
 				}
 			],
 			"sid": 293951223222752
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-flash-ended",
+					"objectClass": "repairHighlight",
+					"sid": 314828750210742,
+					"behaviorType": "Flash"
+				}
+			],
+			"actions": [
+				{
+					"id": "flash",
+					"objectClass": "repairHighlight",
+					"sid": 749122832104868,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": "random(0.2, 0.4)",
+						"off-time": "random(0.2, 0.4)",
+						"duration": "2"
+					}
+				}
+			],
+			"sid": 437881766355391
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-flash-ended",
+					"objectClass": "wheelHighlight",
+					"sid": 118726618301531,
+					"behaviorType": "Flash"
+				}
+			],
+			"actions": [
+				{
+					"id": "flash",
+					"objectClass": "wheelHighlight",
+					"sid": 866081504362732,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": "0.3",
+						"off-time": "0.3",
+						"duration": "2"
+					}
+				}
+			],
+			"sid": 362471950251370
 		}
 	],
 	"sid": 263282355959929

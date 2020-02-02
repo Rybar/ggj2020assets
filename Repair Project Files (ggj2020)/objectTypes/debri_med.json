@@ -24,26 +24,82 @@
 			{
 				"frames": [
 					{
-						"width": 48,
-						"height": 48,
+						"width": 319,
+						"height": 322,
 						"originX": 0.5,
 						"originY": 0.5,
-						"originalSource": "",
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\asteroids-medium3.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 52,
+						"imageSpriteId": 134,
+						"collisionPoly": {
+							"points": [
+								0.27899686520376166,
+								0.3074534161490682,
+								0.5642633228840125,
+								0.3229813664596273,
+								0.7601880877742946,
+								0.562111801242236,
+								0.6018808777429467,
+								0.6972049689440992,
+								0.38087774294670845,
+								0.6335403726708078
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1
 					},
 					{
-						"width": 32,
-						"height": 32,
+						"width": 319,
+						"height": 322,
 						"originX": 0.5,
 						"originY": 0.5,
-						"originalSource": "",
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\asteroids-medium4.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 44,
+						"imageSpriteId": 135,
+						"collisionPoly": {
+							"points": [
+								0.5188087774294672,
+								0.27173913043478276,
+								0.6865203761755488,
+								0.3276397515527951,
+								0.7492163009404391,
+								0.4720496894409938,
+								0.43730407523510967,
+								0.7298136645962734,
+								0.28996865203761746,
+								0.6739130434782609,
+								0.20846394984326017,
+								0.45962732919254656
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 319,
+						"height": 322,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\asteroids-medium5.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 136,
+						"collisionPoly": {
+							"points": [
+								0.2523510971786833,
+								0.36801242236024845,
+								0.5329153605015672,
+								0.20341614906832303,
+								0.6786833855799373,
+								0.6366459627329193,
+								0.5768025078369906,
+								0.8027950310559008,
+								0.3205329153605015,
+								0.566770186335404
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}

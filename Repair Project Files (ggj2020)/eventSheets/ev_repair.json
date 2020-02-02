@@ -90,6 +90,49 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 664665930045730,
+									"parameters": {
+										"count": "1000"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 705438896456996,
+									"parameters": {
+										"object-to-create": "stars",
+										"layer": "\"BG\"",
+										"x": "random(0, LayoutWidth)",
+										"y": "100"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "stars",
+									"sid": 863892666068477,
+									"parameters": {
+										"frame-number": "floor(random(0, 7))"
+									}
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "stars",
+									"sid": 115956056316025,
+									"parameters": {
+										"z": "random(-50, 50)"
+									}
+								}
+							],
+							"sid": 761372694612184
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "compare-two-values",
 									"objectClass": "System",
 									"sid": 754576145278720,
@@ -590,6 +633,46 @@
 													}
 												},
 												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 276299484720602,
+													"parameters": {
+														"object-to-create": "wheelHighlight",
+														"layer": "\"Player\"",
+														"x": "ship_BG2_1.TileToPositionX(loopindex(\"tileX\")) + 4",
+														"y": "ship_BG2_1.TileToPositionY(loopindex(\"tileY\")) + 1"
+													}
+												},
+												{
+													"id": "flash",
+													"objectClass": "wheelHighlight",
+													"sid": 870941961516038,
+													"behaviorType": "Flash",
+													"parameters": {
+														"on-time": "0.3",
+														"off-time": "0.3",
+														"duration": "2"
+													}
+												},
+												{
+													"id": "pin-to-object",
+													"objectClass": "wheelHighlight",
+													"sid": 759874870642038,
+													"behaviorType": "Pin",
+													"parameters": {
+														"pin-to": "ship_col_1",
+														"mode": "position-angle"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "wheelHighlight",
+													"sid": 343301718958663,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
 													"id": "stop-loop",
 													"objectClass": "System",
 													"sid": 866178194814743
@@ -733,6 +816,41 @@
 													"behaviorType": "Pin",
 													"parameters": {
 														"pin-to": "ship_col_1",
+														"mode": "position-angle"
+													}
+												},
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 892763719381242,
+													"disabled": true,
+													"parameters": {
+														"object-to-create": "repairHighlight",
+														"layer": "\"Player\"",
+														"x": "repairObj.X",
+														"y": "repairObj.Y - 6"
+													}
+												},
+												{
+													"id": "flash",
+													"objectClass": "repairHighlight",
+													"sid": 464766082576136,
+													"disabled": true,
+													"behaviorType": "Flash",
+													"parameters": {
+														"on-time": "random(0.2, 0.4)",
+														"off-time": "random(0.2, 0.4)",
+														"duration": "2"
+													}
+												},
+												{
+													"id": "pin-to-object",
+													"objectClass": "repairHighlight",
+													"sid": 297361071629585,
+													"disabled": true,
+													"behaviorType": "Pin",
+													"parameters": {
+														"pin-to": "repairHighlight",
 														"mode": "position-angle"
 													}
 												},

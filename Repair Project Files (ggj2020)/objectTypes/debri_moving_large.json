@@ -22,14 +22,32 @@
 			{
 				"frames": [
 					{
-						"width": 48,
-						"height": 48,
+						"width": 723,
+						"height": 435,
 						"originX": 0.5,
 						"originY": 0.5,
-						"originalSource": "",
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\movingJunk-large1.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 54,
+						"imageSpriteId": 140,
+						"collisionPoly": {
+							"points": [
+								0.25449515905947434,
+								0.029885057471264367,
+								0.3215767634854773,
+								0.18275862068965515,
+								0.9723374827109268,
+								0.6344827586206896,
+								0.8533886583679117,
+								0.903448275862069,
+								0.2710926694329184,
+								0.4873563218390804,
+								0.17565698478561548,
+								0.6367816091954024,
+								0.02835408022130015,
+								0.49540229885057474
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}

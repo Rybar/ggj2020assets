@@ -296,6 +296,12 @@
 									}
 								},
 								{
+									"id": "stop",
+									"objectClass": "shipController",
+									"sid": 912092639135000,
+									"behaviorType": "8Direction"
+								},
+								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
 									"sid": 360671788729930,
@@ -314,6 +320,49 @@
 								}
 							],
 							"sid": 832853050335234
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 547177921394323,
+									"parameters": {
+										"count": "5000"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 890717939105942,
+									"parameters": {
+										"object-to-create": "stars",
+										"layer": "\"BG\"",
+										"x": "random(0, LayoutWidth)",
+										"y": "random(0, LayoutHeight + 1000)"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "stars",
+									"sid": 494527439179373,
+									"parameters": {
+										"frame-number": "floor(random(0, 7))"
+									}
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "stars",
+									"sid": 973024706519919,
+									"parameters": {
+										"z": "random(-50, 50)"
+									}
+								}
+							],
+							"sid": 535611223880451
 						},
 						{
 							"eventType": "group",
@@ -362,6 +411,22 @@
 											"parameters": {
 												"instance-variable": "damage",
 												"value": "SMALL_DEBRI_DMG"
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "debri_small",
+											"sid": 204023118178479,
+											"parameters": {
+												"frame-number": "floor(random(0, 1))"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "debri_small",
+											"sid": 924229084654966,
+											"parameters": {
+												"scale": "0.5"
 											}
 										}
 									],
@@ -437,6 +502,22 @@
 												"instance-variable": "damage",
 												"value": "MED_DEBRI_DMG"
 											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "debri_med",
+											"sid": 580596185294664,
+											"parameters": {
+												"frame-number": "floor(random(0, 3))"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "debri_med",
+											"sid": 798294331146319,
+											"parameters": {
+												"scale": "0.25"
+											}
 										}
 									],
 									"sid": 250799659746061,
@@ -510,6 +591,22 @@
 											"parameters": {
 												"instance-variable": "damage",
 												"value": "LARGE_DEBRI_DMG"
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "debri_large",
+											"sid": 624823984138286,
+											"parameters": {
+												"frame-number": "floor(random(0, 3))"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "debri_large",
+											"sid": 184643799043757,
+											"parameters": {
+												"scale": "0.25"
 											}
 										}
 									],
@@ -604,6 +701,30 @@
 												"instance-variable": "damage",
 												"value": "SMALL_DEBRI_DMG"
 											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "debri_moving_small",
+											"sid": 731657097344259,
+											"parameters": {
+												"frame-number": "floor(random(0, 2))"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "debri_moving_small",
+											"sid": 648518927100515,
+											"parameters": {
+												"scale": "0.25"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "debri_moving_small",
+											"sid": 628725694509183,
+											"parameters": {
+												"angle": "random(0, 360)"
+											}
 										}
 									],
 									"sid": 738515298461574,
@@ -686,6 +807,22 @@
 											"parameters": {
 												"instance-variable": "damage",
 												"value": "MED_DEBRI_DMG"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "debri_moving_large",
+											"sid": 134079474608355,
+											"parameters": {
+												"scale": "0.25"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "debri_moving_large",
+											"sid": 479763414099449,
+											"parameters": {
+												"angle": "random(0, 360)"
 											}
 										}
 									],
@@ -785,6 +922,7 @@
 							"id": "compare-instance-variable",
 							"objectClass": "shipController",
 							"sid": 681248255566437,
+							"disabled": true,
 							"parameters": {
 								"instance-variable": "id",
 								"comparison": 0,

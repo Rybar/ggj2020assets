@@ -12,6 +12,13 @@
 			],
 			"actions": [
 				{
+					"callFunction": "FadeIn",
+					"sid": 104091885666280,
+					"parameters": [
+						"FADE_TIME"
+					]
+				},
+				{
 					"id": "set-layout-scale",
 					"objectClass": "System",
 					"sid": 865711395403787,
@@ -213,6 +220,15 @@
 							}
 						},
 						{
+							"id": "set-position",
+							"objectClass": "ship_entire_collider_1",
+							"sid": 975305764379436,
+							"parameters": {
+								"x": "ship_col_1.X + 145",
+								"y": "ship_col_1.Y + 92"
+							}
+						},
+						{
 							"id": "pin-to-object",
 							"objectClass": "ship_BG2_1",
 							"sid": 165172320040614,
@@ -236,6 +252,16 @@
 							"id": "pin-to-object",
 							"objectClass": "ship_jumpthru_1",
 							"sid": 329692185890037,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "ship_col_1",
+								"mode": "position-angle"
+							}
+						},
+						{
+							"id": "pin-to-object",
+							"objectClass": "ship_entire_collider_1",
+							"sid": 884137486904219,
 							"behaviorType": "Pin",
 							"parameters": {
 								"pin-to": "ship_col_1",
@@ -367,28 +393,6 @@
 					"sid": 550159204261546
 				}
 			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 337664004642944
-				}
-			],
-			"actions": [
-				{
-					"id": "set-position-to-another-object",
-					"objectClass": "screen_boundary",
-					"sid": 328258778194941,
-					"parameters": {
-						"object": "camera",
-						"image-point-optional": "0"
-					}
-				}
-			],
-			"sid": 668522164498019
 		},
 		{
 			"eventType": "comment",
@@ -580,16 +584,38 @@
 			]
 		},
 		{
-			"eventType": "include",
-			"includeSheet": "ev_camera"
-		},
-		{
-			"eventType": "include",
-			"includeSheet": "ev_player"
-		},
-		{
-			"eventType": "include",
-			"includeSheet": "ev_triggers"
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "shipController",
+					"sid": 699274954743729,
+					"parameters": {
+						"object": "ground"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "shake",
+					"objectClass": "camera",
+					"sid": 222686186551639,
+					"behaviorType": "ScrollTo",
+					"parameters": {
+						"magnitude": "5",
+						"duration": "0.4",
+						"mode": "reducing-magnitude"
+					}
+				},
+				{
+					"callFunction": "StartFreezeFrame",
+					"sid": 665783184848089,
+					"parameters": [
+						"0.08"
+					]
+				}
+			],
+			"sid": 436585212316107
 		},
 		{
 			"eventType": "block",
@@ -624,6 +650,18 @@
 				}
 			],
 			"sid": 779374221221774
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "ev_camera"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "ev_player"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "ev_triggers"
 		}
 	],
 	"sid": 970568081279856

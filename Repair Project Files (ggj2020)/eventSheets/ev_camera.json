@@ -53,6 +53,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "FADE_TIME",
+			"type": "number",
+			"initialValue": "0.6",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 905528936062733
+		},
+		{
+			"eventType": "variable",
 			"name": "zoomLevel",
 			"type": "number",
 			"initialValue": "1",
@@ -143,6 +153,247 @@
 				}
 			],
 			"sid": 881280521236630
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Fade functions",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "FadeIn",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "fadeTime",
+							"type": "number",
+							"initialValue": "1",
+							"comment": "Amount of seconds it takes to fade in",
+							"sid": 291646111717749
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 855529717626832,
+							"parameters": {
+								"object-to-create": "fadeTex",
+								"layer": "\"Fade\"",
+								"x": "0",
+								"y": "0"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "fadeTex",
+							"sid": 265043000753716,
+							"parameters": {
+								"width": "ViewportRight(\"Fade\") * 2",
+								"height": "ViewportBottom(\"Fade\") * 2"
+							}
+						},
+						{
+							"id": "set-fade-out-time",
+							"objectClass": "fadeTex",
+							"sid": 627168928117557,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-out-time": "fadeTime"
+							}
+						},
+						{
+							"id": "set-wait-time",
+							"objectClass": "fadeTex",
+							"sid": 961579891612748,
+							"behaviorType": "Fade",
+							"parameters": {
+								"wait-time": "0"
+							}
+						},
+						{
+							"id": "set-fade-in-time",
+							"objectClass": "fadeTex",
+							"sid": 797489024805661,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-in-time": "0"
+							}
+						},
+						{
+							"id": "restart-fade",
+							"objectClass": "fadeTex",
+							"sid": 527320899102356,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 348644169413194
+				},
+				{
+					"functionName": "FadeOut",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "fadeTime",
+							"type": "number",
+							"initialValue": "1",
+							"comment": "Amount of seconds it takes to fade in",
+							"sid": 554299941216653
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 892397191661681,
+							"parameters": {
+								"object-to-create": "fadeTex",
+								"layer": "\"Fade\"",
+								"x": "0",
+								"y": "0"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "fadeTex",
+							"sid": 482922135328336,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "fadeTex",
+							"sid": 271550985091034,
+							"parameters": {
+								"width": "ViewportRight(\"Fade\")",
+								"height": "ViewportBottom(\"Fade\")"
+							}
+						},
+						{
+							"id": "set-fade-out-time",
+							"objectClass": "fadeTex",
+							"sid": 283895870969234,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-out-time": "0"
+							}
+						},
+						{
+							"id": "set-wait-time",
+							"objectClass": "fadeTex",
+							"sid": 118927552663359,
+							"behaviorType": "Fade",
+							"parameters": {
+								"wait-time": "0"
+							}
+						},
+						{
+							"id": "set-fade-in-time",
+							"objectClass": "fadeTex",
+							"sid": 938587501478660,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-in-time": "fadeTime"
+							}
+						},
+						{
+							"id": "restart-fade",
+							"objectClass": "fadeTex",
+							"sid": 544812335439476,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 490672115516769
+				}
+			],
+			"sid": 388700186490267
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Freeze frame function",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "StartFreezeFrame",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "timeToFreeze",
+							"type": "number",
+							"initialValue": "0.1",
+							"comment": "",
+							"sid": 373509467667478
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "SysObj",
+							"sid": 438706254631163,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "timeToFreeze",
+								"type": "once",
+								"tag": "\"freeze_frame\""
+							}
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 966549842231234,
+							"parameters": {
+								"time-scale": "0"
+							}
+						}
+					],
+					"sid": 895053605826412
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "SysObj",
+							"sid": 836232539830478,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"freeze_frame\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 856876014750978,
+							"parameters": {
+								"time-scale": "1"
+							}
+						}
+					],
+					"sid": 591120366305691
+				}
+			],
+			"sid": 675280281869348
 		}
 	],
 	"sid": 537747933757102

@@ -191,6 +191,7 @@
 					},
 					"uid": 41,
 					"instanceVariables": {
+						"damage": 0,
 						"size": 0
 					},
 					"behaviors": {
@@ -231,6 +232,7 @@
 					},
 					"uid": 42,
 					"instanceVariables": {
+						"damage": 0,
 						"size": 0
 					},
 					"behaviors": {
@@ -271,6 +273,7 @@
 					},
 					"uid": 43,
 					"instanceVariables": {
+						"damage": 0,
 						"size": 0
 					},
 					"behaviors": {
@@ -311,6 +314,7 @@
 					},
 					"uid": 44,
 					"instanceVariables": {
+						"damage": 0,
 						"size": 0
 					},
 					"behaviors": {
@@ -351,6 +355,7 @@
 					},
 					"uid": 45,
 					"instanceVariables": {
+						"damage": 0,
 						"size": 0
 					},
 					"behaviors": {
@@ -391,6 +396,7 @@
 					},
 					"uid": 46,
 					"instanceVariables": {
+						"damage": 0,
 						"size": 0
 					},
 					"behaviors": {
@@ -431,6 +437,7 @@
 					},
 					"uid": 47,
 					"instanceVariables": {
+						"damage": 0,
 						"size": 0
 					},
 					"behaviors": {
@@ -471,6 +478,7 @@
 					},
 					"uid": 48,
 					"instanceVariables": {
+						"damage": 0,
 						"size": 0
 					},
 					"behaviors": {
@@ -511,6 +519,7 @@
 					},
 					"uid": 49,
 					"instanceVariables": {
+						"damage": 0,
 						"size": 0
 					},
 					"behaviors": {
@@ -551,6 +560,7 @@
 					},
 					"uid": 50,
 					"instanceVariables": {
+						"damage": 0,
 						"size": 0
 					},
 					"behaviors": {
@@ -591,6 +601,7 @@
 					},
 					"uid": 51,
 					"instanceVariables": {
+						"damage": 0,
 						"size": 0
 					},
 					"behaviors": {
@@ -631,6 +642,7 @@
 					},
 					"uid": 52,
 					"instanceVariables": {
+						"damage": 0,
 						"size": 0
 					},
 					"behaviors": {
@@ -671,6 +683,7 @@
 					},
 					"uid": 53,
 					"instanceVariables": {
+						"damage": 0,
 						"size": 0
 					},
 					"behaviors": {
@@ -711,6 +724,7 @@
 					},
 					"uid": 54,
 					"instanceVariables": {
+						"damage": 0,
 						"size": 0
 					},
 					"behaviors": {
@@ -751,6 +765,7 @@
 					},
 					"uid": 55,
 					"instanceVariables": {
+						"damage": 0,
 						"size": 0
 					},
 					"behaviors": {
@@ -791,6 +806,7 @@
 					},
 					"uid": 56,
 					"instanceVariables": {
+						"damage": 0,
 						"size": 0
 					},
 					"behaviors": {
@@ -831,6 +847,7 @@
 					},
 					"uid": 57,
 					"instanceVariables": {
+						"damage": 0,
 						"size": 0
 					},
 					"behaviors": {
@@ -871,6 +888,7 @@
 					},
 					"uid": 58,
 					"instanceVariables": {
+						"damage": 0,
 						"size": 0
 					},
 					"behaviors": {
@@ -911,6 +929,7 @@
 					},
 					"uid": 59,
 					"instanceVariables": {
+						"damage": 0,
 						"size": 0
 					},
 					"behaviors": {
@@ -951,6 +970,7 @@
 					},
 					"uid": 60,
 					"instanceVariables": {
+						"damage": 0,
 						"size": 0
 					},
 					"behaviors": {
@@ -991,6 +1011,7 @@
 					},
 					"uid": 61,
 					"instanceVariables": {
+						"damage": 0,
 						"size": 0
 					},
 					"behaviors": {
@@ -1031,6 +1052,7 @@
 					},
 					"uid": 62,
 					"instanceVariables": {
+						"damage": 0,
 						"size": 0
 					},
 					"behaviors": {
@@ -1071,6 +1093,7 @@
 					},
 					"uid": 63,
 					"instanceVariables": {
+						"damage": 0,
 						"size": 0
 					},
 					"behaviors": {
@@ -1477,47 +1500,26 @@
 					},
 					"uid": 8,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {}
+						}
+					},
 					"world": {
-						"x": 1923.6145902517605,
-						"y": 85.76856109966991,
-						"width": 314.7576789693062,
-						"height": 211.73365631177063,
+						"x": 2132,
+						"y": -45,
+						"width": 197.78384969577382,
+						"height": 166.37645720570703,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
 							1,
 							1,
 							1,
-							1
+							0.5
 						],
 						"angle": 0,
 						"zElevation": 0
-					}
-				},
-				{
-					"type": "DrawingCanvas",
-					"properties": {
-						"initially-visible": true,
-						"origin": "top-left",
-						"antialiasing": "off"
-					},
-					"uid": 16,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 1752,
-						"y": 322,
-						"width": 100,
-						"height": 100,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						]
 					}
 				}
 			],
@@ -1539,6 +1541,34 @@
 			"isTransparent": true,
 			"parallaxX": 1,
 			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		},
+		{
+			"name": "Fade",
+			"overriden": 0,
+			"instances": [],
+			"sid": 189624617389098,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 0,
+			"parallaxY": 0,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
 			"useRenderCells": false,

@@ -65,7 +65,7 @@
 			"eventType": "variable",
 			"name": "PLAYER_MAX_HP",
 			"type": "number",
-			"initialValue": "3",
+			"initialValue": "5",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -92,16 +92,6 @@
 			"sid": 337938430256037
 		},
 		{
-			"eventType": "variable",
-			"name": "isInvulnerable",
-			"type": "boolean",
-			"initialValue": "true",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 367676618940155
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -118,6 +108,24 @@
 					"parameters": {
 						"x": "player_base.X",
 						"y": "player_base.Y"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "shipController",
+					"sid": 292029539757176,
+					"parameters": {
+						"instance-variable": "dmgPercent",
+						"value": "clamp(Self.dmgPercent, 0, 100)"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "player_base",
+					"sid": 824663636242691,
+					"parameters": {
+						"instance-variable": "health",
+						"value": "clamp(Self.health, 0, PLAYER_MAX_HP)"
 					}
 				}
 			],
@@ -200,21 +208,64 @@
 				{
 					"id": "on-created",
 					"objectClass": "player_base",
-					"sid": 205783136277267
+					"sid": 745493009369563
 				}
 			],
 			"actions": [
 				{
 					"id": "set-instvar-value",
 					"objectClass": "player_base",
-					"sid": 433628398354187,
+					"sid": 234591359743533,
 					"parameters": {
 						"instance-variable": "health",
 						"value": "PLAYER_MAX_HP"
 					}
+				},
+				{
+					"id": "set-solid-collision-filter",
+					"objectClass": "player_base",
+					"sid": 911835241896088,
+					"parameters": {
+						"mode": "exclusive",
+						"tags": "\"shipcollider\""
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "player_base",
+					"sid": 501778373950398,
+					"parameters": {
+						"visibility": "invisible"
+					}
 				}
 			],
-			"sid": 259535866505123
+			"sid": 800819495970416
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "SysObj",
+					"sid": 164237989166660,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"invuln_timer\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "player_base",
+					"sid": 778417405057428,
+					"parameters": {
+						"instance-variable": "isInvulnerable",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 399582318413940
 		},
 		{
 			"eventType": "group",
@@ -269,12 +320,12 @@
 						{
 							"id": "compare-axis",
 							"objectClass": "Gamepad",
-							"sid": 564744634951868,
+							"sid": 749365781685690,
 							"parameters": {
 								"gamepad": "0",
 								"axis": "left-analog-y-axis",
 								"comparison": 4,
-								"value": "0"
+								"value": "50"
 							}
 						},
 						{
@@ -387,12 +438,12 @@
 						{
 							"id": "compare-axis",
 							"objectClass": "Gamepad",
-							"sid": 868356239813596,
+							"sid": 767014308497294,
 							"parameters": {
 								"gamepad": "0",
 								"axis": "left-analog-y-axis",
 								"comparison": 3,
-								"value": "0"
+								"value": "50"
 							}
 						}
 					],
@@ -983,6 +1034,15 @@
 							"parameters": {
 								"state": "disabled"
 							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "shipController",
+							"sid": 717898277078843,
+							"parameters": {
+								"instance-variable": "dmgPercent",
+								"value": "0"
+							}
 						}
 					],
 					"sid": 341745050384229
@@ -1022,12 +1082,54 @@
 									}
 								},
 								{
+									"id": "unpin",
+									"objectClass": "ship_col_1",
+									"sid": 502702494393935,
+									"behaviorType": "Pin"
+								},
+								{
 									"id": "set-enabled",
 									"objectClass": "shipController",
 									"sid": 749609226425147,
 									"behaviorType": "8Direction",
 									"parameters": {
 										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "shipController",
+									"sid": 768837992314470,
+									"parameters": {
+										"collisions": "disabled"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "shipController",
+									"sid": 910421976557735,
+									"parameters": {
+										"width": "ship_entire_collider_1.Width - 8",
+										"height": "ship_entire_collider_1.Height - 8"
+									}
+								},
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "shipController",
+									"sid": 800596218027603,
+									"parameters": {
+										"object": "ship_entire_collider_1",
+										"image-point-optional": "0"
+									}
+								},
+								{
+									"id": "pin-to-object",
+									"objectClass": "ship_col_1",
+									"sid": 302703469121847,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "shipController",
+										"mode": "position-angle"
 									}
 								},
 								{
@@ -1040,12 +1142,28 @@
 									}
 								},
 								{
+									"id": "set-collisions-enabled",
+									"objectClass": "player_base",
+									"sid": 802627736948111,
+									"parameters": {
+										"collisions": "disabled"
+									}
+								},
+								{
 									"id": "set-position",
 									"objectClass": "player_base",
 									"sid": 423802826550437,
 									"parameters": {
 										"x": "shipController.X",
 										"y": "shipController.Y"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "shipController",
+									"sid": 276315041844787,
+									"parameters": {
+										"collisions": "enabled"
 									}
 								},
 								{
@@ -1215,6 +1333,110 @@
 										}
 									],
 									"sid": 409909337589149
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 511120901681060,
+											"parameters": {
+												"gamepad": "0",
+												"button": "d-pad-up"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "shipController",
+											"sid": 699026983545169,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"control": "up"
+											}
+										}
+									],
+									"sid": 193444816750689
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 777571447003577,
+											"parameters": {
+												"gamepad": "0",
+												"button": "d-pad-down"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "shipController",
+											"sid": 633419295679581,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"control": "down"
+											}
+										}
+									],
+									"sid": 605115298274926
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 254694931243345,
+											"parameters": {
+												"gamepad": "0",
+												"button": "d-pad-left"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "shipController",
+											"sid": 706637950350480,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"control": "left"
+											}
+										}
+									],
+									"sid": 205863562220467
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 834314592148974,
+											"parameters": {
+												"gamepad": "0",
+												"button": "d-pad-right"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "shipController",
+											"sid": 254582302978049,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"control": "right"
+											}
+										}
+									],
+									"sid": 353954681525799
 								}
 							]
 						}
@@ -1243,15 +1465,6 @@
 								"comparison": 3,
 								"value": "0"
 							}
-						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 312985956979750,
-							"parameters": {
-								"variable": "isInvulnerable"
-							},
-							"isInverted": true
 						},
 						{
 							"id": "trigger-once-while-true",
@@ -1322,12 +1535,29 @@
 					}
 				},
 				{
+					"id": "set-collisions-enabled",
+					"objectClass": "shipController",
+					"sid": 641791340203582,
+					"disabled": true,
+					"parameters": {
+						"collisions": "enabled"
+					}
+				},
+				{
 					"id": "set-enabled",
 					"objectClass": "player_base",
 					"sid": 845869931021626,
 					"behaviorType": "Platform",
 					"parameters": {
 						"state": "enabled"
+					}
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "player_base",
+					"sid": 280757489737908,
+					"parameters": {
+						"collisions": "enabled"
 					}
 				},
 				{

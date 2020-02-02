@@ -2,7 +2,14 @@
 	"name": "famDebri",
 	"plugin-id": "Sprite",
 	"sid": 819667695184161,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "damage",
+			"type": "number",
+			"desc": "",
+			"sid": 309829617433191
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [

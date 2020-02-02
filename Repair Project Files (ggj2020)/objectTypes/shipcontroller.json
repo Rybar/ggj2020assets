@@ -27,6 +27,12 @@
 			"type": "number",
 			"desc": "",
 			"sid": 821357405046701
+		},
+		{
+			"name": "dmgPercent",
+			"type": "number",
+			"desc": "",
+			"sid": 115693144997398
 		}
 	],
 	"behaviorTypes": [

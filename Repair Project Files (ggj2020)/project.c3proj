@@ -24,14 +24,6 @@
 		},
 		{
 			"type": "plugin",
-			"id": "gamepad",
-			"name": "Gamepad",
-			"author": "Scirra",
-			"version": "r182.2",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
@@ -48,8 +40,16 @@
 		},
 		{
 			"type": "plugin",
-			"id": "DrawingCanvas",
-			"name": "Drawing canvas",
+			"id": "gamepad",
+			"name": "Gamepad",
+			"author": "Scirra",
+			"version": "r182.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Flash",
+			"name": "Flash",
 			"author": "Scirra",
 			"version": "r182.2",
 			"bundled": false
@@ -96,16 +96,24 @@
 		},
 		{
 			"type": "behavior",
-			"id": "scrollto",
-			"name": "Scroll To",
+			"id": "Timer",
+			"name": "Timer",
 			"author": "Scirra",
 			"version": "r182.2",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
-			"id": "Timer",
-			"name": "Timer",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"version": "r182.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
 			"author": "Scirra",
 			"version": "r182.2",
 			"bundled": false
@@ -138,23 +146,17 @@
 	"uniqueId": "x18al704qvv",
 	"objectTypes": {
 		"items": [
-			"Gamepad",
-			"Browser",
 			"camera",
-			"SysObj",
 			"ground",
-			"screen_boundary",
 			"debri_small",
 			"dock",
-			"AdvancedRandom",
 			"ship_spawn_loc",
 			"debri_moving_small",
 			"debri_med",
 			"debri_large",
 			"debriSpawnZone",
 			"debriMovingSpawnZone",
-			"debri_moving_large",
-			"DrawingCanvas"
+			"debri_moving_large"
 		],
 		"subfolders": [
 			{
@@ -190,6 +192,17 @@
 					}
 				],
 				"name": "Ships"
+			},
+			{
+				"items": [
+					"Browser",
+					"AdvancedRandom",
+					"Gamepad",
+					"SysObj",
+					"fadeTex"
+				],
+				"subfolders": [],
+				"name": "System"
 			}
 		]
 	},
@@ -207,6 +220,7 @@
 				"ship_BG2_1",
 				"ship_BG_1",
 				"ship_col_1",
+				"ship_entire_collider_1",
 				"ship_jumpthru_1"
 			],
 			"selectMode": "normal"
@@ -267,14 +281,14 @@
 					"sid": 149021782019492
 				},
 				{
-					"name": "loading-logo.png",
-					"type": "image/png",
-					"sid": 676918741181496
-				},
-				{
 					"name": "icon-64.png",
 					"type": "image/png",
 					"sid": 919260237549963
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 676918741181496
 				},
 				{
 					"name": "icon-32.png",

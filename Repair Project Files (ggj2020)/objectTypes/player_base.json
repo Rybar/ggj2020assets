@@ -33,6 +33,12 @@
 			"type": "number",
 			"desc": "",
 			"sid": 510055796599344
+		},
+		{
+			"name": "isInvulnerable",
+			"type": "boolean",
+			"desc": "",
+			"sid": 245781220858690
 		}
 	],
 	"behaviorTypes": [

@@ -5,7 +5,7 @@
 			"eventType": "variable",
 			"name": "NUM_SMALL_DEBRI",
 			"type": "number",
-			"initialValue": "100",
+			"initialValue": "80",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -25,7 +25,7 @@
 			"eventType": "variable",
 			"name": "NUM_MED_DEBRI",
 			"type": "number",
-			"initialValue": "50",
+			"initialValue": "35",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -45,7 +45,7 @@
 			"eventType": "variable",
 			"name": "NUM_LARGE_DEBRI",
 			"type": "number",
-			"initialValue": "20",
+			"initialValue": "15",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -65,7 +65,7 @@
 			"eventType": "variable",
 			"name": "NUM_LARGE_MOVING_DEBRI",
 			"type": "number",
-			"initialValue": "20",
+			"initialValue": "10",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -75,7 +75,7 @@
 			"eventType": "variable",
 			"name": "NUM_SMALL_MOVING_DEBRI",
 			"type": "number",
-			"initialValue": "60",
+			"initialValue": "40",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -85,7 +85,7 @@
 			"eventType": "variable",
 			"name": "MOVING_DEBRI_SPEED_LARGE",
 			"type": "number",
-			"initialValue": "100",
+			"initialValue": "80",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -95,11 +95,41 @@
 			"eventType": "variable",
 			"name": "MOVING_DEBRI_SPEED_SMALL",
 			"type": "number",
-			"initialValue": "200",
+			"initialValue": "160",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 850338058231108
+		},
+		{
+			"eventType": "variable",
+			"name": "SMALL_DEBRI_DMG",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 181279316577779
+		},
+		{
+			"eventType": "variable",
+			"name": "MED_DEBRI_DMG",
+			"type": "number",
+			"initialValue": "5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 635003211376544
+		},
+		{
+			"eventType": "variable",
+			"name": "LARGE_DEBRI_DMG",
+			"type": "number",
+			"initialValue": "12",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 821371973380606
 		},
 		{
 			"eventType": "group",
@@ -114,11 +144,19 @@
 						{
 							"id": "on-start-of-layout",
 							"objectClass": "System",
-							"sid": 728143670783280
+							"sid": 359815442228091
 						}
 					],
-					"actions": [],
-					"sid": 319641938664075,
+					"actions": [
+						{
+							"callFunction": "FadeIn",
+							"sid": 303194973332928,
+							"parameters": [
+								"FADE_TIME"
+							]
+						}
+					],
+					"sid": 571833828451273,
 					"children": [
 						{
 							"eventType": "block",
@@ -126,7 +164,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 972315001219162,
+									"sid": 370701391307637,
 									"parameters": {
 										"first-value": "player_base.Count",
 										"comparison": 0,
@@ -138,7 +176,7 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 295981533135456,
+									"sid": 390966060431971,
 									"parameters": {
 										"object-to-create": "player_base",
 										"layer": "\"FG\"",
@@ -149,7 +187,7 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 417525725959488,
+									"sid": 133501576079530,
 									"parameters": {
 										"variable": "spaceLayoutGameplayState",
 										"value": "GAME_STATE_FALLING"
@@ -158,7 +196,7 @@
 								{
 									"id": "set-object-time-scale",
 									"objectClass": "System",
-									"sid": 488988543737192,
+									"sid": 773217997827364,
 									"parameters": {
 										"object": "SysObj",
 										"time-scale": "1"
@@ -167,7 +205,7 @@
 								{
 									"id": "createPermutationTable",
 									"objectClass": "AdvancedRandom",
-									"sid": 817309931394609,
+									"sid": 879093136385628,
 									"parameters": {
 										"length": "NUM_SHIPS",
 										"offset": "0"
@@ -176,10 +214,10 @@
 								{
 									"id": "destroy",
 									"objectClass": "shipController",
-									"sid": 497946429722001
+									"sid": 109714209019370
 								}
 							],
-							"sid": 349797107617033
+							"sid": 264787216420912
 						},
 						{
 							"eventType": "block",
@@ -187,7 +225,7 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 447038834458639,
+									"sid": 531474878512676,
 									"parameters": {
 										"variable": "spaceLayoutGameplayState",
 										"comparison": 0,
@@ -199,7 +237,7 @@
 								{
 									"id": "set-position",
 									"objectClass": "player_base",
-									"sid": 412478939469892,
+									"sid": 605614927472882,
 									"parameters": {
 										"x": "playerSpawnLoc.X",
 										"y": "playerSpawnLoc.Y"
@@ -208,7 +246,7 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 764344905007090,
+									"sid": 376229493508491,
 									"parameters": {
 										"variable": "zoomLevel",
 										"value": "BASE_ZOOM"
@@ -217,13 +255,13 @@
 								{
 									"id": "set-layout-scale",
 									"objectClass": "System",
-									"sid": 262542292782934,
+									"sid": 759505504086718,
 									"parameters": {
 										"scale": "BASE_ZOOM"
 									}
 								}
 							],
-							"sid": 410827113706306
+							"sid": 795023804709805
 						},
 						{
 							"eventType": "block",
@@ -231,7 +269,7 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 645127108451388,
+									"sid": 554244593309337,
 									"parameters": {
 										"variable": "spaceLayoutGameplayState",
 										"comparison": 0,
@@ -241,18 +279,26 @@
 							],
 							"actions": [
 								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 472429874748153,
+									"parameters": {
+										"seconds": "0"
+									}
+								},
+								{
 									"id": "set-position",
 									"objectClass": "shipController",
-									"sid": 878047812389379,
+									"sid": 562030123794716,
 									"parameters": {
 										"x": "LayoutWidth / 2",
-										"y": "LayoutHeight - 128"
+										"y": "LayoutHeight - 300"
 									}
 								},
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 369545848007816,
+									"sid": 360671788729930,
 									"parameters": {
 										"variable": "zoomLevel",
 										"value": "ZOOMED_OUT"
@@ -261,13 +307,13 @@
 								{
 									"id": "set-layout-scale",
 									"objectClass": "System",
-									"sid": 755687884464079,
+									"sid": 130823671712151,
 									"parameters": {
 										"scale": "ZOOMED_OUT"
 									}
 								}
 							],
-							"sid": 733878692246500
+							"sid": 832853050335234
 						},
 						{
 							"eventType": "group",
@@ -282,7 +328,7 @@
 										{
 											"id": "repeat",
 											"objectClass": "System",
-											"sid": 201537072223560,
+											"sid": 450968180852063,
 											"parameters": {
 												"count": "NUM_SMALL_DEBRI"
 											}
@@ -292,7 +338,7 @@
 										{
 											"id": "create-object",
 											"objectClass": "System",
-											"sid": 806258205204704,
+											"sid": 398800556973719,
 											"parameters": {
 												"object-to-create": "debri_small",
 												"layer": "\"Debri\"",
@@ -303,14 +349,23 @@
 										{
 											"id": "set-speed",
 											"objectClass": "debri_small",
-											"sid": 379835550989368,
+											"sid": 714737128162564,
 											"behaviorType": "Rotate",
 											"parameters": {
 												"speed": "SMALL_DEBRI_SIZE"
 											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "debri_small",
+											"sid": 310960426619345,
+											"parameters": {
+												"instance-variable": "damage",
+												"value": "SMALL_DEBRI_DMG"
+											}
 										}
 									],
-									"sid": 167869183575175,
+									"sid": 518832915183936,
 									"children": [
 										{
 											"eventType": "block",
@@ -318,7 +373,7 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 810865851955416,
+													"sid": 191900304910432,
 													"parameters": {
 														"first-value": "floor(random(0, 2))",
 														"comparison": 0,
@@ -330,14 +385,14 @@
 												{
 													"id": "set-speed",
 													"objectClass": "debri_small",
-													"sid": 460971489134648,
+													"sid": 511389643624217,
 													"behaviorType": "Rotate",
 													"parameters": {
 														"speed": "Self.Rotate.Speed * (-1)"
 													}
 												}
 											],
-											"sid": 229200952308248
+											"sid": 821539163863120
 										}
 									]
 								},
@@ -347,7 +402,7 @@
 										{
 											"id": "repeat",
 											"objectClass": "System",
-											"sid": 654518579398907,
+											"sid": 977621079325056,
 											"parameters": {
 												"count": "NUM_MED_DEBRI"
 											}
@@ -357,7 +412,7 @@
 										{
 											"id": "create-object",
 											"objectClass": "System",
-											"sid": 184050150263126,
+											"sid": 877374014073810,
 											"parameters": {
 												"object-to-create": "debri_med",
 												"layer": "\"Debri\"",
@@ -368,14 +423,23 @@
 										{
 											"id": "set-speed",
 											"objectClass": "debri_med",
-											"sid": 269461753280813,
+											"sid": 343968258020992,
 											"behaviorType": "Rotate",
 											"parameters": {
 												"speed": "MED_DEBRI_SIZE"
 											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "debri_med",
+											"sid": 992740411003840,
+											"parameters": {
+												"instance-variable": "damage",
+												"value": "MED_DEBRI_DMG"
+											}
 										}
 									],
-									"sid": 321903068251633,
+									"sid": 250799659746061,
 									"children": [
 										{
 											"eventType": "block",
@@ -383,7 +447,7 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 618824750444437,
+													"sid": 349820478434437,
 													"parameters": {
 														"first-value": "floor(random(0, 2))",
 														"comparison": 0,
@@ -395,14 +459,14 @@
 												{
 													"id": "set-speed",
 													"objectClass": "debri_med",
-													"sid": 908602142600461,
+													"sid": 975124044707256,
 													"behaviorType": "Rotate",
 													"parameters": {
 														"speed": "Self.Rotate.Speed * (-1)"
 													}
 												}
 											],
-											"sid": 562835829283963
+											"sid": 221709680561702
 										}
 									]
 								},
@@ -412,7 +476,7 @@
 										{
 											"id": "repeat",
 											"objectClass": "System",
-											"sid": 192750328109470,
+											"sid": 392324987349477,
 											"parameters": {
 												"count": "NUM_LARGE_DEBRI"
 											}
@@ -422,7 +486,7 @@
 										{
 											"id": "create-object",
 											"objectClass": "System",
-											"sid": 942420675914288,
+											"sid": 767651491482092,
 											"parameters": {
 												"object-to-create": "debri_large",
 												"layer": "\"Debri\"",
@@ -433,14 +497,23 @@
 										{
 											"id": "set-speed",
 											"objectClass": "debri_large",
-											"sid": 130562606693893,
+											"sid": 379208592300325,
 											"behaviorType": "Rotate",
 											"parameters": {
 												"speed": "LARGE_DEBRI_SIZE"
 											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "debri_large",
+											"sid": 689041775502275,
+											"parameters": {
+												"instance-variable": "damage",
+												"value": "LARGE_DEBRI_DMG"
+											}
 										}
 									],
-									"sid": 579786335061725,
+									"sid": 162021677743117,
 									"children": [
 										{
 											"eventType": "block",
@@ -448,7 +521,7 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 871847063402458,
+													"sid": 829483105433420,
 													"parameters": {
 														"first-value": "floor(random(0, 2))",
 														"comparison": 0,
@@ -460,19 +533,19 @@
 												{
 													"id": "set-speed",
 													"objectClass": "debri_large",
-													"sid": 636960209599550,
+													"sid": 422334317665262,
 													"behaviorType": "Rotate",
 													"parameters": {
 														"speed": "Self.Rotate.Speed * (-1)"
 													}
 												}
 											],
-											"sid": 805877496679977
+											"sid": 211669594186653
 										}
 									]
 								}
 							],
-							"sid": 253795843969088
+							"sid": 132207674684561
 						},
 						{
 							"eventType": "group",
@@ -487,7 +560,7 @@
 										{
 											"id": "repeat",
 											"objectClass": "System",
-											"sid": 152350028607564,
+											"sid": 326081499588341,
 											"parameters": {
 												"count": "NUM_SMALL_MOVING_DEBRI"
 											}
@@ -497,7 +570,7 @@
 										{
 											"id": "create-object",
 											"objectClass": "System",
-											"sid": 959418845779656,
+											"sid": 627834033976592,
 											"parameters": {
 												"object-to-create": "debri_moving_small",
 												"layer": "\"Debri\"",
@@ -508,7 +581,7 @@
 										{
 											"id": "set-speed",
 											"objectClass": "debri_moving_small",
-											"sid": 895109781313437,
+											"sid": 934565503136787,
 											"behaviorType": "Bullet",
 											"parameters": {
 												"speed": "MOVING_DEBRI_SPEED_SMALL"
@@ -517,14 +590,23 @@
 										{
 											"id": "set-angle-of-motion",
 											"objectClass": "debri_moving_small",
-											"sid": 181173884244057,
+											"sid": 991151372918265,
 											"behaviorType": "Bullet",
 											"parameters": {
 												"angle": "0"
 											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "debri_moving_small",
+											"sid": 718420350585275,
+											"parameters": {
+												"instance-variable": "damage",
+												"value": "SMALL_DEBRI_DMG"
+											}
 										}
 									],
-									"sid": 163607447343968,
+									"sid": 738515298461574,
 									"children": [
 										{
 											"eventType": "block",
@@ -532,7 +614,7 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 769565119372449,
+													"sid": 165435718386761,
 													"parameters": {
 														"first-value": "floor(random(0, 2))",
 														"comparison": 0,
@@ -544,14 +626,14 @@
 												{
 													"id": "set-angle-of-motion",
 													"objectClass": "debri_moving_small",
-													"sid": 443179696371911,
+													"sid": 834035260044358,
 													"behaviorType": "Bullet",
 													"parameters": {
 														"angle": "180"
 													}
 												}
 											],
-											"sid": 639104580274094
+											"sid": 260002399264915
 										}
 									]
 								},
@@ -561,7 +643,7 @@
 										{
 											"id": "repeat",
 											"objectClass": "System",
-											"sid": 986459026732850,
+											"sid": 861574841953592,
 											"parameters": {
 												"count": "NUM_LARGE_MOVING_DEBRI"
 											}
@@ -571,7 +653,7 @@
 										{
 											"id": "create-object",
 											"objectClass": "System",
-											"sid": 994390984033700,
+											"sid": 466255292749242,
 											"parameters": {
 												"object-to-create": "debri_moving_large",
 												"layer": "\"Debri\"",
@@ -582,7 +664,7 @@
 										{
 											"id": "set-speed",
 											"objectClass": "debri_moving_large",
-											"sid": 687089151355627,
+											"sid": 541237224809299,
 											"behaviorType": "Bullet",
 											"parameters": {
 												"speed": "MOVING_DEBRI_SPEED_LARGE"
@@ -591,14 +673,23 @@
 										{
 											"id": "set-angle-of-motion",
 											"objectClass": "debri_moving_large",
-											"sid": 107736466165628,
+											"sid": 811028019489156,
 											"behaviorType": "Bullet",
 											"parameters": {
 												"angle": "0"
 											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "debri_moving_large",
+											"sid": 536772725692941,
+											"parameters": {
+												"instance-variable": "damage",
+												"value": "MED_DEBRI_DMG"
+											}
 										}
 									],
-									"sid": 402136853028575,
+									"sid": 841708201574156,
 									"children": [
 										{
 											"eventType": "block",
@@ -606,7 +697,7 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 402836591745547,
+													"sid": 808303666623239,
 													"parameters": {
 														"first-value": "floor(random(0, 2))",
 														"comparison": 0,
@@ -618,19 +709,19 @@
 												{
 													"id": "set-angle-of-motion",
 													"objectClass": "debri_moving_large",
-													"sid": 171290762392651,
+													"sid": 856507210806840,
 													"behaviorType": "Bullet",
 													"parameters": {
 														"angle": "180"
 													}
 												}
 											],
-											"sid": 743048466055835
+											"sid": 979614460200484
 										}
 									]
 								}
 							],
-							"sid": 340126089442953
+							"sid": 821039976676054
 						}
 					]
 				},
@@ -638,51 +729,29 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 588850343906658
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "camera",
+							"sid": 412831181585979,
+							"parameters": {
+								"instance-variable": "isEnabled"
+							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-position-to-another-object",
-							"objectClass": "screen_boundary",
-							"sid": 564118057439749,
+							"id": "set-position",
+							"objectClass": "camera",
+							"sid": 708704715633927,
 							"parameters": {
-								"object": "camera",
-								"image-point-optional": "0"
+								"x": "player_base.X",
+								"y": "player_base.Y"
 							}
 						}
 					],
-					"sid": 139151540058718
+					"sid": 831739268671820
 				}
 			],
 			"sid": 621147840178682
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-boolean-instance-variable-set",
-					"objectClass": "camera",
-					"sid": 675304327583565,
-					"parameters": {
-						"instance-variable": "isEnabled"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-position",
-					"objectClass": "camera",
-					"sid": 254927132186780,
-					"parameters": {
-						"x": "player_base.X",
-						"y": "player_base.Y"
-					}
-				}
-			],
-			"sid": 201923679240242
 		},
 		{
 			"eventType": "group",
@@ -695,11 +764,21 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "shipController",
-							"sid": 382562153003650,
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 523931645674787,
 							"parameters": {
 								"object": "dock"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 378304505829180,
+							"parameters": {
+								"first-value": "distance(dock.X, dock.Y, ship_entire_collider_1.X, ship_entire_collider_1.Y)",
+								"comparison": 3,
+								"second-value": "16"
 							}
 						},
 						{
@@ -711,6 +790,11 @@
 								"comparison": 0,
 								"value": "dock.id"
 							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 505538365427148
 						}
 					],
 					"actions": [
@@ -729,12 +813,25 @@
 							"sid": 339253594580060
 						},
 						{
+							"id": "destroy",
+							"objectClass": "ship_col_1",
+							"sid": 815553567629953
+						},
+						{
 							"id": "set-enabled",
 							"objectClass": "player_base",
 							"sid": 333460402253454,
 							"behaviorType": "Platform",
 							"parameters": {
 								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "player_base",
+							"sid": 694125588196309,
+							"parameters": {
+								"collisions": "enabled"
 							}
 						},
 						{
@@ -769,6 +866,25 @@
 							"parameters": {
 								"object": "famDebri"
 							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "player_base",
+							"sid": 293114164652380,
+							"parameters": {
+								"instance-variable": "isInvulnerable"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 992393694969935,
+							"parameters": {
+								"variable": "spaceLayoutGameplayState",
+								"comparison": 0,
+								"value": "GAME_STATE_FALLING"
+							}
 						}
 					],
 					"actions": [
@@ -785,9 +901,122 @@
 								"instance-variable": "health",
 								"value": "1"
 							}
+						},
+						{
+							"callFunction": "StartFreezeFrame",
+							"sid": 898741029171152,
+							"parameters": [
+								"0.1"
+							]
+						},
+						{
+							"id": "flash",
+							"objectClass": "player_anim",
+							"sid": 187385617934599,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "0.8"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "player_base",
+							"sid": 250611861006636,
+							"parameters": {
+								"instance-variable": "isInvulnerable",
+								"value": "true"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "SysObj",
+							"sid": 826649311756731,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1.0",
+								"type": "once",
+								"tag": "\"invuln_timer\""
+							}
 						}
 					],
 					"sid": 564299217857428
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "ship_entire_collider_1",
+							"sid": 264248521101276,
+							"parameters": {
+								"object": "famDebri"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "famDebri",
+							"sid": 281470049156690
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "shipController",
+							"sid": 407300883356015,
+							"parameters": {
+								"instance-variable": "dmgPercent",
+								"value": "famDebri.damage"
+							}
+						},
+						{
+							"id": "shake",
+							"objectClass": "camera",
+							"sid": 928691529072648,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"magnitude": "5",
+								"duration": "0.4",
+								"mode": "reducing-magnitude"
+							}
+						}
+					],
+					"sid": 666635506675751
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "shipController",
+							"sid": 176736960541361,
+							"parameters": {
+								"object": "ground"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "shake",
+							"objectClass": "camera",
+							"sid": 702789077808863,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"magnitude": "5",
+								"duration": "0.4",
+								"mode": "reducing-magnitude"
+							}
+						},
+						{
+							"callFunction": "StartFreezeFrame",
+							"sid": 334195376847605,
+							"parameters": [
+								"0.08"
+							]
+						}
+					],
+					"sid": 597269274916965
 				}
 			],
 			"sid": 812969214847925

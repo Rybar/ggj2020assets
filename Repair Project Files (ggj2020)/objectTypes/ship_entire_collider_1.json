@@ -2,9 +2,15 @@
 	"name": "ship_entire_collider_1",
 	"plugin-id": "Sprite",
 	"sid": 108511070663607,
-	"isGlobal": false,
+	"isGlobal": true,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 125865151065026
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [

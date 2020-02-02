@@ -177,7 +177,14 @@
 			"repairObj",
 			"repairProgressBar",
 			"repairProgressBarBG",
-			"textGameOver"
+			"textGameOver",
+			"titleScreenTilemap",
+			"black",
+			"tileMapSpaceArea",
+			"stars",
+			"tileMapPlanetSurface",
+			"wheelHighlight",
+			"repairHighlight"
 		],
 		"subfolders": [
 			{

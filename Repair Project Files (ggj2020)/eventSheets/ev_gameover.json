@@ -12,6 +12,23 @@
 			],
 			"actions": [
 				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 408134646244278,
+					"parameters": {
+						"scale": "BASE_ZOOM"
+					}
+				},
+				{
+					"id": "scroll-to-position",
+					"objectClass": "System",
+					"sid": 464999519145271,
+					"parameters": {
+						"x": "0",
+						"y": "0"
+					}
+				},
+				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 217286615655708,

@@ -24,26 +24,76 @@
 			{
 				"frames": [
 					{
-						"width": 64,
-						"height": 64,
+						"width": 319,
+						"height": 322,
 						"originX": 0.5,
 						"originY": 0.5,
-						"originalSource": "",
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\asteroids-large6.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 53,
+						"imageSpriteId": 129,
+						"collisionPoly": {
+							"points": [
+								0.07053291536050156,
+								0.40062111801242223,
+								0.44043887147335437,
+								0.05279503105590054,
+								0.7108150470219436,
+								0.1653726708074534,
+								0.8620689655172414,
+								0.8090062111801243,
+								0.5031347962382444,
+								0.7996894409937889
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1
 					},
 					{
-						"width": 32,
-						"height": 32,
+						"width": 319,
+						"height": 322,
 						"originX": 0.5,
 						"originY": 0.5,
-						"originalSource": "",
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\asteroids-large7.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 46,
+						"imageSpriteId": 130,
+						"collisionPoly": {
+							"points": [
+								0.5862068965517242,
+								0.023291925465838356,
+								0.8495297805642634,
+								0.340062111801242,
+								0.4811912225705329,
+								0.9440993788819877,
+								0.08463949843260186,
+								0.6350931677018637
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 319,
+						"height": 322,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\asteroids-large8.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 131,
+						"collisionPoly": {
+							"points": [
+								0.2147335423197492,
+								0.21739130434782603,
+								0.6128526645768027,
+								0.04968944099378874,
+								0.8369905956112853,
+								0.7934782608695653,
+								0.2366771159874608,
+								0.6568322981366461
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}

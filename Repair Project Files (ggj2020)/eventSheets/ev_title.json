@@ -22,6 +22,43 @@
 			],
 			"actions": [
 				{
+					"callFunction": "FadeIn",
+					"sid": 317553634308460,
+					"parameters": [
+						"FADE_TIME"
+					]
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 125138562792333,
+					"parameters": {
+						"seconds": "0"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "black",
+					"sid": 795195398072904
+				},
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 865514085759676,
+					"parameters": {
+						"scale": "BASE_ZOOM"
+					}
+				},
+				{
+					"id": "scroll-to-position",
+					"objectClass": "System",
+					"sid": 738474509927691,
+					"parameters": {
+						"x": "0",
+						"y": "0"
+					}
+				},
+				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 933645868065362,
@@ -40,13 +77,6 @@
 						"off-time": "0.2",
 						"duration": "1.2"
 					}
-				},
-				{
-					"callFunction": "FadeIn",
-					"sid": 545679351737143,
-					"parameters": [
-						"FADE_TIME"
-					]
 				},
 				{
 					"id": "wait",

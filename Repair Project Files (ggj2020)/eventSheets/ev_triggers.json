@@ -214,6 +214,15 @@
 							}
 						},
 						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 454483151911738,
+							"parameters": {
+								"variable": "zoomLevel",
+								"value": "ZOOMED_OUT"
+							}
+						},
+						{
 							"id": "go-to-layout",
 							"objectClass": "System",
 							"sid": 798624173170301,

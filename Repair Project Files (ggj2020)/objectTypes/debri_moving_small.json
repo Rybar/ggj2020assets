@@ -22,14 +22,54 @@
 			{
 				"frames": [
 					{
-						"width": 16,
-						"height": 16,
+						"width": 723,
+						"height": 435,
 						"originX": 0.5,
 						"originY": 0.5,
-						"originalSource": "",
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\movingJunk-medium2.png",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 39,
+						"imageSpriteId": 141,
+						"collisionPoly": {
+							"points": [
+								0.4343015214384508,
+								0.25517241379310335,
+								0.5338865836791149,
+								0.19310344827586212,
+								0.6196403872752421,
+								0.3011494252873564,
+								0.6044260027662519,
+								0.4896551724137929,
+								0.45089903181189506,
+								0.8068965517241379,
+								0.3001383125864453,
+								0.6597701149425288
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 723,
+						"height": 435,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Christopher\\Documents\\GitHub\\ggj2020assets\\assets\\movingJunk-small3.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 142,
+						"collisionPoly": {
+							"points": [
+								0.3845089903181189,
+								0.5080459770114941,
+								0.5449515905947442,
+								0.25747126436781603,
+								0.6030428769017981,
+								0.44827586206896575,
+								0.4453665283540802,
+								0.6965517241379308
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}

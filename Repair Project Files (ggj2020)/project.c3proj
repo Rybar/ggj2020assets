@@ -47,6 +47,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "DrawingCanvas",
+			"name": "Drawing canvas",
+			"author": "Scirra",
+			"version": "r182.2",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Platform",
 			"name": "Platform",
@@ -145,7 +153,8 @@
 			"debri_large",
 			"debriSpawnZone",
 			"debriMovingSpawnZone",
-			"debri_moving_large"
+			"debri_moving_large",
+			"DrawingCanvas"
 		],
 		"subfolders": [
 			{
@@ -173,7 +182,8 @@
 							"ship_BG_1",
 							"ship_BG2_1",
 							"ship_col_1",
-							"ship_jumpthru_1"
+							"ship_jumpthru_1",
+							"ship_entire_collider_1"
 						],
 						"subfolders": [],
 						"name": "Varation 1"

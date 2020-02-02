@@ -2,7 +2,7 @@
 	"name": "ship_BG2_1",
 	"plugin-id": "Tilemap",
 	"sid": 627527040067501,
-	"isGlobal": false,
+	"isGlobal": true,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
@@ -20,7 +20,7 @@
 		"originalSource": "",
 		"exportFormat": "png",
 		"exportQuality": 0.8,
-		"imageSpriteId": 88,
+		"imageSpriteId": 96,
 		"useCollisionPoly": true
 	},
 	"tile-collision-polys": {}

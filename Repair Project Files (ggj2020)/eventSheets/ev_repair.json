@@ -46,9 +46,14 @@
 					}
 				},
 				{
+					"id": "destroy",
+					"objectClass": "ship_col_1",
+					"sid": 608021430774798
+				},
+				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 226163610655930,
+					"sid": 148987588689877,
 					"parameters": {
 						"variable": "curShipIndex",
 						"value": "0"
@@ -150,15 +155,6 @@
 								"instance-variable": "id",
 								"value": "AdvancedRandom.Permutation(curShipIndex)"
 							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "shipController",
-							"sid": 496527631131530,
-							"parameters": {
-								"instance-variable": "id",
-								"value": "AdvancedRandom.Permutation(curShipIndex)"
-							}
 						}
 					],
 					"sid": 113770588159126
@@ -169,7 +165,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 214372550780340,
+							"sid": 803297834800861,
 							"parameters": {
 								"variable": "curShipIndex",
 								"comparison": 0,
@@ -181,18 +177,18 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 481777980556662,
+							"sid": 682813764226186,
 							"parameters": {
 								"object-to-create": "ship_col_1",
 								"layer": "\"Ship\"",
-								"x": "ship_spawn_loc.X - 100",
-								"y": "ship_spawn_loc.Y - 200"
+								"x": "ship_spawn_loc.X - 140",
+								"y": "ship_spawn_loc.Y - 174"
 							}
 						},
 						{
 							"id": "set-position-to-another-object",
 							"objectClass": "ship_BG2_1",
-							"sid": 853894092614645,
+							"sid": 997964635271420,
 							"parameters": {
 								"object": "ship_col_1",
 								"image-point-optional": "0"
@@ -201,7 +197,7 @@
 						{
 							"id": "set-position-to-another-object",
 							"objectClass": "ship_BG_1",
-							"sid": 224435789964209,
+							"sid": 781176638189392,
 							"parameters": {
 								"object": "ship_col_1",
 								"image-point-optional": "0"
@@ -210,7 +206,7 @@
 						{
 							"id": "set-position-to-another-object",
 							"objectClass": "ship_jumpthru_1",
-							"sid": 570256328191459,
+							"sid": 354095504232908,
 							"parameters": {
 								"object": "ship_col_1",
 								"image-point-optional": "0"
@@ -219,7 +215,7 @@
 						{
 							"id": "pin-to-object",
 							"objectClass": "ship_BG2_1",
-							"sid": 831064013573245,
+							"sid": 165172320040614,
 							"behaviorType": "Pin",
 							"parameters": {
 								"pin-to": "ship_col_1",
@@ -229,7 +225,7 @@
 						{
 							"id": "pin-to-object",
 							"objectClass": "ship_BG_1",
-							"sid": 911977209088954,
+							"sid": 991384781549153,
 							"behaviorType": "Pin",
 							"parameters": {
 								"pin-to": "ship_col_1",
@@ -239,98 +235,35 @@
 						{
 							"id": "pin-to-object",
 							"objectClass": "ship_jumpthru_1",
-							"sid": 143162205649499,
+							"sid": 329692185890037,
 							"behaviorType": "Pin",
 							"parameters": {
 								"pin-to": "ship_col_1",
 								"mode": "position-angle"
 							}
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "ship_BG_1",
+							"sid": 810804995516412
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "ship_BG2_1",
+							"sid": 279903062139371
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "ship_col_1",
+							"sid": 471878620966027
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "ship_jumpthru_1",
+							"sid": 152725151791840
 						}
 					],
-					"sid": 559825857455348,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "for",
-									"objectClass": "System",
-									"sid": 785229191727891,
-									"parameters": {
-										"name": "\"tileX\"",
-										"start-index": "0",
-										"end-index": "200"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 698007055127061,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "for",
-											"objectClass": "System",
-											"sid": 658809424059910,
-											"parameters": {
-												"name": "\"tileY\"",
-												"start-index": "0",
-												"end-index": "500"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 120460533116037,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-tile-at",
-													"objectClass": "ship_BG2_1",
-													"sid": 999977759236732,
-													"parameters": {
-														"tile-x": "loopindex(\"tileX\")",
-														"tile-y": "loopindex(\"tileY\")",
-														"comparison": 0,
-														"tile": "332"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-position",
-													"objectClass": "shipController",
-													"sid": 238858402719097,
-													"parameters": {
-														"x": "ship_BG2_1.TileToPositionX(loopindex(\"tileX\"))",
-														"y": "ship_BG2_1.TileToPositionY(loopindex(\"tileY\"))"
-													}
-												},
-												{
-													"id": "stop-loop",
-													"objectClass": "System",
-													"sid": 512727822407705
-												},
-												{
-													"id": "pin-to-object",
-													"objectClass": "ship_col_1",
-													"sid": 265747143959372,
-													"behaviorType": "Pin",
-													"parameters": {
-														"pin-to": "shipController",
-														"mode": "position-angle"
-													}
-												}
-											],
-											"sid": 858015029936823
-										}
-									]
-								}
-							]
-						}
-					]
+					"sid": 300748285151090
 				},
 				{
 					"eventType": "block",
@@ -338,7 +271,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 845623662322582,
+							"sid": 530039019346340,
 							"parameters": {
 								"variable": "curShipIndex",
 								"comparison": 0,
@@ -347,7 +280,7 @@
 						}
 					],
 					"actions": [],
-					"sid": 949456418318790
+					"sid": 402609710802993
 				},
 				{
 					"eventType": "block",
@@ -355,7 +288,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 221731248480440,
+							"sid": 997543290721987,
 							"parameters": {
 								"variable": "curShipIndex",
 								"comparison": 0,
@@ -364,7 +297,7 @@
 						}
 					],
 					"actions": [],
-					"sid": 944875817036861
+					"sid": 962597490377334
 				},
 				{
 					"eventType": "block",
@@ -372,7 +305,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 296238875523891,
+							"sid": 755239340552140,
 							"parameters": {
 								"variable": "curShipIndex",
 								"comparison": 0,
@@ -381,7 +314,7 @@
 						}
 					],
 					"actions": [],
-					"sid": 927727791564963
+					"sid": 317587289302570
 				},
 				{
 					"eventType": "block",
@@ -389,7 +322,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 462341315840509,
+							"sid": 982506262087606,
 							"parameters": {
 								"variable": "curShipIndex",
 								"comparison": 0,
@@ -398,7 +331,7 @@
 						}
 					],
 					"actions": [],
-					"sid": 304421925796087
+					"sid": 353926942310167
 				},
 				{
 					"eventType": "block",
@@ -406,7 +339,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 891813306536990,
+							"sid": 709582506019494,
 							"parameters": {
 								"variable": "curShipIndex",
 								"comparison": 0,
@@ -415,7 +348,7 @@
 						}
 					],
 					"actions": [],
-					"sid": 479798640976222
+					"sid": 625855588823156
 				},
 				{
 					"eventType": "block",
@@ -456,6 +389,130 @@
 				}
 			],
 			"sid": 668522164498019
+		},
+		{
+			"eventType": "comment",
+			"text": "Find the ship wheel"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 189609723370941
+				}
+			],
+			"actions": [],
+			"sid": 365287281184137,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 371465049940474,
+							"parameters": {
+								"name": "\"tileX\"",
+								"start-index": "0",
+								"end-index": "200"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 910042786725495,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 259500980983732,
+									"parameters": {
+										"name": "\"tileY\"",
+										"start-index": "0",
+										"end-index": "500"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 536781972519257,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-tile-at",
+											"objectClass": "ship_BG2_1",
+											"sid": 763387262739169,
+											"parameters": {
+												"tile-x": "loopindex(\"tileX\")",
+												"tile-y": "loopindex(\"tileY\")",
+												"comparison": 0,
+												"tile": "332"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-collisions-enabled",
+											"objectClass": "shipController",
+											"sid": 690939807732400,
+											"parameters": {
+												"collisions": "disabled"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "shipController",
+											"sid": 860782297403459,
+											"parameters": {
+												"x": "ship_BG2_1.TileToPositionX(loopindex(\"tileX\")) + 8",
+												"y": "ship_BG2_1.TileToPositionY(loopindex(\"tileY\")) + 8"
+											}
+										},
+										{
+											"id": "pin-to-object",
+											"objectClass": "ship_col_1",
+											"sid": 531956494406004,
+											"behaviorType": "Pin",
+											"parameters": {
+												"pin-to": "shipController",
+												"mode": "position-only"
+											}
+										},
+										{
+											"id": "set-collisions-enabled",
+											"objectClass": "shipController",
+											"sid": 622478005352769,
+											"parameters": {
+												"collisions": "enabled"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 171442723180823,
+											"parameters": {
+												"type": "log",
+												"message": "\"found the tile at x = \" & ship_BG2_1.TileToPositionX(loopindex(\"tileX\")) & \" and Y = \" & ship_BG2_1.TileToPositionY(loopindex(\"tileY\"))"
+											}
+										},
+										{
+											"id": "stop-loop",
+											"objectClass": "System",
+											"sid": 746299073407761
+										}
+									],
+									"sid": 473944590219907
+								}
+							]
+						}
+					]
+				}
+			]
 		},
 		{
 			"eventType": "block",

@@ -28,7 +28,7 @@
 								"acceleration": 200,
 								"deceleration": 0,
 								"directions": "dir-8",
-								"set-angle": "smooth",
+								"set-angle": "no",
 								"default-controls": false,
 								"enabled": true
 							}
@@ -40,8 +40,8 @@
 					"world": {
 						"x": 570,
 						"y": 129,
-						"width": 32,
-						"height": 32,
+						"width": 16,
+						"height": 16,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

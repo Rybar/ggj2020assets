@@ -234,6 +234,20 @@
 								"gamepad": "0",
 								"button": "d-pad-down"
 							}
+						},
+						{
+							"id": "is-falling",
+							"objectClass": "player_base",
+							"sid": 905086365740227,
+							"behaviorType": "Platform",
+							"isInverted": true
+						},
+						{
+							"id": "is-jumping",
+							"objectClass": "player_base",
+							"sid": 968323295392830,
+							"behaviorType": "Platform",
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -262,6 +276,20 @@
 								"comparison": 4,
 								"value": "0"
 							}
+						},
+						{
+							"id": "is-falling",
+							"objectClass": "player_base",
+							"sid": 276234478548756,
+							"behaviorType": "Platform",
+							"isInverted": true
+						},
+						{
+							"id": "is-jumping",
+							"objectClass": "player_base",
+							"sid": 677616694544560,
+							"behaviorType": "Platform",
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -946,6 +974,15 @@
 							"parameters": {
 								"acceleration": "SHIP_ACCEL"
 							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "shipController",
+							"sid": 107228229454952,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"state": "disabled"
+							}
 						}
 					],
 					"sid": 341745050384229
@@ -975,6 +1012,24 @@
 								}
 							],
 							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "ship_col_1",
+									"sid": 796757429280354,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "shipController",
+									"sid": 749609226425147,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
 								{
 									"id": "set-enabled",
 									"objectClass": "player_base",
@@ -1224,6 +1279,68 @@
 				}
 			],
 			"sid": 909935578718493
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 777278001611019,
+					"parameters": {
+						"gamepad": "0",
+						"button": "start-menu"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "ship_col_1",
+					"sid": 156278135412382,
+					"behaviorType": "Solid",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "shipController",
+					"sid": 439216378224373,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "shipController",
+					"sid": 895792571311170,
+					"parameters": {
+						"instance-variable": "isActive",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "player_base",
+					"sid": 845869931021626,
+					"behaviorType": "Platform",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 250840972557815,
+					"parameters": {
+						"variable": "zoomLevel",
+						"value": "ZOOMED_IN"
+					}
+				}
+			],
+			"sid": 581765248521789
 		}
 	],
 	"sid": 263282355959929

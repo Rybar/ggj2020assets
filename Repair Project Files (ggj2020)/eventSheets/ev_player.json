@@ -554,7 +554,43 @@
 							}
 						}
 					],
-					"sid": 707306685598762
+					"sid": 707306685598762,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-jumping",
+									"objectClass": "player_base",
+									"sid": 355200731780207,
+									"behaviorType": "Platform",
+									"isInverted": true
+								},
+								{
+									"id": "is-falling",
+									"objectClass": "player_base",
+									"sid": 599746322140150,
+									"behaviorType": "Platform",
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 370473796966869,
+									"parameters": {
+										"folder": "sounds",
+										"audio-file-name": "\"jump\"",
+										"loop": "not-looping",
+										"volume": "0",
+										"tag-optional": "\"jump\""
+									}
+								}
+							],
+							"sid": 640234743605303
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -1337,7 +1373,38 @@
 											}
 										}
 									],
-									"sid": 326087954890515
+									"sid": 326087954890515,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-tag-playing",
+													"objectClass": "Audio",
+													"sid": 406258605570054,
+													"parameters": {
+														"tag": "\"engine\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "play-by-name",
+													"objectClass": "Audio",
+													"sid": 733245412566645,
+													"parameters": {
+														"folder": "sounds",
+														"audio-file-name": "\"engine\"",
+														"loop": "looping",
+														"volume": "0",
+														"tag-optional": "\"engine\""
+													}
+												}
+											],
+											"sid": 669148918110389
+										}
+									]
 								},
 								{
 									"eventType": "block",
@@ -1365,7 +1432,38 @@
 											}
 										}
 									],
-									"sid": 736142571537243
+									"sid": 736142571537243,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-tag-playing",
+													"objectClass": "Audio",
+													"sid": 400569585421666,
+													"parameters": {
+														"tag": "\"engine\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "play-by-name",
+													"objectClass": "Audio",
+													"sid": 601804647324968,
+													"parameters": {
+														"folder": "sounds",
+														"audio-file-name": "\"engine\"",
+														"loop": "looping",
+														"volume": "0",
+														"tag-optional": "\"engine\""
+													}
+												}
+											],
+											"sid": 184186437112573
+										}
+									]
 								},
 								{
 									"eventType": "block",
@@ -1393,7 +1491,38 @@
 											}
 										}
 									],
-									"sid": 843050880286876
+									"sid": 843050880286876,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-tag-playing",
+													"objectClass": "Audio",
+													"sid": 923951021541081,
+													"parameters": {
+														"tag": "\"engine\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "play-by-name",
+													"objectClass": "Audio",
+													"sid": 115849060439809,
+													"parameters": {
+														"folder": "sounds",
+														"audio-file-name": "\"engine\"",
+														"loop": "looping",
+														"volume": "0",
+														"tag-optional": "\"engine\""
+													}
+												}
+											],
+											"sid": 794455877334833
+										}
+									]
 								},
 								{
 									"eventType": "block",
@@ -1421,7 +1550,38 @@
 											}
 										}
 									],
-									"sid": 409909337589149
+									"sid": 409909337589149,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-tag-playing",
+													"objectClass": "Audio",
+													"sid": 772185469529087,
+													"parameters": {
+														"tag": "\"engine\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "play-by-name",
+													"objectClass": "Audio",
+													"sid": 877585185832512,
+													"parameters": {
+														"folder": "sounds",
+														"audio-file-name": "\"engine\"",
+														"loop": "looping",
+														"volume": "0",
+														"tag-optional": "\"engine\""
+													}
+												}
+											],
+											"sid": 307114811990829
+										}
+									]
 								},
 								{
 									"eventType": "block",
@@ -1447,7 +1607,38 @@
 											}
 										}
 									],
-									"sid": 193444816750689
+									"sid": 193444816750689,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-tag-playing",
+													"objectClass": "Audio",
+													"sid": 155457736626458,
+													"parameters": {
+														"tag": "\"engine\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "play-by-name",
+													"objectClass": "Audio",
+													"sid": 878558254093565,
+													"parameters": {
+														"folder": "sounds",
+														"audio-file-name": "\"engine\"",
+														"loop": "looping",
+														"volume": "0",
+														"tag-optional": "\"engine\""
+													}
+												}
+											],
+											"sid": 567937490965103
+										}
+									]
 								},
 								{
 									"eventType": "block",
@@ -1473,7 +1664,38 @@
 											}
 										}
 									],
-									"sid": 605115298274926
+									"sid": 605115298274926,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-tag-playing",
+													"objectClass": "Audio",
+													"sid": 365077046727274,
+													"parameters": {
+														"tag": "\"engine\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "play-by-name",
+													"objectClass": "Audio",
+													"sid": 131062620264499,
+													"parameters": {
+														"folder": "sounds",
+														"audio-file-name": "\"engine\"",
+														"loop": "looping",
+														"volume": "0",
+														"tag-optional": "\"engine\""
+													}
+												}
+											],
+											"sid": 377662918525117
+										}
+									]
 								},
 								{
 									"eventType": "block",
@@ -1499,7 +1721,38 @@
 											}
 										}
 									],
-									"sid": 205863562220467
+									"sid": 205863562220467,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-tag-playing",
+													"objectClass": "Audio",
+													"sid": 646485999968963,
+													"parameters": {
+														"tag": "\"engine\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "play-by-name",
+													"objectClass": "Audio",
+													"sid": 653080968223467,
+													"parameters": {
+														"folder": "sounds",
+														"audio-file-name": "\"engine\"",
+														"loop": "looping",
+														"volume": "0",
+														"tag-optional": "\"engine\""
+													}
+												}
+											],
+											"sid": 159410043472827
+										}
+									]
 								},
 								{
 									"eventType": "block",
@@ -1525,9 +1778,118 @@
 											}
 										}
 									],
-									"sid": 353954681525799
+									"sid": 353954681525799,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-tag-playing",
+													"objectClass": "Audio",
+													"sid": 231594472923496,
+													"parameters": {
+														"tag": "\"engine\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "play-by-name",
+													"objectClass": "Audio",
+													"sid": 767336725229152,
+													"parameters": {
+														"folder": "sounds",
+														"audio-file-name": "\"engine\"",
+														"loop": "looping",
+														"volume": "0",
+														"tag-optional": "\"engine\""
+													}
+												}
+											],
+											"sid": 543030437448133
+										}
+									]
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 308588985322324,
+									"parameters": {
+										"gamepad": "0",
+										"axis": "left-analog-x-axis",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 294044041606250,
+									"parameters": {
+										"gamepad": "0",
+										"axis": "left-analog-y-axis",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "is-button-down",
+									"objectClass": "Gamepad",
+									"sid": 973445308516145,
+									"parameters": {
+										"gamepad": "0",
+										"button": "d-pad-up"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-button-down",
+									"objectClass": "Gamepad",
+									"sid": 644177403033489,
+									"parameters": {
+										"gamepad": "0",
+										"button": "d-pad-down"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-button-down",
+									"objectClass": "Gamepad",
+									"sid": 361679422035696,
+									"parameters": {
+										"gamepad": "0",
+										"button": "d-pad-left"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-button-down",
+									"objectClass": "Gamepad",
+									"sid": 217530228040903,
+									"parameters": {
+										"gamepad": "0",
+										"button": "d-pad-right"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 127564801593547,
+									"parameters": {
+										"tag": "\"engine\""
+									}
+								}
+							],
+							"sid": 963887297721547
 						}
 					],
 					"sid": 857630001975342
@@ -2183,6 +2545,18 @@
 								"type": "once",
 								"tag": "\"progEffect\""
 							}
+						},
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 175488977538716,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "\"fixed\"",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"fixed\""
+							}
 						}
 					],
 					"sid": 196537849662222,
@@ -2475,31 +2849,6 @@
 				}
 			],
 			"sid": 437881766355391
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-flash-ended",
-					"objectClass": "wheelHighlight",
-					"sid": 118726618301531,
-					"behaviorType": "Flash"
-				}
-			],
-			"actions": [
-				{
-					"id": "flash",
-					"objectClass": "wheelHighlight",
-					"sid": 866081504362732,
-					"behaviorType": "Flash",
-					"parameters": {
-						"on-time": "0.3",
-						"off-time": "0.3",
-						"duration": "2"
-					}
-				}
-			],
-			"sid": 362471950251370
 		}
 	],
 	"sid": 263282355959929

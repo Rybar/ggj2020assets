@@ -911,11 +911,11 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 378304505829180,
+							"sid": 935794533462357,
 							"parameters": {
 								"first-value": "distance(dock.X, dock.Y, ship_entire_collider_1.X, ship_entire_collider_1.Y)",
 								"comparison": 3,
-								"second-value": "16"
+								"second-value": "32"
 							}
 						},
 						{
@@ -939,6 +939,17 @@
 						{
 							"callFunction": "DestroyShipAndReset",
 							"sid": 641698590296270
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 687231813563541,
+							"parameters": {
+								"object-to-create": "shipWhole",
+								"layer": "\"FG\"",
+								"x": "dock.X",
+								"y": "dock.Y"
+							}
 						}
 					],
 					"sid": 262350446453438
@@ -1000,14 +1011,6 @@
 							}
 						},
 						{
-							"callFunction": "StartFreezeFrame",
-							"sid": 898741029171152,
-							"disabled": true,
-							"parameters": [
-								"0.1"
-							]
-						},
-						{
 							"id": "flash",
 							"objectClass": "player_anim",
 							"sid": 187385617934599,
@@ -1036,6 +1039,18 @@
 								"duration": "1.0",
 								"type": "once",
 								"tag": "\"invuln_timer\""
+							}
+						},
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 959869178214950,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "\"junkhit\"",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"junkhit\""
 							}
 						}
 					],
@@ -1078,44 +1093,21 @@
 								"duration": "0.4",
 								"mode": "reducing-magnitude"
 							}
+						},
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 869730348148264,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "\"junkhit\"",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"junkhit\""
+							}
 						}
 					],
 					"sid": 666635506675751
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "shipController",
-							"sid": 176736960541361,
-							"parameters": {
-								"object": "ground"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "shake",
-							"objectClass": "camera",
-							"sid": 702789077808863,
-							"behaviorType": "ScrollTo",
-							"parameters": {
-								"magnitude": "5",
-								"duration": "0.4",
-								"mode": "reducing-magnitude"
-							}
-						},
-						{
-							"callFunction": "StartFreezeFrame",
-							"sid": 334195376847605,
-							"parameters": [
-								"0.08"
-							]
-						}
-					],
-					"sid": 597269274916965,
-					"disabled": true
 				}
 			],
 			"sid": 812969214847925

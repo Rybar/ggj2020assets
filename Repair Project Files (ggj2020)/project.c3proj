@@ -48,6 +48,14 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"version": "r182.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Text",
 			"name": "Text",
 			"author": "Scirra",
@@ -237,7 +245,8 @@
 					"AdvancedRandom",
 					"Gamepad",
 					"SysObj",
-					"fadeTex"
+					"fadeTex",
+					"Keyboard"
 				],
 				"subfolders": [],
 				"name": "System"
@@ -309,16 +318,6 @@
 		"sound": {
 			"items": [
 				{
-					"name": "engine.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 766979363745450
-				},
-				{
-					"name": "fixed.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 866014356150351
-				},
-				{
 					"name": "jump.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 416868031641376
@@ -327,6 +326,16 @@
 					"name": "junkhit.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 277906201711326
+				},
+				{
+					"name": "engine.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 766979363745450
+				},
+				{
+					"name": "fixed.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 866014356150351
 				},
 				{
 					"name": "land.webm",
@@ -368,24 +377,24 @@
 		"icon": {
 			"items": [
 				{
-					"name": "icon-16.png",
-					"type": "image/png",
-					"sid": 149021782019492
-				},
-				{
 					"name": "loading-logo.png",
 					"type": "image/png",
 					"sid": 676918741181496
 				},
 				{
-					"name": "icon-32.png",
-					"type": "image/png",
-					"sid": 635738620168026
-				},
-				{
 					"name": "icon-64.png",
 					"type": "image/png",
 					"sid": 919260237549963
+				},
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 149021782019492
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 635738620168026
 				},
 				{
 					"name": "icon-128.png",

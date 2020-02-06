@@ -63,7 +63,9 @@
 						"live-preview": false
 					},
 					"uid": 38,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"id": 0
+					},
 					"behaviors": {
 						"Solid": {
 							"properties": {
@@ -99,7 +101,9 @@
 						"live-preview": false
 					},
 					"uid": 35,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"id": 0
+					},
 					"behaviors": {
 						"Solid": {
 							"properties": {
@@ -135,7 +139,9 @@
 						"live-preview": false
 					},
 					"uid": 39,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"id": 0
+					},
 					"behaviors": {
 						"Solid": {
 							"properties": {
@@ -564,6 +570,39 @@
 						],
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "ship_entire_collider_1",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 8,
+					"instanceVariables": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 2388.1112147107583,
+						"y": -111.91739751218739,
+						"width": 208.00627911729043,
+						"height": 168.2112522300818,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							0.5
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 171359173729342,
@@ -593,41 +632,7 @@
 		{
 			"name": "Player",
 			"overriden": 0,
-			"instances": [
-				{
-					"type": "ship_entire_collider_1",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 8,
-					"instanceVariables": {},
-					"behaviors": {
-						"Pin": {
-							"properties": {}
-						}
-					},
-					"world": {
-						"x": 2389,
-						"y": -105,
-						"width": 197.78384969577382,
-						"height": 166.37645720570703,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							0.5
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				}
-			],
+			"instances": [],
 			"sid": 478964514666136,
 			"effectTypes": [],
 			"isInitiallyVisible": true,

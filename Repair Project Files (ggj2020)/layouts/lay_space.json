@@ -44,91 +44,6 @@
 					}
 				},
 				{
-					"type": "player_base",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 7,
-					"instanceVariables": {
-						"isCrouching": false,
-						"isMovingRight": false,
-						"speed_norm": 200,
-						"speed_crouch": 100,
-						"health": 0,
-						"isInvulnerable": false,
-						"isRepairing": false
-					},
-					"behaviors": {
-						"Platform": {
-							"properties": {
-								"max-speed": 200,
-								"acceleration": 3000,
-								"deceleration": 3000,
-								"jump-strength": 300,
-								"gravity": 1400,
-								"max-fall-speed": 270,
-								"double-jump": false,
-								"jump-sustain": 75,
-								"default-controls": true,
-								"enabled": true
-							}
-						}
-					},
-					"world": {
-						"x": 1427,
-						"y": 542,
-						"width": 8,
-						"height": 12,
-						"originX": 0.5,
-						"originY": 0.8333333333333334,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "player_anim",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "idle",
-						"initial-frame": 0,
-						"enable-collisions": false,
-						"live-preview": false
-					},
-					"uid": 6,
-					"instanceVariables": {},
-					"behaviors": {
-						"Flash": {
-							"properties": {}
-						}
-					},
-					"world": {
-						"x": 1439,
-						"y": 533,
-						"width": 21,
-						"height": 23,
-						"originX": 0.5238095238095238,
-						"originY": 0.8695652173913043,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "trigger",
 					"properties": {
 						"initially-visible": false,
@@ -200,7 +115,9 @@
 						"live-preview": false
 					},
 					"uid": 65,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"id": 0
+					},
 					"behaviors": {
 						"Solid": {
 							"properties": {
@@ -236,7 +153,9 @@
 						"live-preview": false
 					},
 					"uid": 66,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"id": 0
+					},
 					"behaviors": {
 						"Solid": {
 							"properties": {
@@ -272,7 +191,9 @@
 						"live-preview": false
 					},
 					"uid": 67,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"id": 1
+					},
 					"behaviors": {
 						"Solid": {
 							"properties": {
@@ -308,7 +229,9 @@
 						"live-preview": false
 					},
 					"uid": 68,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"id": 0
+					},
 					"behaviors": {
 						"Solid": {
 							"properties": {
@@ -528,7 +451,9 @@
 						"live-preview": false
 					},
 					"uid": 86,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"id": 0
+					},
 					"behaviors": {
 						"Solid": {
 							"properties": {
@@ -564,7 +489,9 @@
 						"live-preview": false
 					},
 					"uid": 87,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"id": 0
+					},
 					"behaviors": {
 						"Solid": {
 							"properties": {
@@ -600,7 +527,9 @@
 						"live-preview": false
 					},
 					"uid": 20,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"id": 0
+					},
 					"behaviors": {
 						"Solid": {
 							"properties": {
@@ -636,7 +565,9 @@
 						"live-preview": false
 					},
 					"uid": 22,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"id": 0
+					},
 					"behaviors": {
 						"Solid": {
 							"properties": {
@@ -672,7 +603,9 @@
 						"live-preview": false
 					},
 					"uid": 28,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"id": 0
+					},
 					"behaviors": {
 						"Solid": {
 							"properties": {
@@ -708,7 +641,9 @@
 						"live-preview": false
 					},
 					"uid": 9,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"id": 0
+					},
 					"behaviors": {
 						"Solid": {
 							"properties": {
@@ -744,7 +679,9 @@
 						"live-preview": false
 					},
 					"uid": 16,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"id": 0
+					},
 					"behaviors": {
 						"Solid": {
 							"properties": {
@@ -780,7 +717,9 @@
 						"live-preview": false
 					},
 					"uid": 17,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"id": 0
+					},
 					"behaviors": {
 						"Solid": {
 							"properties": {

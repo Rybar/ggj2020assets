@@ -75,6 +75,35 @@
 							"sid": 447550952054682
 						},
 						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 248328549529695,
+							"parameters": {
+								"object-to-create": "shipController",
+								"layer": "\"Ship\"",
+								"x": "ship_spawn_loc.X",
+								"y": "ship_spawn_loc.Y"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "shipController",
+							"sid": 314983875339372,
+							"parameters": {
+								"instance-variable": "isActive",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "shipController",
+							"sid": 819694394719340,
+							"parameters": {
+								"instance-variable": "id",
+								"value": "AdvancedRandom.Permutation(curShipIndex)"
+							}
+						},
+						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
 							"sid": 776606511801112,
@@ -102,12 +131,12 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 705438896456996,
+									"sid": 593372863049596,
 									"parameters": {
 										"object-to-create": "stars",
 										"layer": "\"BG\"",
 										"x": "random(0, LayoutWidth)",
-										"y": "100"
+										"y": "random(0, 280)"
 									}
 								},
 								{
@@ -121,13 +150,25 @@
 								{
 									"id": "set-z-elevation",
 									"objectClass": "stars",
-									"sid": 115956056316025,
+									"sid": 956240239633641,
 									"parameters": {
-										"z": "random(-50, 50)"
+										"z": "random(-50, 25)"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "stars",
+									"sid": 157470280777876,
+									"parameters": {
+										"collisions": "disabled"
 									}
 								}
 							],
 							"sid": 761372694612184
+						},
+						{
+							"eventType": "comment",
+							"text": "DEBUG: TESTING ONLY --------------------------------------"
 						},
 						{
 							"eventType": "block",
@@ -156,6 +197,15 @@
 									}
 								},
 								{
+									"id": "set-object-time-scale",
+									"objectClass": "System",
+									"sid": 511938124801738,
+									"parameters": {
+										"object": "SysObj",
+										"time-scale": "1"
+									}
+								},
+								{
 									"id": "set-visible",
 									"objectClass": "SysObj",
 									"sid": 251703940694505,
@@ -165,6 +215,14 @@
 								}
 							],
 							"sid": 203606924076507
+						},
+						{
+							"eventType": "comment",
+							"text": "---------------------------------------------------------------"
+						},
+						{
+							"eventType": "comment",
+							"text": "DEBUG: TESTING ONLY --------------------------------------"
 						},
 						{
 							"eventType": "block",
@@ -202,15 +260,6 @@
 									}
 								},
 								{
-									"id": "set-object-time-scale",
-									"objectClass": "System",
-									"sid": 457082343888529,
-									"parameters": {
-										"object": "SysObj",
-										"time-scale": "1"
-									}
-								},
-								{
 									"id": "createPermutationTable",
 									"objectClass": "AdvancedRandom",
 									"sid": 665776975709320,
@@ -228,40 +277,8 @@
 							"sid": 727468435088492
 						},
 						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 319062976976940,
-									"parameters": {
-										"object-to-create": "shipController",
-										"layer": "\"Ship\"",
-										"x": "ship_spawn_loc.X",
-										"y": "ship_spawn_loc.Y"
-									}
-								},
-								{
-									"id": "set-boolean-instvar",
-									"objectClass": "shipController",
-									"sid": 543430002035228,
-									"parameters": {
-										"instance-variable": "isActive",
-										"value": "false"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "shipController",
-									"sid": 782188385091267,
-									"parameters": {
-										"instance-variable": "id",
-										"value": "AdvancedRandom.Permutation(curShipIndex)"
-									}
-								}
-							],
-							"sid": 464470911753029
+							"eventType": "comment",
+							"text": "---------------------------------------------------------------"
 						},
 						{
 							"eventType": "block",
@@ -331,46 +348,6 @@
 									"sid": 823619501902178,
 									"parameters": {
 										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "pin-to-object",
-									"objectClass": "ship_BG2_1",
-									"sid": 388940488220492,
-									"behaviorType": "Pin",
-									"parameters": {
-										"pin-to": "ship_col_1",
-										"mode": "position-angle"
-									}
-								},
-								{
-									"id": "pin-to-object",
-									"objectClass": "ship_BG_1",
-									"sid": 901579485279095,
-									"behaviorType": "Pin",
-									"parameters": {
-										"pin-to": "ship_col_1",
-										"mode": "position-angle"
-									}
-								},
-								{
-									"id": "pin-to-object",
-									"objectClass": "ship_jumpthru_1",
-									"sid": 795003001078129,
-									"behaviorType": "Pin",
-									"parameters": {
-										"pin-to": "ship_col_1",
-										"mode": "position-angle"
-									}
-								},
-								{
-									"id": "pin-to-object",
-									"objectClass": "ship_entire_collider_1",
-									"sid": 702831136814509,
-									"behaviorType": "Pin",
-									"parameters": {
-										"pin-to": "ship_col_1",
-										"mode": "position-angle"
 									}
 								},
 								{
@@ -527,7 +504,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Flight controller to ship wheel",
+			"title": "Flight controller to ship wheel and repair objects",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -615,9 +592,28 @@
 													}
 												},
 												{
+													"id": "set-instvar-value",
+													"objectClass": "shipController",
+													"sid": 183573089185601,
+													"parameters": {
+														"instance-variable": "xDistFromShipGraphics",
+														"value": "Self.X - ship_col_1.X"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "shipController",
+													"sid": 536803173768147,
+													"parameters": {
+														"instance-variable": "yDistFromShipGraphics",
+														"value": "Self.Y - ship_col_1.Y"
+													}
+												},
+												{
 													"id": "pin-to-object",
 													"objectClass": "ship_col_1",
 													"sid": 650575789412710,
+													"disabled": true,
 													"behaviorType": "Pin",
 													"parameters": {
 														"pin-to": "shipController",
@@ -811,41 +807,6 @@
 												{
 													"id": "create-object",
 													"objectClass": "System",
-													"sid": 892763719381242,
-													"disabled": true,
-													"parameters": {
-														"object-to-create": "repairHighlight",
-														"layer": "\"Player\"",
-														"x": "repairObj.X",
-														"y": "repairObj.Y - 6"
-													}
-												},
-												{
-													"id": "flash",
-													"objectClass": "repairHighlight",
-													"sid": 464766082576136,
-													"disabled": true,
-													"behaviorType": "Flash",
-													"parameters": {
-														"on-time": "random(0.2, 0.4)",
-														"off-time": "random(0.2, 0.4)",
-														"duration": "2"
-													}
-												},
-												{
-													"id": "pin-to-object",
-													"objectClass": "repairHighlight",
-													"sid": 297361071629585,
-													"disabled": true,
-													"behaviorType": "Pin",
-													"parameters": {
-														"pin-to": "repairHighlight",
-														"mode": "position-angle"
-													}
-												},
-												{
-													"id": "create-object",
-													"objectClass": "System",
 													"sid": 600294538491158,
 													"parameters": {
 														"object-to-create": "repairProgressBar",
@@ -1011,41 +972,6 @@
 					"sid": 728642067035094
 				}
 			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "shipController",
-					"sid": 699274954743729,
-					"parameters": {
-						"object": "ground"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "shake",
-					"objectClass": "camera",
-					"sid": 222686186551639,
-					"behaviorType": "ScrollTo",
-					"parameters": {
-						"magnitude": "5",
-						"duration": "0.4",
-						"mode": "reducing-magnitude"
-					}
-				},
-				{
-					"callFunction": "StartFreezeFrame",
-					"sid": 665783184848089,
-					"parameters": [
-						"0.08"
-					]
-				}
-			],
-			"sid": 436585212316107,
-			"disabled": true
 		},
 		{
 			"eventType": "include",

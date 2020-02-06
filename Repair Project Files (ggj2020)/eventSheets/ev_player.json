@@ -65,11 +65,21 @@
 			"eventType": "variable",
 			"name": "PLAYER_MAX_HP",
 			"type": "number",
-			"initialValue": "7",
+			"initialValue": "5",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 619542988559660
+		},
+		{
+			"eventType": "variable",
+			"name": "SHIP_ACCEL",
+			"type": "number",
+			"initialValue": "200",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 418974530977236
 		},
 		{
 			"eventType": "variable",
@@ -82,38 +92,19 @@
 			"sid": 358957929072161
 		},
 		{
-			"eventType": "variable",
-			"name": "SHIP_ACCEL",
-			"type": "number",
-			"initialValue": "200",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 337938430256037
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
 					"id": "every-tick",
 					"objectClass": "System",
-					"sid": 241748603201764
+					"sid": 428062207757907
 				}
 			],
 			"actions": [
 				{
-					"id": "set-position",
-					"objectClass": "player_anim",
-					"sid": 465883377385760,
-					"parameters": {
-						"x": "player_base.X",
-						"y": "player_base.Y"
-					}
-				},
-				{
 					"id": "set-instvar-value",
 					"objectClass": "shipController",
-					"sid": 292029539757176,
+					"sid": 217432692240405,
 					"parameters": {
 						"instance-variable": "dmgPercent",
 						"value": "clamp(Self.dmgPercent, 0, 100)"
@@ -122,22 +113,125 @@
 				{
 					"id": "set-instvar-value",
 					"objectClass": "player_base",
-					"sid": 824663636242691,
+					"sid": 777184718290751,
 					"parameters": {
 						"instance-variable": "health",
 						"value": "clamp(Self.health, 0, PLAYER_MAX_HP)"
 					}
+				},
+				{
+					"id": "set-width",
+					"objectClass": "repairProgressBar",
+					"sid": 674763230969209,
+					"parameters": {
+						"width": "Self.originalWidth * (Self.prog / 100)"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "repairProgressBar",
+					"sid": 767753452506714,
+					"parameters": {
+						"instance-variable": "prog",
+						"value": "clamp(Self.prog, 0, 100)"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "ship_BG2_1",
+					"sid": 284613416597758,
+					"parameters": {
+						"x": "shipController.X - shipController.xDistFromShipGraphics",
+						"y": "shipController.Y - shipController.yDistFromShipGraphics"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "ship_BG_1",
+					"sid": 393941975688548,
+					"parameters": {
+						"x": "shipController.X - shipController.xDistFromShipGraphics",
+						"y": "shipController.Y - shipController.yDistFromShipGraphics"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "ship_jumpthru_1",
+					"sid": 963113827796999,
+					"parameters": {
+						"x": "shipController.X - shipController.xDistFromShipGraphics",
+						"y": "shipController.Y - shipController.yDistFromShipGraphics"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "ship_entire_collider_1",
+					"sid": 263047441642977,
+					"parameters": {
+						"x": "shipController.X - shipController.xDistFromShipGraphics + 145",
+						"y": "shipController.Y - shipController.yDistFromShipGraphics + 92"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "ship_col_1",
+					"sid": 845640327984788,
+					"parameters": {
+						"x": "shipController.X - shipController.xDistFromShipGraphics",
+						"y": "shipController.Y - shipController.yDistFromShipGraphics"
+					}
 				}
 			],
-			"sid": 914220584197158,
+			"sid": 384195659160220,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
 							"id": "is-boolean-instance-variable-set",
+							"objectClass": "shipController",
+							"sid": 800717667949917,
+							"parameters": {
+								"instance-variable": "isActive"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
 							"objectClass": "player_base",
-							"sid": 223729048730893,
+							"sid": 864992849478184,
+							"parameters": {
+								"x": "shipController.X",
+								"y": "shipController.Y"
+							}
+						}
+					],
+					"sid": 807856983906090
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "player_anim",
+							"sid": 382733664484049,
+							"parameters": {
+								"x": "player_base.X",
+								"y": "player_base.Y"
+							}
+						}
+					],
+					"sid": 526748841775437
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "player_base",
+							"sid": 318778027871375,
 							"parameters": {
 								"instance-variable": "isCrouching"
 							}
@@ -147,7 +241,7 @@
 						{
 							"id": "set-max-speed",
 							"objectClass": "player_base",
-							"sid": 247973242644602,
+							"sid": 210024566258261,
 							"behaviorType": "Platform",
 							"parameters": {
 								"max-speed": "PLAYER_SPEED_CROUCH"
@@ -156,14 +250,14 @@
 						{
 							"id": "set-jump-strength",
 							"objectClass": "player_base",
-							"sid": 716974132772966,
+							"sid": 559693187346049,
 							"behaviorType": "Platform",
 							"parameters": {
 								"jump-strength": "PLAYER_JUMPSTR_CROUCH"
 							}
 						}
 					],
-					"sid": 180950993041843
+					"sid": 779797010313508
 				},
 				{
 					"eventType": "block",
@@ -171,7 +265,7 @@
 						{
 							"id": "is-boolean-instance-variable-set",
 							"objectClass": "player_base",
-							"sid": 356263166695418,
+							"sid": 795792446278665,
 							"parameters": {
 								"instance-variable": "isCrouching"
 							},
@@ -182,7 +276,7 @@
 						{
 							"id": "set-max-speed",
 							"objectClass": "player_base",
-							"sid": 840356932403275,
+							"sid": 211358532848598,
 							"behaviorType": "Platform",
 							"parameters": {
 								"max-speed": "PLAYER_SPEED_NORM"
@@ -191,14 +285,14 @@
 						{
 							"id": "set-jump-strength",
 							"objectClass": "player_base",
-							"sid": 195169779270452,
+							"sid": 449346531826101,
 							"behaviorType": "Platform",
 							"parameters": {
 								"jump-strength": "PLAYER_JUMPSTR_NORM"
 							}
 						}
 					],
-					"sid": 251978214091063
+					"sid": 874242033734960
 				}
 			]
 		},
@@ -206,40 +300,48 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-created",
-					"objectClass": "player_base",
-					"sid": 745493009369563
+					"id": "on-any-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 511253794174570
 				}
 			],
 			"actions": [
 				{
-					"id": "set-instvar-value",
-					"objectClass": "player_base",
-					"sid": 234591359743533,
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 100560348672373,
 					"parameters": {
-						"instance-variable": "health",
-						"value": "PLAYER_MAX_HP"
-					}
-				},
-				{
-					"id": "set-solid-collision-filter",
-					"objectClass": "player_base",
-					"sid": 911835241896088,
-					"parameters": {
-						"mode": "exclusive",
-						"tags": "\"shipcollider\""
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "player_base",
-					"sid": 501778373950398,
-					"parameters": {
-						"visibility": "invisible"
+						"variable": "inputType",
+						"value": "0"
 					}
 				}
 			],
-			"sid": 800819495970416
+			"sid": 654728137146598
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 629113279070765,
+					"parameters": {
+						"gamepad": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 641070602697030,
+					"parameters": {
+						"variable": "inputType",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 216447650156564
 		},
 		{
 			"eventType": "block",
@@ -275,421 +377,503 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-button-down",
-							"objectClass": "Gamepad",
-							"sid": 575518790988567,
-							"parameters": {
-								"gamepad": "0",
-								"button": "d-pad-down"
-							}
-						},
-						{
-							"id": "is-falling",
-							"objectClass": "player_base",
-							"sid": 905086365740227,
-							"behaviorType": "Platform",
-							"isInverted": true
-						},
-						{
-							"id": "is-jumping",
-							"objectClass": "player_base",
-							"sid": 968323295392830,
-							"behaviorType": "Platform",
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "player_base",
-							"sid": 213121758178697,
-							"parameters": {
-								"instance-variable": "isCrouching",
-								"value": "true"
-							}
-						}
-					],
-					"sid": 353970814117523
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-axis",
-							"objectClass": "Gamepad",
-							"sid": 749365781685690,
-							"parameters": {
-								"gamepad": "0",
-								"axis": "left-analog-y-axis",
-								"comparison": 4,
-								"value": "50"
-							}
-						},
-						{
-							"id": "is-falling",
-							"objectClass": "player_base",
-							"sid": 276234478548756,
-							"behaviorType": "Platform",
-							"isInverted": true
-						},
-						{
-							"id": "is-jumping",
-							"objectClass": "player_base",
-							"sid": 677616694544560,
-							"behaviorType": "Platform",
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "player_base",
-							"sid": 331899697787755,
-							"parameters": {
-								"instance-variable": "isCrouching",
-								"value": "true"
-							}
-						}
-					],
-					"sid": 745502921774587
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-button-pressed",
-							"objectClass": "Gamepad",
-							"sid": 727536907566861,
-							"parameters": {
-								"gamepad": "0",
-								"button": "button-a"
-							}
-						},
-						{
-							"id": "is-button-down",
-							"objectClass": "Gamepad",
-							"sid": 276396156866965,
-							"parameters": {
-								"gamepad": "0",
-								"button": "d-pad-down"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "fall-through",
-							"objectClass": "player_base",
-							"sid": 330100457081646,
-							"behaviorType": "Platform"
-						}
-					],
-					"sid": 371392893668972
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-button-pressed",
-							"objectClass": "Gamepad",
-							"sid": 506097073613401,
-							"parameters": {
-								"gamepad": "0",
-								"button": "button-a"
-							}
-						},
-						{
-							"id": "compare-axis",
-							"objectClass": "Gamepad",
-							"sid": 246784850946304,
-							"parameters": {
-								"gamepad": "0",
-								"axis": "left-analog-y-axis",
-								"comparison": 4,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "fall-through",
-							"objectClass": "player_base",
-							"sid": 436897651213576,
-							"behaviorType": "Platform"
-						}
-					],
-					"sid": 355348435461702
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-button-down",
-							"objectClass": "Gamepad",
-							"sid": 948701794825067,
-							"parameters": {
-								"gamepad": "0",
-								"button": "d-pad-down"
-							},
-							"isInverted": true
-						},
-						{
-							"id": "compare-axis",
-							"objectClass": "Gamepad",
-							"sid": 767014308497294,
-							"parameters": {
-								"gamepad": "0",
-								"axis": "left-analog-y-axis",
-								"comparison": 3,
-								"value": "50"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "player_base",
-							"sid": 213619088307168,
-							"parameters": {
-								"instance-variable": "isCrouching",
-								"value": "false"
-							}
-						}
-					],
-					"sid": 617221069659756
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-button-down",
-							"objectClass": "Gamepad",
-							"sid": 865918500864153,
-							"parameters": {
-								"gamepad": "0",
-								"button": "d-pad-left"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "player_base",
-							"sid": 549759622384548,
-							"behaviorType": "Platform",
-							"parameters": {
-								"control": "left"
-							}
-						},
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "player_base",
-							"sid": 873829017654280,
-							"parameters": {
-								"instance-variable": "isMovingRight",
-								"value": "false"
-							}
-						}
-					],
-					"sid": 424614335878968
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-button-down",
-							"objectClass": "Gamepad",
-							"sid": 563600725196223,
-							"parameters": {
-								"gamepad": "0",
-								"button": "d-pad-right"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "player_base",
-							"sid": 266051940706711,
-							"behaviorType": "Platform",
-							"parameters": {
-								"control": "right"
-							}
-						},
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "player_base",
-							"sid": 522777852579116,
-							"parameters": {
-								"instance-variable": "isMovingRight",
-								"value": "true"
-							}
-						}
-					],
-					"sid": 560188160438501
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-button-pressed",
-							"objectClass": "Gamepad",
-							"sid": 633898020509532,
-							"parameters": {
-								"gamepad": "0",
-								"button": "button-a"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "player_base",
-							"sid": 902763714730367,
-							"behaviorType": "Platform",
-							"parameters": {
-								"control": "jump"
-							}
-						}
-					],
-					"sid": 707306685598762,
+					"eventType": "group",
+					"disabled": false,
+					"title": "Set crouching",
+					"description": "",
+					"isActiveOnStart": true,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "is-jumping",
-									"objectClass": "player_base",
-									"sid": 355200731780207,
-									"behaviorType": "Platform",
+									"id": "is-button-down",
+									"objectClass": "Gamepad",
+									"sid": 620108700838163,
+									"parameters": {
+										"gamepad": "0",
+										"button": "d-pad-down"
+									}
+								},
+								{
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 111954412978258,
+									"parameters": {
+										"gamepad": "0",
+										"axis": "left-analog-y-axis",
+										"comparison": 4,
+										"value": "50"
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 305685458746439,
+									"parameters": {
+										"key": 40
+									}
+								}
+							],
+							"actions": [],
+							"sid": 310836195678550,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-falling",
+											"objectClass": "player_base",
+											"sid": 805951762149100,
+											"behaviorType": "Platform",
+											"isInverted": true
+										},
+										{
+											"id": "is-jumping",
+											"objectClass": "player_base",
+											"sid": 918633736624984,
+											"behaviorType": "Platform",
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "player_base",
+											"sid": 119818409986623,
+											"parameters": {
+												"instance-variable": "isCrouching",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 763748329646817
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-button-down",
+									"objectClass": "Gamepad",
+									"sid": 190228543674380,
+									"parameters": {
+										"gamepad": "0",
+										"button": "d-pad-down"
+									},
 									"isInverted": true
 								},
 								{
-									"id": "is-falling",
-									"objectClass": "player_base",
-									"sid": 599746322140150,
-									"behaviorType": "Platform",
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 578618247184107,
+									"parameters": {
+										"gamepad": "0",
+										"axis": "left-analog-y-axis",
+										"comparison": 3,
+										"value": "50"
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 632449369995484,
+									"parameters": {
+										"key": 40
+									},
 									"isInverted": true
 								}
 							],
 							"actions": [
 								{
-									"id": "play-by-name",
-									"objectClass": "Audio",
-									"sid": 370473796966869,
+									"id": "set-boolean-instvar",
+									"objectClass": "player_base",
+									"sid": 992842883832901,
 									"parameters": {
-										"folder": "sounds",
-										"audio-file-name": "\"jump\"",
-										"loop": "not-looping",
-										"volume": "0",
-										"tag-optional": "\"jump\""
+										"instance-variable": "isCrouching",
+										"value": "false"
 									}
 								}
 							],
-							"sid": 640234743605303
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-axis",
-							"objectClass": "Gamepad",
-							"sid": 227621796451583,
-							"parameters": {
-								"gamepad": "0",
-								"axis": "left-analog-x-axis",
-								"comparison": 4,
-								"value": "0"
-							}
+							"sid": 979333294428239
 						}
 					],
-					"actions": [
+					"sid": 250075277635473
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Fall through jump-thru platforms",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
 						{
-							"id": "simulate-control",
-							"objectClass": "player_base",
-							"sid": 798160765930876,
-							"behaviorType": "Platform",
-							"parameters": {
-								"control": "right"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 715016817610309,
+									"parameters": {
+										"gamepad": "0",
+										"button": "button-a"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "player_base",
+									"sid": 469383590339705,
+									"parameters": {
+										"instance-variable": "isCrouching"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "fall-through",
+									"objectClass": "player_base",
+									"sid": 303561431367969,
+									"behaviorType": "Platform"
+								}
+							],
+							"sid": 233768830983412
 						},
 						{
-							"id": "set-boolean-instvar",
-							"objectClass": "player_base",
-							"sid": 628055380132209,
-							"parameters": {
-								"instance-variable": "isMovingRight",
-								"value": "true"
-							}
-						}
-					],
-					"sid": 324579378057540
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-axis",
-							"objectClass": "Gamepad",
-							"sid": 408177941034418,
-							"parameters": {
-								"gamepad": "0",
-								"axis": "left-analog-x-axis",
-								"comparison": 2,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "player_base",
-							"sid": 366154608661313,
-							"behaviorType": "Platform",
-							"parameters": {
-								"control": "left"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 678110167124490,
+									"parameters": {
+										"gamepad": "0",
+										"button": "button-a"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "player_base",
+									"sid": 209955985790004,
+									"parameters": {
+										"instance-variable": "isCrouching"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "fall-through",
+									"objectClass": "player_base",
+									"sid": 939173448309366,
+									"behaviorType": "Platform"
+								}
+							],
+							"sid": 862052901378200
 						},
 						{
-							"id": "set-boolean-instvar",
-							"objectClass": "player_base",
-							"sid": 685986681971230,
-							"parameters": {
-								"instance-variable": "isMovingRight",
-								"value": "false"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 389473218523048,
+									"parameters": {
+										"key": 88
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "player_base",
+									"sid": 285293708040182,
+									"parameters": {
+										"instance-variable": "isCrouching"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "fall-through",
+									"objectClass": "player_base",
+									"sid": 670673384255123,
+									"behaviorType": "Platform"
+								}
+							],
+							"sid": 895468787688009
 						}
 					],
-					"sid": 851878996679840
+					"sid": 937173914584404
 				},
 				{
-					"eventType": "block",
-					"conditions": [
+					"eventType": "group",
+					"disabled": false,
+					"title": "Left-right movement",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
 						{
-							"id": "is-boolean-instance-variable-set",
-							"objectClass": "shipController",
-							"sid": 552674589474216,
-							"parameters": {
-								"instance-variable": "isActive"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-button-down",
+									"objectClass": "Gamepad",
+									"sid": 143302768782885,
+									"parameters": {
+										"gamepad": "0",
+										"button": "d-pad-left"
+									}
+								},
+								{
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 748247151952008,
+									"parameters": {
+										"gamepad": "0",
+										"axis": "left-analog-x-axis",
+										"comparison": 2,
+										"value": "0"
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 851769727216836,
+									"parameters": {
+										"key": 37
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "player_base",
+									"sid": 676803764734812,
+									"behaviorType": "Platform",
+									"parameters": {
+										"control": "left"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "player_base",
+									"sid": 264335112355487,
+									"parameters": {
+										"instance-variable": "isMovingRight",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 299980036056564,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-button-down",
+									"objectClass": "Gamepad",
+									"sid": 232619998666354,
+									"parameters": {
+										"gamepad": "0",
+										"button": "d-pad-right"
+									}
+								},
+								{
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 988446341884011,
+									"parameters": {
+										"gamepad": "0",
+										"axis": "left-analog-x-axis",
+										"comparison": 4,
+										"value": "0"
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 275032827090590,
+									"parameters": {
+										"key": 39
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "player_base",
+									"sid": 903335086495059,
+									"behaviorType": "Platform",
+									"parameters": {
+										"control": "right"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "player_base",
+									"sid": 684470144024326,
+									"parameters": {
+										"instance-variable": "isMovingRight",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 825389932241164,
+							"isOrBlock": true
 						}
 					],
-					"actions": [
+					"sid": 775098590373325
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Jump",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
 						{
-							"id": "set-position",
-							"objectClass": "player_base",
-							"sid": 203961938740819,
-							"parameters": {
-								"x": "shipController.X",
-								"y": "shipController.Y"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 594899697811479,
+									"parameters": {
+										"gamepad": "0",
+										"button": "button-a"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "player_base",
+									"sid": 320150081664234,
+									"behaviorType": "Platform",
+									"parameters": {
+										"control": "jump"
+									}
+								}
+							],
+							"sid": 515420597168759,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-jumping",
+											"objectClass": "player_base",
+											"sid": 927794732731974,
+											"behaviorType": "Platform",
+											"isInverted": true
+										},
+										{
+											"id": "is-falling",
+											"objectClass": "player_base",
+											"sid": 365576252649098,
+											"behaviorType": "Platform",
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "player_base",
+											"sid": 397360642534058,
+											"parameters": {
+												"instance-variable": "isRepairing"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "play-by-name",
+											"objectClass": "Audio",
+											"sid": 716183862000035,
+											"parameters": {
+												"folder": "sounds",
+												"audio-file-name": "\"jump\"",
+												"loop": "not-looping",
+												"volume": "0",
+												"tag-optional": "\"jump\""
+											}
+										}
+									],
+									"sid": 895774061586180
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 548584205214158,
+									"parameters": {
+										"key": 88
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "player_base",
+									"sid": 886794183327850,
+									"behaviorType": "Platform",
+									"parameters": {
+										"control": "jump"
+									}
+								}
+							],
+							"sid": 433277217056260,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-jumping",
+											"objectClass": "player_base",
+											"sid": 897275259234412,
+											"behaviorType": "Platform",
+											"isInverted": true
+										},
+										{
+											"id": "is-falling",
+											"objectClass": "player_base",
+											"sid": 267447488051027,
+											"behaviorType": "Platform",
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "player_base",
+											"sid": 787696419996438,
+											"parameters": {
+												"instance-variable": "isRepairing"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "play-by-name",
+											"objectClass": "Audio",
+											"sid": 414678720443751,
+											"parameters": {
+												"folder": "sounds",
+												"audio-file-name": "\"jump\"",
+												"loop": "not-looping",
+												"volume": "0",
+												"tag-optional": "\"jump\""
+											}
+										}
+									],
+									"sid": 697899522544841
+								}
+							]
 						}
 					],
-					"sid": 830849248572526
+					"sid": 637187044460798
 				},
 				{
 					"eventType": "block",
@@ -697,20 +881,20 @@
 						{
 							"id": "is-on-floor",
 							"objectClass": "player_base",
-							"sid": 174341150713176,
+							"sid": 782756402677795,
 							"behaviorType": "Platform"
 						},
 						{
 							"id": "trigger-once-while-true",
 							"objectClass": "System",
-							"sid": 870227551288569
+							"sid": 320905075704799
 						}
 					],
 					"actions": [
 						{
 							"id": "play-by-name",
 							"objectClass": "Audio",
-							"sid": 619223922204459,
+							"sid": 174532158438174,
 							"parameters": {
 								"folder": "sounds",
 								"audio-file-name": "\"land\"",
@@ -720,7 +904,7 @@
 							}
 						}
 					],
-					"sid": 198637903678477
+					"sid": 777509484161585
 				}
 			],
 			"sid": 305367303219703
@@ -728,7 +912,317 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Crouching",
+			"title": "Repair ship part controls",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 832250892986770,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-b"
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 417364981985841,
+							"parameters": {
+								"key": 90
+							}
+						}
+					],
+					"actions": [],
+					"sid": 421868230776449,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "player_base",
+									"sid": 611775085075542,
+									"parameters": {
+										"object": "repairObj"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "repairObj",
+									"sid": 189368026269973,
+									"parameters": {
+										"instance-variable": "repairProg",
+										"value": "repairSpeed * dt"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "repairObj",
+									"sid": 534119183772441,
+									"parameters": {
+										"instance-variable": "repairProg",
+										"value": "clamp(Self.repairProg, 0, 100)"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "player_base",
+									"sid": 298818368569799,
+									"parameters": {
+										"instance-variable": "isRepairing",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 509877194733016,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "repairProgressBar",
+											"sid": 508372586280995,
+											"parameters": {
+												"instance-variable": "id",
+												"comparison": 0,
+												"value": "repairObj.id"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "repairProgressBar",
+											"sid": 266123803722874,
+											"parameters": {
+												"instance-variable": "prog",
+												"value": "repairObj.repairProg"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "repairProgressBar",
+											"sid": 569025159187228,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "repairProgressBarBG",
+											"sid": 561568423010908,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 521748865000190
+								}
+							]
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 149710958798939,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-b"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 434165767290885,
+							"parameters": {
+								"key": 90
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "player_base",
+							"sid": 735185239451094,
+							"parameters": {
+								"instance-variable": "isRepairing",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "repairProgressBar",
+							"sid": 670903988704085,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "repairProgressBarBG",
+							"sid": 821513130808782,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 379833178203651
+				}
+			],
+			"sid": 214829334626307
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Repair progress bar",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "repairProgressBar",
+							"sid": 550264110494094,
+							"parameters": {
+								"instance-variable": "prog",
+								"comparison": 5,
+								"value": "100"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "repairProgressBar",
+							"sid": 328465875502710,
+							"parameters": {
+								"instance-variable": "isDone"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "repairProgressBar",
+							"sid": 984075213267465,
+							"parameters": {
+								"instance-variable": "isDone",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "repairProgressBar",
+							"sid": 340567267212164,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"BlackWhite\""
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "SysObj",
+							"sid": 606231450749145,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "0.2",
+								"type": "once",
+								"tag": "\"progEffect\""
+							}
+						},
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 224191540482356,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "\"fixed\"",
+								"loop": "not-looping",
+								"volume": "-20",
+								"tag-optional": "\"fixed\""
+							}
+						}
+					],
+					"sid": 882778020151116,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "repairObj",
+									"sid": 382615502013649,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "repairProgressBar.id"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "repairObj",
+									"sid": 674480019627690,
+									"parameters": {
+										"animation": "Self.rndAnim & \"_fixed\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 670879218069569
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "SysObj",
+							"sid": 848919562392063,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"progEffect\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "repairProgressBar",
+							"sid": 488781637782734,
+							"parameters": {
+								"mode": "disable",
+								"effect": "\"BlackWhite\""
+							}
+						}
+					],
+					"sid": 170038159296466
+				}
+			],
+			"sid": 628292048070487
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Set crouching collider",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -783,7 +1277,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Animation",
+			"title": "Player Animation",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -1114,6 +1608,15 @@
 								"instance-variable": "isRepairing"
 							},
 							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "shipController",
+							"sid": 973484009620913,
+							"parameters": {
+								"instance-variable": "isActive"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -1131,6 +1634,167 @@
 				}
 			],
 			"sid": 566218327472240
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Activate the ship",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-released",
+							"objectClass": "Gamepad",
+							"sid": 151468791902023,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-b"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "player_base",
+							"sid": 393370949429689,
+							"parameters": {
+								"object": "shipController"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "shipController",
+							"sid": 427530461159989,
+							"parameters": {
+								"instance-variable": "isActive"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "shipController",
+							"sid": 128996678166648,
+							"parameters": {
+								"instance-variable": "canActivate"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "shipController",
+							"sid": 708050115041695,
+							"parameters": {
+								"instance-variable": "isActive",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 496135516563785
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 468608192821861,
+							"parameters": {
+								"key": 88
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "player_base",
+							"sid": 903899966372247,
+							"parameters": {
+								"object": "shipController"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "shipController",
+							"sid": 602632019933032,
+							"parameters": {
+								"instance-variable": "isActive"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "shipController",
+							"sid": 583032167815185,
+							"parameters": {
+								"instance-variable": "canActivate"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "shipController",
+							"sid": 130516768146026,
+							"parameters": {
+								"instance-variable": "isActive",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 391152969436080
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 180879317438316,
+							"parameters": {
+								"key": 90
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "player_base",
+							"sid": 898951924225988,
+							"parameters": {
+								"object": "shipController"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "shipController",
+							"sid": 435850092042917,
+							"parameters": {
+								"instance-variable": "isActive"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "shipController",
+							"sid": 362091757121616,
+							"parameters": {
+								"instance-variable": "canActivate"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "shipController",
+							"sid": 416869551602793,
+							"parameters": {
+								"instance-variable": "isActive",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 302853976496325
+				}
+			],
+			"sid": 309366186000133
 		},
 		{
 			"eventType": "group",
@@ -1185,24 +1849,98 @@
 						{
 							"id": "is-boolean-instance-variable-set",
 							"objectClass": "shipController",
-							"sid": 327037121600887,
+							"sid": 958633707558043,
 							"parameters": {
-								"instance-variable": "isActive"
+								"instance-variable": "canActivate"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 754466370585093
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "wheelHighlight",
+							"sid": 741977202303112,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "wheelHighlight",
+							"sid": 694803649666031,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.2",
+								"off-time": "0.2",
+								"duration": "2"
+							}
+						}
+					],
+					"sid": 781465889863496
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-flash-ended",
+							"objectClass": "wheelHighlight",
+							"sid": 907768505288690,
+							"behaviorType": "Flash"
+						}
+					],
+					"actions": [
+						{
+							"id": "flash",
+							"objectClass": "wheelHighlight",
+							"sid": 197106976972821,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.2",
+								"off-time": "0.2",
+								"duration": "2"
+							}
+						}
+					],
+					"sid": 458256632366347
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "shipController",
+							"sid": 721201786899509,
+							"parameters": {
+								"object": "ground"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-enabled",
-							"objectClass": "player_base",
-							"sid": 554242185650519,
-							"behaviorType": "Platform",
+							"id": "shake",
+							"objectClass": "camera",
+							"sid": 361230590826806,
+							"behaviorType": "ScrollTo",
 							"parameters": {
-								"state": "disabled"
+								"magnitude": "5",
+								"duration": "0.4",
+								"mode": "reducing-magnitude"
 							}
+						},
+						{
+							"callFunction": "StartFreezeFrame",
+							"sid": 589603482622986,
+							"parameters": [
+								"0.08"
+							]
 						}
 					],
-					"sid": 919287060543065
+					"sid": 146872993921190
 				},
 				{
 					"eventType": "group",
@@ -1230,6 +1968,12 @@
 							],
 							"actions": [
 								{
+									"id": "stop-flashing",
+									"objectClass": "wheelHighlight",
+									"sid": 633436159584209,
+									"behaviorType": "Flash"
+								},
+								{
 									"id": "set-visible",
 									"objectClass": "wheelHighlight",
 									"sid": 521735312019654,
@@ -1245,12 +1989,6 @@
 									"parameters": {
 										"state": "disabled"
 									}
-								},
-								{
-									"id": "unpin",
-									"objectClass": "ship_col_1",
-									"sid": 502702494393935,
-									"behaviorType": "Pin"
 								},
 								{
 									"id": "set-enabled",
@@ -1279,39 +2017,12 @@
 									}
 								},
 								{
-									"id": "set-position-to-another-object",
-									"objectClass": "shipController",
-									"sid": 800596218027603,
-									"parameters": {
-										"object": "ship_entire_collider_1",
-										"image-point-optional": "0"
-									}
-								},
-								{
-									"id": "pin-to-object",
-									"objectClass": "ship_col_1",
-									"sid": 302703469121847,
-									"behaviorType": "Pin",
-									"parameters": {
-										"pin-to": "shipController",
-										"mode": "position-angle"
-									}
-								},
-								{
 									"id": "set-enabled",
 									"objectClass": "player_base",
 									"sid": 415910874472860,
 									"behaviorType": "Platform",
 									"parameters": {
 										"state": "disabled"
-									}
-								},
-								{
-									"id": "set-collisions-enabled",
-									"objectClass": "player_base",
-									"sid": 802627736948111,
-									"parameters": {
-										"collisions": "disabled"
 									}
 								},
 								{
@@ -1332,7 +2043,36 @@
 									}
 								}
 							],
-							"sid": 780642409012874
+							"sid": 780642409012874,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 547567152452028,
+											"parameters": {
+												"first-value": "LayoutName",
+												"comparison": 0,
+												"second-value": "\"lay_space\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 509797495599028,
+											"parameters": {
+												"variable": "zoomLevel",
+												"value": "ZOOMED_OUT"
+											}
+										}
+									],
+									"sid": 887524888856428
+								}
+							]
 						}
 					],
 					"sid": 439491808654925
@@ -1345,504 +2085,773 @@
 					"isActiveOnStart": true,
 					"children": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-boolean-instance-variable-set",
-									"objectClass": "shipController",
-									"sid": 902525577132129,
-									"parameters": {
-										"instance-variable": "isActive"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "shipController",
-									"sid": 611054825061171,
-									"parameters": {
-										"instance-variable": "dirX",
-										"value": "Gamepad.Axis(0, 0) / 100"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "shipController",
-									"sid": 915552265053195,
-									"parameters": {
-										"instance-variable": "dirY",
-										"value": "Gamepad.Axis(0, 1) / 100"
-									}
-								}
-							],
-							"sid": 210488695218392,
+							"eventType": "group",
+							"disabled": false,
+							"title": "Gamepad Axis",
+							"description": "",
+							"isActiveOnStart": true,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-axis",
-											"objectClass": "Gamepad",
-											"sid": 745170260851091,
-											"parameters": {
-												"gamepad": "0",
-												"axis": "left-analog-x-axis",
-												"comparison": 4,
-												"value": "0"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
+											"id": "is-boolean-instance-variable-set",
 											"objectClass": "shipController",
-											"sid": 391924534397474,
-											"behaviorType": "8Direction",
+											"sid": 779237941519580,
 											"parameters": {
-												"control": "right"
+												"instance-variable": "isActive"
 											}
 										}
 									],
-									"sid": 326087954890515,
+									"actions": [],
+									"sid": 371900669534536,
 									"children": [
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "is-tag-playing",
-													"objectClass": "Audio",
-													"sid": 406258605570054,
+													"id": "compare-axis",
+													"objectClass": "Gamepad",
+													"sid": 263986026755269,
 													"parameters": {
-														"tag": "\"engine\""
-													},
-													"isInverted": true
+														"gamepad": "0",
+														"axis": "left-analog-x-axis",
+														"comparison": 4,
+														"value": "0"
+													}
 												}
 											],
 											"actions": [
 												{
-													"id": "play-by-name",
-													"objectClass": "Audio",
-													"sid": 733245412566645,
+													"id": "simulate-control",
+													"objectClass": "shipController",
+													"sid": 639430787259938,
+													"behaviorType": "8Direction",
 													"parameters": {
-														"folder": "sounds",
-														"audio-file-name": "\"engine\"",
-														"loop": "looping",
-														"volume": "0",
-														"tag-optional": "\"engine\""
+														"control": "right"
 													}
 												}
 											],
-											"sid": 669148918110389
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-axis",
-											"objectClass": "Gamepad",
-											"sid": 108229902140817,
-											"parameters": {
-												"gamepad": "0",
-												"axis": "left-analog-x-axis",
-												"comparison": 2,
-												"value": "0"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "shipController",
-											"sid": 170337743031352,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"control": "left"
-											}
-										}
-									],
-									"sid": 736142571537243,
-									"children": [
+											"sid": 636546535216647,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 444066601710800,
+															"parameters": {
+																"tag": "\"engine\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "play-by-name",
+															"objectClass": "Audio",
+															"sid": 514572809092735,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "\"engine\"",
+																"loop": "looping",
+																"volume": "0",
+																"tag-optional": "\"engine\""
+															}
+														}
+													],
+													"sid": 752298076064451
+												}
+											]
+										},
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "is-tag-playing",
-													"objectClass": "Audio",
-													"sid": 400569585421666,
+													"id": "compare-axis",
+													"objectClass": "Gamepad",
+													"sid": 666678887617953,
 													"parameters": {
-														"tag": "\"engine\""
-													},
-													"isInverted": true
+														"gamepad": "0",
+														"axis": "left-analog-x-axis",
+														"comparison": 2,
+														"value": "0"
+													}
 												}
 											],
 											"actions": [
 												{
-													"id": "play-by-name",
-													"objectClass": "Audio",
-													"sid": 601804647324968,
+													"id": "simulate-control",
+													"objectClass": "shipController",
+													"sid": 913854141959305,
+													"behaviorType": "8Direction",
 													"parameters": {
-														"folder": "sounds",
-														"audio-file-name": "\"engine\"",
-														"loop": "looping",
-														"volume": "0",
-														"tag-optional": "\"engine\""
+														"control": "left"
 													}
 												}
 											],
-											"sid": 184186437112573
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-axis",
-											"objectClass": "Gamepad",
-											"sid": 425330585417403,
-											"parameters": {
-												"gamepad": "0",
-												"axis": "left-analog-y-axis",
-												"comparison": 2,
-												"value": "0"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "shipController",
-											"sid": 281264644073840,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"control": "up"
-											}
-										}
-									],
-									"sid": 843050880286876,
-									"children": [
+											"sid": 123069448751114,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 817460418978282,
+															"parameters": {
+																"tag": "\"engine\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "play-by-name",
+															"objectClass": "Audio",
+															"sid": 358950888558018,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "\"engine\"",
+																"loop": "looping",
+																"volume": "0",
+																"tag-optional": "\"engine\""
+															}
+														}
+													],
+													"sid": 767725068533270
+												}
+											]
+										},
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "is-tag-playing",
-													"objectClass": "Audio",
-													"sid": 923951021541081,
+													"id": "compare-axis",
+													"objectClass": "Gamepad",
+													"sid": 526502695895835,
 													"parameters": {
-														"tag": "\"engine\""
-													},
-													"isInverted": true
+														"gamepad": "0",
+														"axis": "left-analog-y-axis",
+														"comparison": 2,
+														"value": "0"
+													}
 												}
 											],
 											"actions": [
 												{
-													"id": "play-by-name",
-													"objectClass": "Audio",
-													"sid": 115849060439809,
+													"id": "simulate-control",
+													"objectClass": "shipController",
+													"sid": 196052336495876,
+													"behaviorType": "8Direction",
 													"parameters": {
-														"folder": "sounds",
-														"audio-file-name": "\"engine\"",
-														"loop": "looping",
-														"volume": "0",
-														"tag-optional": "\"engine\""
+														"control": "up"
 													}
 												}
 											],
-											"sid": 794455877334833
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-axis",
-											"objectClass": "Gamepad",
-											"sid": 360963622185030,
-											"parameters": {
-												"gamepad": "0",
-												"axis": "left-analog-y-axis",
-												"comparison": 4,
-												"value": "0"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "shipController",
-											"sid": 652840433627092,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"control": "down"
-											}
-										}
-									],
-									"sid": 409909337589149,
-									"children": [
+											"sid": 709907060664088,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 944094907990985,
+															"parameters": {
+																"tag": "\"engine\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "play-by-name",
+															"objectClass": "Audio",
+															"sid": 367494558967191,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "\"engine\"",
+																"loop": "looping",
+																"volume": "0",
+																"tag-optional": "\"engine\""
+															}
+														}
+													],
+													"sid": 860622301928109
+												}
+											]
+										},
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "is-tag-playing",
-													"objectClass": "Audio",
-													"sid": 772185469529087,
+													"id": "compare-axis",
+													"objectClass": "Gamepad",
+													"sid": 107868727230851,
 													"parameters": {
-														"tag": "\"engine\""
-													},
-													"isInverted": true
+														"gamepad": "0",
+														"axis": "left-analog-y-axis",
+														"comparison": 4,
+														"value": "0"
+													}
 												}
 											],
 											"actions": [
 												{
-													"id": "play-by-name",
-													"objectClass": "Audio",
-													"sid": 877585185832512,
+													"id": "simulate-control",
+													"objectClass": "shipController",
+													"sid": 277832875674005,
+													"behaviorType": "8Direction",
 													"parameters": {
-														"folder": "sounds",
-														"audio-file-name": "\"engine\"",
-														"loop": "looping",
-														"volume": "0",
-														"tag-optional": "\"engine\""
+														"control": "down"
 													}
 												}
 											],
-											"sid": 307114811990829
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-button-down",
-											"objectClass": "Gamepad",
-											"sid": 511120901681060,
-											"parameters": {
-												"gamepad": "0",
-												"button": "d-pad-up"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "shipController",
-											"sid": 699026983545169,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"control": "up"
-											}
-										}
-									],
-									"sid": 193444816750689,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
+											"sid": 179633382096496,
+											"children": [
 												{
-													"id": "is-tag-playing",
-													"objectClass": "Audio",
-													"sid": 155457736626458,
-													"parameters": {
-														"tag": "\"engine\""
-													},
-													"isInverted": true
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 120478986202646,
+															"parameters": {
+																"tag": "\"engine\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "play-by-name",
+															"objectClass": "Audio",
+															"sid": 780924771056006,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "\"engine\"",
+																"loop": "looping",
+																"volume": "0",
+																"tag-optional": "\"engine\""
+															}
+														}
+													],
+													"sid": 119581097414666
 												}
-											],
-											"actions": [
-												{
-													"id": "play-by-name",
-													"objectClass": "Audio",
-													"sid": 878558254093565,
-													"parameters": {
-														"folder": "sounds",
-														"audio-file-name": "\"engine\"",
-														"loop": "looping",
-														"volume": "0",
-														"tag-optional": "\"engine\""
-													}
-												}
-											],
-											"sid": 567937490965103
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-button-down",
-											"objectClass": "Gamepad",
-											"sid": 777571447003577,
-											"parameters": {
-												"gamepad": "0",
-												"button": "d-pad-down"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "shipController",
-											"sid": 633419295679581,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"control": "down"
-											}
-										}
-									],
-									"sid": 605115298274926,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-tag-playing",
-													"objectClass": "Audio",
-													"sid": 365077046727274,
-													"parameters": {
-														"tag": "\"engine\""
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [
-												{
-													"id": "play-by-name",
-													"objectClass": "Audio",
-													"sid": 131062620264499,
-													"parameters": {
-														"folder": "sounds",
-														"audio-file-name": "\"engine\"",
-														"loop": "looping",
-														"volume": "0",
-														"tag-optional": "\"engine\""
-													}
-												}
-											],
-											"sid": 377662918525117
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-button-down",
-											"objectClass": "Gamepad",
-											"sid": 254694931243345,
-											"parameters": {
-												"gamepad": "0",
-												"button": "d-pad-left"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "shipController",
-											"sid": 706637950350480,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"control": "left"
-											}
-										}
-									],
-									"sid": 205863562220467,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-tag-playing",
-													"objectClass": "Audio",
-													"sid": 646485999968963,
-													"parameters": {
-														"tag": "\"engine\""
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [
-												{
-													"id": "play-by-name",
-													"objectClass": "Audio",
-													"sid": 653080968223467,
-													"parameters": {
-														"folder": "sounds",
-														"audio-file-name": "\"engine\"",
-														"loop": "looping",
-														"volume": "0",
-														"tag-optional": "\"engine\""
-													}
-												}
-											],
-											"sid": 159410043472827
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-button-down",
-											"objectClass": "Gamepad",
-											"sid": 834314592148974,
-											"parameters": {
-												"gamepad": "0",
-												"button": "d-pad-right"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "shipController",
-											"sid": 254582302978049,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"control": "right"
-											}
-										}
-									],
-									"sid": 353954681525799,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-tag-playing",
-													"objectClass": "Audio",
-													"sid": 231594472923496,
-													"parameters": {
-														"tag": "\"engine\""
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [
-												{
-													"id": "play-by-name",
-													"objectClass": "Audio",
-													"sid": 767336725229152,
-													"parameters": {
-														"folder": "sounds",
-														"audio-file-name": "\"engine\"",
-														"loop": "looping",
-														"volume": "0",
-														"tag-optional": "\"engine\""
-													}
-												}
-											],
-											"sid": 543030437448133
+											]
 										}
 									]
 								}
-							]
+							],
+							"sid": 171192905693151
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "Gamepad D-pad",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "shipController",
+											"sid": 874355729020563,
+											"parameters": {
+												"instance-variable": "isActive"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 279642753958965,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-button-down",
+													"objectClass": "Gamepad",
+													"sid": 992664950844685,
+													"parameters": {
+														"gamepad": "0",
+														"button": "d-pad-up"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "simulate-control",
+													"objectClass": "shipController",
+													"sid": 624151058449489,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"control": "up"
+													}
+												}
+											],
+											"sid": 906217610734461,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 780423597077614,
+															"parameters": {
+																"tag": "\"engine\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "play-by-name",
+															"objectClass": "Audio",
+															"sid": 656669773129765,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "\"engine\"",
+																"loop": "looping",
+																"volume": "0",
+																"tag-optional": "\"engine\""
+															}
+														}
+													],
+													"sid": 591278217828766
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-button-down",
+													"objectClass": "Gamepad",
+													"sid": 579119554506080,
+													"parameters": {
+														"gamepad": "0",
+														"button": "d-pad-down"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "simulate-control",
+													"objectClass": "shipController",
+													"sid": 897129060461939,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"control": "down"
+													}
+												}
+											],
+											"sid": 385085637627102,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 301379104140818,
+															"parameters": {
+																"tag": "\"engine\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "play-by-name",
+															"objectClass": "Audio",
+															"sid": 237297378565812,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "\"engine\"",
+																"loop": "looping",
+																"volume": "0",
+																"tag-optional": "\"engine\""
+															}
+														}
+													],
+													"sid": 458876591496092
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-button-down",
+													"objectClass": "Gamepad",
+													"sid": 556495834113547,
+													"parameters": {
+														"gamepad": "0",
+														"button": "d-pad-left"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "simulate-control",
+													"objectClass": "shipController",
+													"sid": 714187167196265,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"control": "left"
+													}
+												}
+											],
+											"sid": 644060123734934,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 365309605677866,
+															"parameters": {
+																"tag": "\"engine\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "play-by-name",
+															"objectClass": "Audio",
+															"sid": 221781787146933,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "\"engine\"",
+																"loop": "looping",
+																"volume": "0",
+																"tag-optional": "\"engine\""
+															}
+														}
+													],
+													"sid": 511638321236263
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-button-down",
+													"objectClass": "Gamepad",
+													"sid": 163700248301668,
+													"parameters": {
+														"gamepad": "0",
+														"button": "d-pad-right"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "simulate-control",
+													"objectClass": "shipController",
+													"sid": 839865896087843,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"control": "right"
+													}
+												}
+											],
+											"sid": 665031427793353,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 715678911054248,
+															"parameters": {
+																"tag": "\"engine\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "play-by-name",
+															"objectClass": "Audio",
+															"sid": 556919507342297,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "\"engine\"",
+																"loop": "looping",
+																"volume": "0",
+																"tag-optional": "\"engine\""
+															}
+														}
+													],
+													"sid": 301870510772483
+												}
+											]
+										}
+									]
+								}
+							],
+							"sid": 731549464714994
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "Keyboard arrows",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "shipController",
+											"sid": 396414275082050,
+											"parameters": {
+												"instance-variable": "isActive"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 442179697504466,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 262042312160551,
+													"parameters": {
+														"key": 38
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "simulate-control",
+													"objectClass": "shipController",
+													"sid": 524869356381453,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"control": "up"
+													}
+												}
+											],
+											"sid": 116088499360436,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 565964927079936,
+															"parameters": {
+																"tag": "\"engine\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "play-by-name",
+															"objectClass": "Audio",
+															"sid": 546802919992241,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "\"engine\"",
+																"loop": "looping",
+																"volume": "0",
+																"tag-optional": "\"engine\""
+															}
+														}
+													],
+													"sid": 940841488152471
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 300800509985190,
+													"parameters": {
+														"key": 40
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "simulate-control",
+													"objectClass": "shipController",
+													"sid": 328228082648913,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"control": "down"
+													}
+												}
+											],
+											"sid": 441524820614197,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 448267903280227,
+															"parameters": {
+																"tag": "\"engine\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "play-by-name",
+															"objectClass": "Audio",
+															"sid": 146072086164783,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "\"engine\"",
+																"loop": "looping",
+																"volume": "0",
+																"tag-optional": "\"engine\""
+															}
+														}
+													],
+													"sid": 881848354809595
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 270600730116412,
+													"parameters": {
+														"key": 37
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "simulate-control",
+													"objectClass": "shipController",
+													"sid": 629247633514295,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"control": "left"
+													}
+												}
+											],
+											"sid": 392350546090026,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 809301318655076,
+															"parameters": {
+																"tag": "\"engine\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "play-by-name",
+															"objectClass": "Audio",
+															"sid": 821296337974041,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "\"engine\"",
+																"loop": "looping",
+																"volume": "0",
+																"tag-optional": "\"engine\""
+															}
+														}
+													],
+													"sid": 483711695766341
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 239764106470776,
+													"parameters": {
+														"key": 39
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "simulate-control",
+													"objectClass": "shipController",
+													"sid": 500655870372882,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"control": "right"
+													}
+												}
+											],
+											"sid": 673406125052486,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-tag-playing",
+															"objectClass": "Audio",
+															"sid": 950697680478752,
+															"parameters": {
+																"tag": "\"engine\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "play-by-name",
+															"objectClass": "Audio",
+															"sid": 556958558628545,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "\"engine\"",
+																"loop": "looping",
+																"volume": "0",
+																"tag-optional": "\"engine\""
+															}
+														}
+													],
+													"sid": 665987468374968
+												}
+											]
+										}
+									]
+								}
+							],
+							"sid": 262472994293797
 						},
 						{
 							"eventType": "block",
@@ -1908,6 +2917,42 @@
 										"button": "d-pad-right"
 									},
 									"isInverted": true
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 608886083638865,
+									"parameters": {
+										"key": 38
+									},
+									"isInverted": true
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 187336963694940,
+									"parameters": {
+										"key": 40
+									},
+									"isInverted": true
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 156893875181050,
+									"parameters": {
+										"key": 37
+									},
+									"isInverted": true
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 836566226852592,
+									"parameters": {
+										"key": 39
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
@@ -1968,30 +3013,39 @@
 									}
 								},
 								{
+									"id": "set-boolean-instvar",
+									"objectClass": "shipController",
+									"sid": 225097487664580,
+									"parameters": {
+										"instance-variable": "isActive",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "shipController",
+									"sid": 489672598485008,
+									"parameters": {
+										"instance-variable": "dmgPercent",
+										"value": "30"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "shipController",
+									"sid": 944208830598392,
+									"parameters": {
+										"width": "16",
+										"height": "16"
+									}
+								},
+								{
 									"id": "set-enabled",
 									"objectClass": "ship_col_1",
 									"sid": 156278135412382,
 									"behaviorType": "Solid",
 									"parameters": {
 										"state": "enabled"
-									}
-								},
-								{
-									"id": "set-enabled",
-									"objectClass": "shipController",
-									"sid": 439216378224373,
-									"behaviorType": "8Direction",
-									"parameters": {
-										"state": "disabled"
-									}
-								},
-								{
-									"id": "set-boolean-instvar",
-									"objectClass": "shipController",
-									"sid": 895792571311170,
-									"parameters": {
-										"instance-variable": "isActive",
-										"value": "false"
 									}
 								},
 								{
@@ -2014,10 +3068,10 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 250840972557815,
+									"sid": 447865825444528,
 									"parameters": {
 										"variable": "zoomLevel",
-										"value": "ZOOMED_IN"
+										"value": "BASE_ZOOM"
 									}
 								}
 							],
@@ -2111,150 +3165,11 @@
 											"sid": 671193044414949
 										}
 									]
-								},
-								{
-									"eventType": "comment",
-									"text": "Find the ship wheel"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "for",
-											"objectClass": "System",
-											"sid": 303870168218996,
-											"parameters": {
-												"name": "\"tileX\"",
-												"start-index": "0",
-												"end-index": "200"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 132922378493945,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "for",
-													"objectClass": "System",
-													"sid": 920302850754315,
-													"parameters": {
-														"name": "\"tileY\"",
-														"start-index": "0",
-														"end-index": "500"
-													}
-												}
-											],
-											"actions": [],
-											"sid": 586196029529719,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-tile-at",
-															"objectClass": "ship_BG2_1",
-															"sid": 687389519067296,
-															"parameters": {
-																"tile-x": "loopindex(\"tileX\")",
-																"tile-y": "loopindex(\"tileY\")",
-																"comparison": 0,
-																"tile": "332"
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "set-collisions-enabled",
-															"objectClass": "shipController",
-															"sid": 937349820581244,
-															"parameters": {
-																"collisions": "disabled"
-															}
-														},
-														{
-															"id": "set-position",
-															"objectClass": "shipController",
-															"sid": 366106224121892,
-															"parameters": {
-																"x": "ship_BG2_1.TileToPositionX(loopindex(\"tileX\"))",
-																"y": "ship_BG2_1.TileToPositionY(loopindex(\"tileY\"))"
-															}
-														},
-														{
-															"id": "pin-to-object",
-															"objectClass": "ship_col_1",
-															"sid": 948898565710132,
-															"behaviorType": "Pin",
-															"parameters": {
-																"pin-to": "shipController",
-																"mode": "position-only"
-															}
-														},
-														{
-															"id": "set-size",
-															"objectClass": "shipController",
-															"sid": 795360754934912,
-															"parameters": {
-																"width": "32",
-																"height": "32"
-															}
-														},
-														{
-															"id": "set-collisions-enabled",
-															"objectClass": "shipController",
-															"sid": 445843459167141,
-															"parameters": {
-																"collisions": "enabled"
-															}
-														},
-														{
-															"id": "stop-loop",
-															"objectClass": "System",
-															"sid": 414207459671753
-														}
-													],
-													"sid": 713007051249963
-												}
-											]
-										}
-									]
 								}
 							]
 						}
 					],
 					"sid": 888829196477040
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-boolean-instance-variable-set",
-							"objectClass": "shipController",
-							"sid": 153946691244662,
-							"parameters": {
-								"instance-variable": "canActivate"
-							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 492782793338114
-						}
-					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "wheelHighlight",
-							"sid": 682046171764518,
-							"parameters": {
-								"visibility": "visible"
-							}
-						}
-					],
-					"sid": 149399843725729
 				}
 			],
 			"sid": 824279731104129
@@ -2373,282 +3288,11 @@
 							}
 						}
 					],
-					"sid": 767398082196446
+					"sid": 767398082196446,
+					"disabled": true
 				}
 			],
 			"sid": 909935578718493
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Repair ship part",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-button-down",
-							"objectClass": "Gamepad",
-							"sid": 666609831607436,
-							"parameters": {
-								"gamepad": "0",
-								"button": "button-b"
-							}
-						},
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "player_base",
-							"sid": 385319546638632,
-							"parameters": {
-								"object": "repairObj"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "add-to-instvar",
-							"objectClass": "repairObj",
-							"sid": 824782327004497,
-							"parameters": {
-								"instance-variable": "repairProg",
-								"value": "repairSpeed * dt"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "repairObj",
-							"sid": 803904217689194,
-							"parameters": {
-								"instance-variable": "repairProg",
-								"value": "clamp(Self.repairProg, 0, 100)"
-							}
-						},
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "player_base",
-							"sid": 314922230568970,
-							"parameters": {
-								"instance-variable": "isRepairing",
-								"value": "true"
-							}
-						}
-					],
-					"sid": 781050142099252,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "repairProgressBar",
-									"sid": 242175288006758,
-									"parameters": {
-										"instance-variable": "id",
-										"comparison": 0,
-										"value": "repairObj.id"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "repairProgressBar",
-									"sid": 900657327679875,
-									"parameters": {
-										"instance-variable": "prog",
-										"value": "repairObj.repairProg"
-									}
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "repairProgressBar",
-									"sid": 511247738023540,
-									"parameters": {
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "repairProgressBarBG",
-									"sid": 821955998137648,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 642946770569167
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-button-released",
-							"objectClass": "Gamepad",
-							"sid": 203447463668037,
-							"parameters": {
-								"gamepad": "0",
-								"button": "button-b"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "player_base",
-							"sid": 629397765620329,
-							"parameters": {
-								"instance-variable": "isRepairing",
-								"value": "false"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "repairProgressBar",
-							"sid": 352444844158151,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "repairProgressBarBG",
-							"sid": 117878873207969,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						}
-					],
-					"sid": 499619049196084
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "repairProgressBar",
-							"sid": 259020692372488,
-							"parameters": {
-								"instance-variable": "prog",
-								"comparison": 5,
-								"value": "100"
-							}
-						},
-						{
-							"id": "is-boolean-instance-variable-set",
-							"objectClass": "repairProgressBar",
-							"sid": 322709004809130,
-							"parameters": {
-								"instance-variable": "isDone"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "repairProgressBar",
-							"sid": 760827722689614,
-							"parameters": {
-								"instance-variable": "isDone",
-								"value": "true"
-							}
-						},
-						{
-							"id": "set-effect-enabled",
-							"objectClass": "repairProgressBar",
-							"sid": 147039082877260,
-							"parameters": {
-								"mode": "enable",
-								"effect": "\"BlackWhite\""
-							}
-						},
-						{
-							"id": "start-timer",
-							"objectClass": "SysObj",
-							"sid": 842707517663672,
-							"behaviorType": "Timer",
-							"parameters": {
-								"duration": "0.2",
-								"type": "once",
-								"tag": "\"progEffect\""
-							}
-						},
-						{
-							"id": "play-by-name",
-							"objectClass": "Audio",
-							"sid": 282240722810772,
-							"parameters": {
-								"folder": "sounds",
-								"audio-file-name": "\"fixed\"",
-								"loop": "not-looping",
-								"volume": "-20",
-								"tag-optional": "\"fixed\""
-							}
-						}
-					],
-					"sid": 196537849662222,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "repairObj",
-									"sid": 811692859628526,
-									"parameters": {
-										"instance-variable": "id",
-										"comparison": 0,
-										"value": "repairProgressBar.id"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation",
-									"objectClass": "repairObj",
-									"sid": 365902985210669,
-									"parameters": {
-										"animation": "Self.rndAnim & \"_fixed\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 652441339337687
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-timer",
-							"objectClass": "SysObj",
-							"sid": 738533147551511,
-							"behaviorType": "Timer",
-							"parameters": {
-								"tag": "\"progEffect\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-effect-enabled",
-							"objectClass": "repairProgressBar",
-							"sid": 733006892981881,
-							"parameters": {
-								"mode": "disable",
-								"effect": "\"BlackWhite\""
-							}
-						}
-					],
-					"sid": 653151215675474
-				}
-			],
-			"sid": 770917563332131
 		},
 		{
 			"eventType": "group",
@@ -2764,122 +3408,11 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Activate the ship",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-button-released",
-							"objectClass": "Gamepad",
-							"sid": 521088560703492,
-							"parameters": {
-								"gamepad": "0",
-								"button": "button-b"
-							}
-						},
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "player_base",
-							"sid": 732413204277668,
-							"parameters": {
-								"object": "shipController"
-							}
-						},
-						{
-							"id": "is-boolean-instance-variable-set",
-							"objectClass": "shipController",
-							"sid": 595481833166248,
-							"parameters": {
-								"instance-variable": "canActivate"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "shipController",
-							"sid": 901199924631741,
-							"parameters": {
-								"instance-variable": "isActive",
-								"value": "true"
-							}
-						}
-					],
-					"sid": 438107431753572
-				}
-			],
-			"sid": 248718649681996
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
 			"title": "Progress bar",
 			"description": "",
 			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for-each",
-							"objectClass": "System",
-							"sid": 136009953276517,
-							"parameters": {
-								"object": "repairProgressBar"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-width",
-							"objectClass": "repairProgressBar",
-							"sid": 135536607087771,
-							"parameters": {
-								"width": "Self.originalWidth * (Self.prog / 100)"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "repairProgressBar",
-							"sid": 784878320940653,
-							"parameters": {
-								"instance-variable": "prog",
-								"value": "clamp(Self.prog, 0, 100)"
-							}
-						}
-					],
-					"sid": 314704623939655
-				}
-			],
+			"children": [],
 			"sid": 293951223222752
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-flash-ended",
-					"objectClass": "repairHighlight",
-					"sid": 314828750210742,
-					"behaviorType": "Flash"
-				}
-			],
-			"actions": [
-				{
-					"id": "flash",
-					"objectClass": "repairHighlight",
-					"sid": 749122832104868,
-					"behaviorType": "Flash",
-					"parameters": {
-						"on-time": "random(0.2, 0.4)",
-						"off-time": "random(0.2, 0.4)",
-						"duration": "2"
-					}
-				}
-			],
-			"sid": 437881766355391
 		}
 	],
 	"sid": 263282355959929

@@ -107,15 +107,86 @@
 					}
 				}
 			],
-			"sid": 211924830817791
+			"sid": 211924830817791,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 466386923014666,
+							"parameters": {
+								"variable": "inputType",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "textTitle",
+							"sid": 267008598722989,
+							"parameters": {
+								"text": "\"Press X to Start\""
+							}
+						}
+					],
+					"sid": 508894385155962
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 764151447509041
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "textTitle",
+							"sid": 379766467169225,
+							"parameters": {
+								"text": "\"Press A to Start\""
+							}
+						}
+					],
+					"sid": 893989322195454
+				}
+			]
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "is-button-down",
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 501064143520973
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "player_base",
+					"sid": 346705532907707,
+					"parameters": {
+						"x": "0",
+						"y": "0"
+					}
+				}
+			],
+			"sid": 531036545138341
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-button-pressed",
 					"objectClass": "Gamepad",
-					"sid": 610419193883476,
+					"sid": 115998749840879,
 					"parameters": {
 						"gamepad": "0",
 						"button": "button-a"
@@ -132,6 +203,18 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "play-by-name",
+					"objectClass": "Audio",
+					"sid": 117121863372597,
+					"parameters": {
+						"folder": "sounds",
+						"audio-file-name": "\"jump\"",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"jump\""
+					}
+				},
 				{
 					"id": "fade-volume",
 					"objectClass": "Audio",
@@ -177,6 +260,86 @@
 				}
 			],
 			"sid": 721366778893574
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 454887435794164,
+					"parameters": {
+						"key": 88
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 656124326325580,
+					"parameters": {
+						"variable": "hasPressed"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "play-by-name",
+					"objectClass": "Audio",
+					"sid": 334679747521145,
+					"parameters": {
+						"folder": "sounds",
+						"audio-file-name": "\"jump\"",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"jump\""
+					}
+				},
+				{
+					"id": "fade-volume",
+					"objectClass": "Audio",
+					"sid": 516692330958116,
+					"parameters": {
+						"tag": "\"wind\"",
+						"db": "-100",
+						"duration": "FADE_TIME",
+						"ending": "stop"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 350975567654750,
+					"parameters": {
+						"variable": "hasPressed",
+						"value": "true"
+					}
+				},
+				{
+					"callFunction": "FadeOut",
+					"sid": 431577329817105,
+					"parameters": [
+						"FADE_TIME"
+					]
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 616455266499450,
+					"parameters": {
+						"seconds": "FADE_TIME"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 606394221452610,
+					"parameters": {
+						"layout": "lay_title"
+					}
+				}
+			],
+			"sid": 126617997563276
 		},
 		{
 			"eventType": "block",

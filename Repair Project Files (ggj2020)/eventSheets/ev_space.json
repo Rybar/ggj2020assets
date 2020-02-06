@@ -154,10 +154,85 @@
 							"parameters": [
 								"FADE_TIME"
 							]
+						},
+						{
+							"id": "set-position",
+							"objectClass": "player_base",
+							"sid": 175012471074634,
+							"parameters": {
+								"x": "playerSpawnLoc.X",
+								"y": "playerSpawnLoc.Y"
+							}
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "player_anim",
+							"sid": 459053784374528,
+							"parameters": {
+								"layer": "\"Player\""
+							}
 						}
 					],
 					"sid": 571833828451273,
 					"children": [
+						{
+							"eventType": "comment",
+							"text": "DEBUG: TESTING ONLY --------------------------------------"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 636069046103101,
+									"parameters": {
+										"first-value": "SysObj.Count",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 605176352306368,
+									"parameters": {
+										"object-to-create": "SysObj",
+										"layer": "\"BG\"",
+										"x": "0",
+										"y": "0"
+									}
+								},
+								{
+									"id": "set-object-time-scale",
+									"objectClass": "System",
+									"sid": 850388967135709,
+									"parameters": {
+										"object": "SysObj",
+										"time-scale": "1"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "SysObj",
+									"sid": 320057800618425,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 952402809287943
+						},
+						{
+							"eventType": "comment",
+							"text": "---------------------------------------------------------------"
+						},
+						{
+							"eventType": "comment",
+							"text": "DEBUG: TESTING ONLY --------------------------------------"
+						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -194,15 +269,6 @@
 									}
 								},
 								{
-									"id": "set-object-time-scale",
-									"objectClass": "System",
-									"sid": 773217997827364,
-									"parameters": {
-										"object": "SysObj",
-										"time-scale": "1"
-									}
-								},
-								{
 									"id": "createPermutationTable",
 									"objectClass": "AdvancedRandom",
 									"sid": 879093136385628,
@@ -218,6 +284,10 @@
 								}
 							],
 							"sid": 264787216420912
+						},
+						{
+							"eventType": "comment",
+							"text": "---------------------------------------------------------------"
 						},
 						{
 							"eventType": "block",
@@ -356,9 +426,17 @@
 								{
 									"id": "set-z-elevation",
 									"objectClass": "stars",
-									"sid": 973024706519919,
+									"sid": 869996373325192,
 									"parameters": {
-										"z": "random(-50, 50)"
+										"z": "random(-50, 25)"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "stars",
+									"sid": 198737255256856,
+									"parameters": {
+										"collisions": "disabled"
 									}
 								}
 							],
@@ -886,6 +964,93 @@
 						}
 					],
 					"sid": 831739268671820
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "player_base",
+							"sid": 798115237496807,
+							"parameters": {
+								"object": "ship_entire_collider_1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 890074518901199,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "ground",
+									"sid": 233437690201045,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "ground",
+									"sid": 309425861199333,
+									"parameters": {
+										"collisions": "enabled"
+									}
+								}
+							],
+							"sid": 749020246410943
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "player_base",
+							"sid": 424974800251889,
+							"parameters": {
+								"object": "ship_entire_collider_1"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 100192798128029,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "ground",
+									"sid": 497177812121585,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "ground",
+									"sid": 885994962896884,
+									"parameters": {
+										"collisions": "disabled"
+									}
+								}
+							],
+							"sid": 155869448062332
+						}
+					]
 				}
 			],
 			"sid": 621147840178682
@@ -916,17 +1081,6 @@
 								"first-value": "distance(dock.X, dock.Y, ship_entire_collider_1.X, ship_entire_collider_1.Y)",
 								"comparison": 3,
 								"second-value": "32"
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "shipController",
-							"sid": 681248255566437,
-							"disabled": true,
-							"parameters": {
-								"instance-variable": "id",
-								"comparison": 0,
-								"value": "dock.id"
 							}
 						},
 						{
@@ -987,28 +1141,37 @@
 						{
 							"id": "is-boolean-instance-variable-set",
 							"objectClass": "player_base",
-							"sid": 293114164652380,
+							"sid": 270348605763966,
 							"parameters": {
 								"instance-variable": "isInvulnerable"
 							},
 							"isInverted": true
 						},
 						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 992393694969935,
-							"parameters": {
-								"variable": "spaceLayoutGameplayState",
-								"comparison": 0,
-								"value": "GAME_STATE_FALLING"
-							}
+							"id": "is-enabled",
+							"objectClass": "player_base",
+							"sid": 723137933657650,
+							"behaviorType": "Platform"
 						}
 					],
 					"actions": [
 						{
 							"id": "destroy",
 							"objectClass": "famDebri",
-							"sid": 983173298661242
+							"sid": 983173298661242,
+							"disabled": true
+						},
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 300413626375647,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "\"junkhit\"",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"junkhit\""
+							}
 						},
 						{
 							"id": "subtract-from-instvar",
@@ -1017,17 +1180,6 @@
 							"parameters": {
 								"instance-variable": "health",
 								"value": "1"
-							}
-						},
-						{
-							"id": "flash",
-							"objectClass": "player_anim",
-							"sid": 187385617934599,
-							"behaviorType": "Flash",
-							"parameters": {
-								"on-time": "0.1",
-								"off-time": "0.1",
-								"duration": "0.8"
 							}
 						},
 						{
@@ -1040,6 +1192,17 @@
 							}
 						},
 						{
+							"id": "flash",
+							"objectClass": "player_anim",
+							"sid": 324700195108441,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "0.8"
+							}
+						},
+						{
 							"id": "start-timer",
 							"objectClass": "SysObj",
 							"sid": 826649311756731,
@@ -1048,18 +1211,6 @@
 								"duration": "1.0",
 								"type": "once",
 								"tag": "\"invuln_timer\""
-							}
-						},
-						{
-							"id": "play-by-name",
-							"objectClass": "Audio",
-							"sid": 959869178214950,
-							"parameters": {
-								"folder": "sounds",
-								"audio-file-name": "\"junkhit\"",
-								"loop": "not-looping",
-								"volume": "0",
-								"tag-optional": "\"junkhit\""
 							}
 						}
 					],
@@ -1074,6 +1225,14 @@
 							"sid": 264248521101276,
 							"parameters": {
 								"object": "famDebri"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "shipController",
+							"sid": 875442924225797,
+							"parameters": {
+								"instance-variable": "isActive"
 							}
 						}
 					],

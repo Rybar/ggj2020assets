@@ -5,28 +5,16 @@
 	"isGlobal": true,
 	"instanceVariables": [
 		{
-			"name": "isActive",
-			"type": "boolean",
-			"desc": "",
-			"sid": 488090683206219
-		},
-		{
 			"name": "id",
 			"type": "number",
 			"desc": "",
 			"sid": 902103648937904
 		},
 		{
-			"name": "dirX",
-			"type": "number",
+			"name": "isActive",
+			"type": "boolean",
 			"desc": "",
-			"sid": 288372961092796
-		},
-		{
-			"name": "dirY",
-			"type": "number",
-			"desc": "",
-			"sid": 821357405046701
+			"sid": 488090683206219
 		},
 		{
 			"name": "dmgPercent",
@@ -39,6 +27,18 @@
 			"type": "boolean",
 			"desc": "",
 			"sid": 808989416416221
+		},
+		{
+			"name": "xDistFromShipGraphics",
+			"type": "number",
+			"desc": "",
+			"sid": 907731539515270
+		},
+		{
+			"name": "yDistFromShipGraphics",
+			"type": "number",
+			"desc": "",
+			"sid": 855708454636146
 		}
 	],
 	"behaviorTypes": [

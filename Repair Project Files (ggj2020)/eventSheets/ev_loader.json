@@ -3,6 +3,16 @@
 	"events": [
 		{
 			"eventType": "variable",
+			"name": "NUM_SHIPS",
+			"type": "number",
+			"initialValue": "6",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 814113725685384
+		},
+		{
+			"eventType": "variable",
 			"name": "isLoaderComplete",
 			"type": "boolean",
 			"initialValue": "false",
@@ -13,16 +23,6 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "NUM_SHIPS",
-			"type": "number",
-			"initialValue": "6",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 219397181761660
-		},
-		{
-			"eventType": "variable",
 			"name": "curShipIndex",
 			"type": "number",
 			"initialValue": "0",
@@ -30,6 +30,16 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 589480271609459
+		},
+		{
+			"eventType": "variable",
+			"name": "inputType",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "0 = keyboard, 1 = gamepad",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 204228534011830
 		},
 		{
 			"eventType": "block",
@@ -66,6 +76,36 @@
 				}
 			],
 			"sid": 727957169560006
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "player_base",
+					"sid": 921883839407037
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "player_base",
+					"sid": 399497187563460,
+					"parameters": {
+						"instance-variable": "health",
+						"value": "PLAYER_MAX_HP"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "player_base",
+					"sid": 990785227085425,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 379632570663046
 		},
 		{
 			"eventType": "block",

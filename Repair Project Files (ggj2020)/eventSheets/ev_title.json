@@ -100,34 +100,112 @@
 						"off-time": "0.2",
 						"duration": "1.2"
 					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 398176247585965,
-					"parameters": {
-						"seconds": "0.3"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 940058318559593,
-					"parameters": {
-						"variable": "hasPressed",
-						"value": "false"
-					}
 				}
 			],
-			"sid": 743317056234821
+			"sid": 743317056234821,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 522503193779931,
+							"parameters": {
+								"variable": "inputType",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "textTitle",
+							"sid": 731350903255050,
+							"parameters": {
+								"text": "\"Press X to Start\""
+							}
+						}
+					],
+					"sid": 366794772926981
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 261320791732387
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "textTitle",
+							"sid": 977444706400587,
+							"parameters": {
+								"text": "\"Press A to Start\""
+							}
+						}
+					],
+					"sid": 804019937618291
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 837984744459812,
+							"parameters": {
+								"seconds": "0.3"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 773175170152536,
+							"parameters": {
+								"variable": "hasPressed",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 140179529157101
+				}
+			]
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "is-button-down",
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 465774869623950
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "player_base",
+					"sid": 170785572308490,
+					"parameters": {
+						"x": "0",
+						"y": "0"
+					}
+				}
+			],
+			"sid": 915881657752907
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-button-pressed",
 					"objectClass": "Gamepad",
-					"sid": 744528753147337,
+					"sid": 781073372782213,
 					"parameters": {
 						"gamepad": "0",
 						"button": "button-a"
@@ -144,6 +222,18 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "play-by-name",
+					"objectClass": "Audio",
+					"sid": 442488445994312,
+					"parameters": {
+						"folder": "sounds",
+						"audio-file-name": "\"jump\"",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"jump\""
+					}
+				},
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
@@ -175,11 +265,36 @@
 					"parameters": {
 						"layout": "lay_space"
 					}
+				}
+			],
+			"sid": 611880017047655
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 290686083186684,
+					"parameters": {
+						"key": 88
+					}
 				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 866484805733099,
+					"parameters": {
+						"variable": "hasPressed"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
 				{
 					"id": "play-by-name",
 					"objectClass": "Audio",
-					"sid": 942865759508351,
+					"sid": 333960486906245,
 					"parameters": {
 						"folder": "sounds",
 						"audio-file-name": "\"jump\"",
@@ -187,9 +302,41 @@
 						"volume": "0",
 						"tag-optional": "\"jump\""
 					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 864827450823401,
+					"parameters": {
+						"variable": "hasPressed",
+						"value": "true"
+					}
+				},
+				{
+					"callFunction": "FadeOut",
+					"sid": 190117861358080,
+					"parameters": [
+						"FADE_TIME"
+					]
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 704092178664541,
+					"parameters": {
+						"seconds": "FADE_TIME"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 146490246102710,
+					"parameters": {
+						"layout": "lay_space"
+					}
 				}
 			],
-			"sid": 611880017047655
+			"sid": 659523487562743
 		},
 		{
 			"eventType": "block",

@@ -56,16 +56,16 @@
 		},
 		{
 			"type": "plugin",
-			"id": "Text",
-			"name": "Text",
+			"id": "Audio",
+			"name": "Audio",
 			"author": "Scirra",
 			"version": "r182.3",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
-			"id": "Audio",
-			"name": "Audio",
+			"id": "Text",
+			"name": "Text",
 			"author": "Scirra",
 			"version": "r182.3",
 			"bundled": false
@@ -202,7 +202,8 @@
 			"wheelHighlight",
 			"repairHighlight",
 			"shipWhole",
-			"Audio"
+			"dockBG",
+			"textHangar"
 		],
 		"subfolders": [
 			{
@@ -246,7 +247,8 @@
 					"Gamepad",
 					"SysObj",
 					"fadeTex",
-					"Keyboard"
+					"Keyboard",
+					"Audio"
 				],
 				"subfolders": [],
 				"name": "System"
@@ -469,7 +471,7 @@
 		"downscaling": "medium",
 		"maxSpriteSheetSize": 2048,
 		"loaderStyle": "progress",
-		"preloadSounds": true,
+		"preloadSounds": false,
 		"clearBackground": true,
 		"enhancedAccelerationPrecision": true
 	},

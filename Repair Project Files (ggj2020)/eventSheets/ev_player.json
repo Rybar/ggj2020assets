@@ -456,6 +456,16 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 620200656779509,
+									"parameters": {
+										"variable": "inputType",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
 									"id": "is-button-down",
 									"objectClass": "Gamepad",
 									"sid": 190228543674380,
@@ -475,6 +485,33 @@
 										"comparison": 3,
 										"value": "50"
 									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "player_base",
+									"sid": 420295210463663,
+									"parameters": {
+										"instance-variable": "isCrouching",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 979333294428239
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 235450983104953,
+									"parameters": {
+										"variable": "inputType",
+										"comparison": 0,
+										"value": "0"
+									}
 								},
 								{
 									"id": "key-is-down",
@@ -490,14 +527,14 @@
 								{
 									"id": "set-boolean-instvar",
 									"objectClass": "player_base",
-									"sid": 992842883832901,
+									"sid": 934608105969932,
 									"parameters": {
 										"instance-variable": "isCrouching",
 										"value": "false"
 									}
 								}
 							],
-							"sid": 979333294428239
+							"sid": 140943240969912
 						}
 					],
 					"sid": 250075277635473
@@ -1035,19 +1072,19 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "is-button-down",
-							"objectClass": "Gamepad",
-							"sid": 149710958798939,
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 311863366749725,
 							"parameters": {
-								"gamepad": "0",
-								"button": "button-b"
-							},
-							"isInverted": true
+								"variable": "inputType",
+								"comparison": 0,
+								"value": "0"
+							}
 						},
 						{
 							"id": "key-is-down",
 							"objectClass": "Keyboard",
-							"sid": 434165767290885,
+							"sid": 183607565473837,
 							"parameters": {
 								"key": 90
 							},
@@ -1058,7 +1095,7 @@
 						{
 							"id": "set-boolean-instvar",
 							"objectClass": "player_base",
-							"sid": 735185239451094,
+							"sid": 985348857297711,
 							"parameters": {
 								"instance-variable": "isRepairing",
 								"value": "false"
@@ -1067,7 +1104,7 @@
 						{
 							"id": "set-visible",
 							"objectClass": "repairProgressBar",
-							"sid": 670903988704085,
+							"sid": 258887588457745,
 							"parameters": {
 								"visibility": "invisible"
 							}
@@ -1075,13 +1112,66 @@
 						{
 							"id": "set-visible",
 							"objectClass": "repairProgressBarBG",
-							"sid": 821513130808782,
+							"sid": 962136313893366,
 							"parameters": {
 								"visibility": "invisible"
 							}
 						}
 					],
-					"sid": 379833178203651
+					"sid": 660223462734346
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 836419824278259,
+							"parameters": {
+								"variable": "inputType",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 149710958798939,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-b"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "player_base",
+							"sid": 160036462904345,
+							"parameters": {
+								"instance-variable": "isRepairing",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "repairProgressBar",
+							"sid": 480333170645813,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "repairProgressBarBG",
+							"sid": 642119132585248,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 413535785805796
 				}
 			],
 			"sid": 214829334626307
@@ -2857,6 +2947,78 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 694749776940779,
+									"parameters": {
+										"variable": "inputType",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 608886083638865,
+									"parameters": {
+										"key": 38
+									},
+									"isInverted": true
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 187336963694940,
+									"parameters": {
+										"key": 40
+									},
+									"isInverted": true
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 156893875181050,
+									"parameters": {
+										"key": 37
+									},
+									"isInverted": true
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 836566226852592,
+									"parameters": {
+										"key": 39
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 788986366972257,
+									"parameters": {
+										"tag": "\"engine\""
+									}
+								}
+							],
+							"sid": 954233735245322
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 495730327346178,
+									"parameters": {
+										"variable": "inputType",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
 									"id": "compare-axis",
 									"objectClass": "Gamepad",
 									"sid": 308588985322324,
@@ -2915,42 +3077,6 @@
 									"parameters": {
 										"gamepad": "0",
 										"button": "d-pad-right"
-									},
-									"isInverted": true
-								},
-								{
-									"id": "key-is-down",
-									"objectClass": "Keyboard",
-									"sid": 608886083638865,
-									"parameters": {
-										"key": 38
-									},
-									"isInverted": true
-								},
-								{
-									"id": "key-is-down",
-									"objectClass": "Keyboard",
-									"sid": 187336963694940,
-									"parameters": {
-										"key": 40
-									},
-									"isInverted": true
-								},
-								{
-									"id": "key-is-down",
-									"objectClass": "Keyboard",
-									"sid": 156893875181050,
-									"parameters": {
-										"key": 37
-									},
-									"isInverted": true
-								},
-								{
-									"id": "key-is-down",
-									"objectClass": "Keyboard",
-									"sid": 836566226852592,
-									"parameters": {
-										"key": 39
 									},
 									"isInverted": true
 								}
@@ -3404,15 +3530,6 @@
 				}
 			],
 			"sid": 450137823106553
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Progress bar",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [],
-			"sid": 293951223222752
 		}
 	],
 	"sid": 263282355959929

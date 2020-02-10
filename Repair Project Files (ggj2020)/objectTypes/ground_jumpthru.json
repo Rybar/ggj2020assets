@@ -1,26 +1,14 @@
 {
-	"name": "ground",
+	"name": "ground_jumpthru",
 	"plugin-id": "Sprite",
-	"sid": 163948259361702,
+	"sid": 186424552642981,
 	"isGlobal": false,
-	"instanceVariables": [
-		{
-			"name": "id",
-			"type": "number",
-			"desc": "",
-			"sid": 369933435971190
-		}
-	],
+	"instanceVariables": [],
 	"behaviorTypes": [
 		{
-			"behaviorId": "solid",
-			"name": "Solid",
-			"sid": 207562316394101
-		},
-		{
-			"behaviorId": "Persist",
-			"name": "Persist",
-			"sid": 565376585126100
+			"behaviorId": "jumpthru",
+			"name": "Jumpthru",
+			"sid": 792065602445298
 		}
 	],
 	"effectTypes": [],
@@ -36,12 +24,12 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 0,
+						"imageSpriteId": 6,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 976978432652017,
+				"sid": 458027708979309,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

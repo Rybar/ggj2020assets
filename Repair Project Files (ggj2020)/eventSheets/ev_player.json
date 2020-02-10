@@ -3341,6 +3341,11 @@
 							"sid": 873958805247969
 						},
 						{
+							"id": "destroy",
+							"objectClass": "shipWhole",
+							"sid": 347201469768540
+						},
+						{
 							"callFunction": "FadeOut",
 							"sid": 185036295489380,
 							"parameters": [
@@ -3389,6 +3394,11 @@
 						{
 							"callFunction": "DestroyShipAndReset",
 							"sid": 643578571803979
+						},
+						{
+							"id": "destroy",
+							"objectClass": "shipWhole",
+							"sid": 347201469768540
 						},
 						{
 							"callFunction": "FadeOut",
@@ -3530,6 +3540,31 @@
 				}
 			],
 			"sid": 450137823106553
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Health HUD",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "hud_health",
+							"sid": 446217740900768,
+							"parameters": {
+								"frame-number": "player_base.health"
+							}
+						}
+					],
+					"sid": 883920778255814
+				}
+			],
+			"sid": 501468054132536
 		}
 	],
 	"sid": 263282355959929

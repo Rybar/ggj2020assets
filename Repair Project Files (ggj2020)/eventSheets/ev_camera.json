@@ -74,7 +74,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Zoom",
+			"title": "Scroll & Zoom",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -137,6 +137,13 @@
 							"id": "else",
 							"objectClass": "System",
 							"sid": 230769624953168
+						},
+						{
+							"id": "is-any-playing",
+							"objectClass": "camera",
+							"sid": 591068480475849,
+							"behaviorType": "Tween",
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -149,7 +156,8 @@
 							}
 						}
 					],
-					"sid": 175153171576955
+					"sid": 175153171576955,
+					"disabled": true
 				}
 			],
 			"sid": 881280521236630
@@ -413,6 +421,148 @@
 				}
 			],
 			"sid": 675280281869348
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Group1",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-finished",
+							"objectClass": "camera",
+							"sid": 546688006978127,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"cam_starting_pan\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 830131088255498,
+							"parameters": {
+								"seconds": "0.3"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "camera",
+							"sid": 559638720444126,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"cam_pan_to_player\"",
+								"property": "position",
+								"end-x": "player_base.X",
+								"end-y": "player_base.Y",
+								"time": "3",
+								"ease": "easeinoutsine",
+								"destroy-on-complete": "no"
+							}
+						},
+						{
+							"id": "tween-value",
+							"objectClass": "camera",
+							"sid": 743635988143775,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"layout_scale\"",
+								"start-value": "ZOOMED_OUT",
+								"end-value": "BASE_ZOOM",
+								"time": "5",
+								"ease": "easeinoutsine",
+								"destroy-on-complete": "no"
+							}
+						}
+					],
+					"sid": 492196769367100
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-finished",
+							"objectClass": "camera",
+							"sid": 256677815929285,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"cam_pan_to_player\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 702803968176425,
+							"parameters": {
+								"variable": "zoomLevel",
+								"value": "BASE_ZOOM"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "camera",
+							"sid": 733465939962914,
+							"parameters": {
+								"instance-variable": "isEnabled",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "camera",
+							"sid": 426570442738626,
+							"parameters": {
+								"instance-variable": "isZoomEnabled",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "player_base",
+							"sid": 979806541397037,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 693346965977903
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing",
+							"objectClass": "camera",
+							"sid": 541666781666392,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"layout_scale\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layout-scale",
+							"objectClass": "System",
+							"sid": 366262572795583,
+							"parameters": {
+								"scale": "camera.Tween.Value(\"layout_scale\")"
+							}
+						}
+					],
+					"sid": 532765945760735
+				}
+			],
+			"sid": 103897440805061
 		}
 	],
 	"sid": 537747933757102

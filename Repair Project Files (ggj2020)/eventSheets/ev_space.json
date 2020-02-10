@@ -392,6 +392,132 @@
 							"sid": 832853050335234
 						},
 						{
+							"eventType": "comment",
+							"text": "If first play session pan the camera across hangars"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 909846011163757,
+									"parameters": {
+										"variable": "firstSessionPlaying"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "camera",
+									"sid": 771985394047504,
+									"parameters": {
+										"instance-variable": "isEnabled",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "camera",
+									"sid": 846109052556863,
+									"parameters": {
+										"instance-variable": "isZoomEnabled",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "player_base",
+									"sid": 309198596508686,
+									"behaviorType": "Platform",
+									"parameters": {
+										"state": "disabled"
+									}
+								}
+							],
+							"sid": 449868689605746,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "dock",
+											"sid": 296487646684845,
+											"parameters": {
+												"instance-variable": "id",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position-to-another-object",
+											"objectClass": "camera",
+											"sid": 784069400144187,
+											"parameters": {
+												"object": "dock",
+												"image-point-optional": "0"
+											}
+										}
+									],
+									"sid": 971483133296521
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "dock",
+											"sid": 541938636614332,
+											"parameters": {
+												"instance-variable": "id",
+												"comparison": 0,
+												"value": "5"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-two-properties",
+											"objectClass": "camera",
+											"sid": 479676872614208,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"cam_starting_pan\"",
+												"property": "position",
+												"end-x": "dock.X",
+												"end-y": "dock.Y",
+												"time": "5",
+												"ease": "easeinoutsine",
+												"destroy-on-complete": "no"
+											}
+										},
+										{
+											"id": "set-layout-scale",
+											"objectClass": "System",
+											"sid": 202112064091652,
+											"parameters": {
+												"scale": "ZOOMED_OUT"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 925287895769996,
+											"parameters": {
+												"variable": "zoomLevel",
+												"value": "ZOOMED_OUT"
+											}
+										}
+									],
+									"sid": 724117909833194
+								}
+							]
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -1106,16 +1232,122 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 687231813563541,
+							"sid": 529926058958571,
 							"parameters": {
 								"object-to-create": "shipWhole",
-								"layer": "\"FG\"",
+								"layer": "\"Player\"",
 								"x": "dock.X",
 								"y": "dock.Y"
+							}
+						},
+						{
+							"id": "move-to-object",
+							"objectClass": "shipWhole",
+							"sid": 834971783017461,
+							"parameters": {
+								"where": "behind",
+								"object": "player_anim"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 561444207182410,
+							"parameters": {
+								"object-to-create": "ground",
+								"layer": "\"Colliders\"",
+								"x": "dock.X",
+								"y": "dock.Y"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "ground",
+							"sid": 277907053311720,
+							"parameters": {
+								"width": "360",
+								"height": "242"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "ground",
+							"sid": 219933482089552,
+							"parameters": {
+								"angle": "0"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ground",
+							"sid": 554690995750980,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "ground",
+							"sid": 195561868082449,
+							"parameters": {
+								"instance-variable": "id",
+								"value": "2"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "ground",
+							"sid": 552237797855485,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "SysObj",
+							"sid": 553230701598109,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "3",
+								"type": "once",
+								"tag": "\"turn_hangar_collider_on\""
 							}
 						}
 					],
 					"sid": 262350446453438
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "SysObj",
+							"sid": 563266083490614,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"turn_hangar_collider_on\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "ground",
+							"sid": 726088449767558,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						}
+					],
+					"sid": 553565587526719,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 594227675653523
+						}
+					]
 				}
 			],
 			"sid": 784539228046150

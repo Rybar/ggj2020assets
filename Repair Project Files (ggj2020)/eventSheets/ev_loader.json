@@ -42,6 +42,16 @@
 			"sid": 204228534011830
 		},
 		{
+			"eventType": "variable",
+			"name": "firstSessionPlaying",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 813360904673371
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{

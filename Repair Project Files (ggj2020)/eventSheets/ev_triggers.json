@@ -49,6 +49,15 @@
 							],
 							"actions": [
 								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 941406854466286,
+									"parameters": {
+										"variable": "firstSessionPlaying",
+										"value": "false"
+									}
+								},
+								{
 									"callFunction": "FadeOut",
 									"sid": 543631823720216,
 									"parameters": [
@@ -273,11 +282,6 @@
 					"id": "destroy",
 					"objectClass": "repairProgressBar",
 					"sid": 665233747752667
-				},
-				{
-					"id": "destroy",
-					"objectClass": "shipWhole",
-					"sid": 347201469768540
 				},
 				{
 					"id": "set-enabled",

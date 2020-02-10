@@ -24,6 +24,11 @@
 							"properties": {
 								"enabled": true
 							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
 						}
 					},
 					"world": {
@@ -71,491 +76,6 @@
 							1
 						],
 						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "ground",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 65,
-					"instanceVariables": {
-						"id": 0
-					},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 3054.9408569285542,
-						"y": 2487.996319664206,
-						"width": 5169.403517759346,
-						"height": 127,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 1.5708808173409803,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "ground",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 66,
-					"instanceVariables": {
-						"id": 0
-					},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": -57.059143071445654,
-						"y": 2481.996319664206,
-						"width": 5169.403517759346,
-						"height": 127,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 1.5708808173409803,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "ground",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 67,
-					"instanceVariables": {
-						"id": 1
-					},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 1520,
-						"y": 5015,
-						"width": 3045.410873433903,
-						"height": 127,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 3.141592653589793,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "ground",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 68,
-					"instanceVariables": {
-						"id": 0
-					},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 1503,
-						"y": -14.500000000000064,
-						"width": 3163.410873433903,
-						"height": 252,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 3.141592653589793,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "playerSpawnLoc",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 79,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 1432,
-						"y": 489,
-						"width": 32,
-						"height": 32,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "ground",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 86,
-					"instanceVariables": {
-						"id": 0
-					},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 44.15772098361187,
-						"y": 168.88610433779047,
-						"width": 364.6963865723399,
-						"height": 87.2286181793438,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 4.71238898038469,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "ground",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 87,
-					"instanceVariables": {
-						"id": 0
-					},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 501.2582815257963,
-						"y": 214.9986371657685,
-						"width": 275.27016618518775,
-						"height": 118.5193252972007,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 4.71238898038469,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "ground",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 20,
-					"instanceVariables": {
-						"id": 0
-					},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 934,
-						"y": 167,
-						"width": 196.150785161659,
-						"height": 20.335033183664994,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 4.71238898038469,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "ground",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 22,
-					"instanceVariables": {
-						"id": 0
-					},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 971.2233310710133,
-						"y": 218.42850549751907,
-						"width": 268.5974473036854,
-						"height": 113.75309752469896,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 4.71238898038469,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "ground",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 28,
-					"instanceVariables": {
-						"id": 0
-					},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 1435.4689072892281,
-						"y": 218.1389005022675,
-						"width": 263.8312195311836,
-						"height": 101.36090531619467,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 4.71238898038469,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "ground",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 9,
-					"instanceVariables": {
-						"id": 0
-					},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 1891.120282340394,
-						"y": 219.09214605676786,
-						"width": 263.8312195311836,
-						"height": 101.36090531619467,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 4.71238898038469,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "ground",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 16,
-					"instanceVariables": {
-						"id": 0
-					},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 2345,
-						"y": 220,
-						"width": 263.8312195311836,
-						"height": 101.36090531619467,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 4.71238898038469,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "ground",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 17,
-					"instanceVariables": {
-						"id": 0
-					},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 2871.6681688614412,
-						"y": 220.95324555450028,
-						"width": 263.8312195311836,
-						"height": 256.7399306997511,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 4.71238898038469,
 						"zElevation": 0
 					}
 				},
@@ -783,8 +303,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 1664,
-						"y": 239,
+						"x": 1855,
+						"y": 240,
 						"width": 88.31760866327846,
 						"height": 88.31760866327846,
 						"originX": 0.5,
@@ -812,7 +332,7 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 1665,
+						"x": 1856,
 						"y": 230,
 						"width": 360,
 						"height": 242,
@@ -843,7 +363,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 2119,
+						"x": 2311,
 						"y": 240,
 						"width": 88.31760866327846,
 						"height": 88.31760866327846,
@@ -872,7 +392,7 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 2120,
+						"x": 2311,
 						"y": 230,
 						"width": 360,
 						"height": 242,
@@ -903,8 +423,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 2571,
-						"y": 239,
+						"x": 2762,
+						"y": 240,
 						"width": 88.31760866327846,
 						"height": 88.31760866327846,
 						"originX": 0.5,
@@ -932,7 +452,7 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 2572,
+						"x": 2763,
 						"y": 230,
 						"width": 360,
 						"height": 242,
@@ -1100,7 +620,7 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 1622.0440405894606,
+						"x": 1814.0440405894606,
 						"y": 255,
 						"width": 85.48210478424875,
 						"height": 58.69704525345213,
@@ -1142,7 +662,7 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 2077.2980615286856,
+						"x": 2269.2980615286856,
 						"y": 255,
 						"width": 85.48210478424875,
 						"height": 58.69704525345213,
@@ -1184,7 +704,7 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 2528.8486728571675,
+						"x": 2720.8486728571675,
 						"y": 255,
 						"width": 85.48210478424875,
 						"height": 58.69704525345213,
@@ -1226,10 +746,907 @@
 			"global": false
 		},
 		{
-			"name": "FG",
+			"name": "Colliders",
 			"overriden": 0,
-			"instances": [],
-			"sid": 723809198079104,
+			"instances": [
+				{
+					"type": "ground",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 65,
+					"instanceVariables": {
+						"id": 0
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Persist": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 3054.9408569285542,
+						"y": 2487.996319664206,
+						"width": 5169.403517759346,
+						"height": 127,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 1.5708808173409803,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ground",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 66,
+					"instanceVariables": {
+						"id": 0
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Persist": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": -57.059143071445654,
+						"y": 2481.996319664206,
+						"width": 5169.403517759346,
+						"height": 127,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 1.5708808173409803,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ground",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 67,
+					"instanceVariables": {
+						"id": 1
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Persist": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 1520,
+						"y": 5015,
+						"width": 3045.410873433903,
+						"height": 127,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 3.141592653589793,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ground",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 68,
+					"instanceVariables": {
+						"id": 0
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Persist": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 1503,
+						"y": -14.353736764883514,
+						"width": 3163.410873433903,
+						"height": 252.2925264702331,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 3.141592653589793,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ground",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 86,
+					"instanceVariables": {
+						"id": 0
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Persist": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 44.15772098361187,
+						"y": 168.88610433779047,
+						"width": 364.6963865723399,
+						"height": 87.2286181793438,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ground",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 87,
+					"instanceVariables": {
+						"id": 0
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Persist": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 501.2582815257963,
+						"y": 214.9986371657685,
+						"width": 275.27016618518775,
+						"height": 118.5193252972007,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ground",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 20,
+					"instanceVariables": {
+						"id": 0
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Persist": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 934,
+						"y": 167,
+						"width": 196.150785161659,
+						"height": 20.335033183664994,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ground",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 22,
+					"instanceVariables": {
+						"id": 0
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Persist": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 971.2233310710133,
+						"y": 218.42850549751907,
+						"width": 268.5974473036854,
+						"height": 113.75309752469896,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ground",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 28,
+					"instanceVariables": {
+						"id": 0
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Persist": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 1400.3707052738814,
+						"y": 218.96175482574816,
+						"width": 265.47692817814493,
+						"height": 31.164501285501245,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ground",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 9,
+					"instanceVariables": {
+						"id": 0
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Persist": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 2083.1202823403937,
+						"y": 219.09214605676786,
+						"width": 263.8312195311836,
+						"height": 101.36090531619467,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ground",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 16,
+					"instanceVariables": {
+						"id": 0
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Persist": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 2536,
+						"y": 220,
+						"width": 263.8312195311836,
+						"height": 101.36090531619467,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ground",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 17,
+					"instanceVariables": {
+						"id": 0
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Persist": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 2969.2695081399606,
+						"y": 219.91860238193647,
+						"width": 261.761933186056,
+						"height": 61.53725214271276,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ground",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 51,
+					"instanceVariables": {
+						"id": 0
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Persist": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 1535.6436496269084,
+						"y": 116.30058100808813,
+						"width": 8.292083005127303,
+						"height": -243.90174038160467,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ground",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 52,
+					"instanceVariables": {
+						"id": 0
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Persist": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 1663.8918115435483,
+						"y": 219.36185536410193,
+						"width": 265.05261648717834,
+						"height": 31.772947882707484,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ground",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 53,
+					"instanceVariables": {
+						"id": 0
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Persist": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 1491.4582563570907,
+						"y": 199.95383487837228,
+						"width": 32,
+						"height": -153.0834872858186,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ground",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 54,
+					"instanceVariables": {
+						"id": 0
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Persist": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 1556.9650428187936,
+						"y": 311.9138338939733,
+						"width": 31.88236782460745,
+						"height": -185.80176436382771,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ground",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 55,
+					"instanceVariables": {
+						"id": 0
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Persist": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 1504.0374554305931,
+						"y": 284.89424438989215,
+						"width": 25.832103137539058,
+						"height": -31.99743761015793,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ground_jumpthru",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 56,
+					"instanceVariables": {},
+					"behaviors": {
+						"Jumpthru": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1439.8298822269294,
+						"y": 300.148785565901,
+						"width": 48.602603066100755,
+						"height": 8,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ground",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 57,
+					"instanceVariables": {
+						"id": 0
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Persist": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 1560,
+						"y": 228,
+						"width": 24,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ground",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 58,
+					"instanceVariables": {
+						"id": 0
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Persist": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 1588,
+						"y": 236,
+						"width": 8,
+						"height": 24,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ground",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 59,
+					"instanceVariables": {
+						"id": 0
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Persist": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 1636.5462780124985,
+						"y": 284.36804809773275,
+						"width": 24.73883559021307,
+						"height": -25.070825165812494,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ground",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 60,
+					"instanceVariables": {
+						"id": 0
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Persist": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 1572,
+						"y": 204,
+						"width": 24,
+						"height": 8,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 148850820839310,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"color": [
@@ -1254,7 +1671,7 @@
 			"global": false
 		},
 		{
-			"name": "tilemap",
+			"name": "Tilemap",
 			"overriden": 0,
 			"instances": [
 				{
@@ -1276,11 +1693,11 @@
 					"behaviors": {},
 					"ownData": {
 						"tilemapData": {
-							"width": 357,
+							"width": 376,
 							"height": 86,
-							"max-width": 629,
+							"max-width": 651,
 							"max-height": 360,
-							"data": "744x0,358,243,390,333x0,143h,229h,245h,261h,8x143h,229h,245h,261h,2x143h,7x0,228,375,408,358,243,390,343,3x374,243,2x374,390,323x0,228h,244h,260h,4x0,229h,261h,2x0,228h,244h,260h,9x0,345,378,409,359,392,408,344,376,244,377,244,2x375,408,322x0,143h,228h,244h,260h,2x143h,2x0,228h,260h,2x143h,228h,244h,260h,2x143h,9x0,229,2x378,409,229,245,5x378,394,323x0,228h,244h,260h,4x0,227h,259h,2x0,228h,244h,260h,345x0,143h,227h,243h,259h,3x0,226h,229h,261h,2x143h,227h,243h,259h,0,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,316x0,226h,229h,261h,229h,245h,261h,2x0,227h,259h,2x226h,229h,261h,229h,245h,261h,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,317x0,227h,259h,228h,244h,260h,0,108,2x143,2x108,227h,259h,228h,244h,260h,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,316x0,229h,245h,261h,227h,243h,259h,143h,111,106,122,111,229h,245h,261h,227h,243h,259h,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,316x0,228h,244h,260h,4x0,111,107,123,111,228h,244h,260h,111,7x0,2x108,0,2x111,333x0,227h,243h,259h,4x0,108,2x143,108,227h,243h,259h,108,10x0,2x111,344x0,111,0,111,11x0,2x111,344x0,111,0,111,357x0,111,0,111,357x0,111,0,111,349x0,343,374,407,5x0,111,0,111,348x0,227,359,360,408,5x0,111,0,111,347x0,343,359,392,375,408,5x0,111,0,111,346x0,358,359,2x377,392,391,407,4x0,111,0,111,346x0,344,392,2x375,376,392,391,390,3x0,111,0,111,346x0,362,2x245,361,360,377,375,391,390,2x0,111,0,111,346x0,227,374,259,228,360,392,244,360,260,143h,129,111,0,111,346x0,344,375,408,228,376,392,360,377,260,2x0,111,0,111,346x0,345,245,409,228,376,375,392,393,394,2x0,111,0,111,349x0,229,245,378,245,261,3x0,111,0,111,346x0,243,374,259,343,243,259,5x0,111,0,111,346x0,376,377,408,344,360,408,5x0,111,0,111,346x0,2x360,260,344,376,408,5x0,111,0,111,346x0,2x378,394,344,375,408,358,374,2x243,259,111,0,111,349x0,228,376,408,344,377,376,360,260,111,0,111,346x0,227,374,407,228,392,260,345,3x245,261,111,0,111,346x0,228,375,408,344,376,260,4x0,129,111,0,111,346x0,362,245,394,362,378,261,4x143h,129,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,0,111,355x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,356x0,143,3x108,357x0,3x111,353x0,4x143,108,2x111,357x0,3x111,357x0,3x111,357x0,2x111,108,124,356x0,108,124,109,125,350x0,108,2x143,108,2x143,109,125,143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,11x143,321x0,111,106,122,111,2x0,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,122,10x143,321x0,111,107,123,111,2x0,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,123,327x0,4x143,108,2x143,108,2x0,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,11x143,321x0,111,2x0,111,2x0,227,374,390,111,353x0,111,2x0,344,392,408,357x0,228,376,260,10x0,358,243,390,333x0,143h,229h,245h,261h,8x143h,229h,245h,261h,2x143h,7x0,228,375,408,358,243,390,343,3x374,243,2x374,390,323x0,228h,244h,260h,4x0,229h,261h,2x0,228h,244h,260h,9x0,345,378,409,359,392,408,344,376,244,377,244,2x375,408,322x0,143h,228h,244h,260h,2x143h,2x0,228h,260h,2x143h,228h,244h,260h,2x143h,9x0,229,2x378,409,229,245,5x378,394,323x0,228h,244h,260h,4x0,227h,259h,2x0,228h,244h,260h,345x0,143h,227h,243h,259h,3x0,226h,229h,261h,2x143h,227h,243h,259h,0,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,316x0,226h,229h,261h,229h,245h,261h,2x0,227h,259h,2x226h,229h,261h,229h,245h,261h,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,317x0,227h,259h,228h,244h,260h,0,108,2x143,2x108,227h,259h,228h,244h,260h,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,316x0,229h,245h,261h,227h,243h,259h,143h,111,106,122,111,229h,245h,261h,227h,243h,259h,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,316x0,228h,244h,260h,4x0,111,107,123,111,228h,244h,260h,111,7x0,2x108,0,2x111,333x0,227h,243h,259h,4x0,108,2x143,108,227h,243h,259h,108,10x0,2x111,344x0,111,0,111,11x0,2x111,344x0,111,0,111,357x0,111,0,111,357x0,111,0,111,349x0,343,374,407,5x0,111,0,111,348x0,227,359,360,408,5x0,111,0,111,347x0,343,359,392,375,408,5x0,111,0,111,346x0,358,359,2x377,392,391,407,4x0,111,0,111,346x0,344,392,2x375,376,392,391,390,3x0,111,0,111,346x0,362,2x245,361,360,377,375,391,390,2x0,111,0,111,346x0,227,374,259,228,360,392,244,360,260,143h,129,111,0,111,346x0,344,375,408,228,376,392,360,377,260,2x0,111,0,111,346x0,345,245,409,228,376,375,392,393,394,2x0,111,0,111,349x0,229,245,378,245,261,3x0,111,0,111,346x0,243,374,259,343,243,259,5x0,111,0,111,346x0,376,377,408,344,360,408,5x0,111,0,111,346x0,2x360,260,344,376,408,5x0,111,0,111,346x0,2x378,394,344,375,408,358,374,2x243,259,111,0,111,349x0,228,376,408,344,377,376,360,260,111,0,111,346x0,227,374,407,228,392,260,345,3x245,261,111,0,111,346x0,228,375,408,344,376,260,4x0,129,111,0,111,346x0,362,245,394,362,378,261,4x143h,129,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,0,111,355x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,356x0,143,3x108,357x0,3x111,353x0,4x143,108,2x111,357x0,3x111,357x0,3x111,357x0,2x111,108,124,356x0,108,124,109,125,350x0,108,2x143,108,2x143,109,125,143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,11x143,321x0,111,106,122,111,2x0,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,122,10x143,321x0,111,107,123,111,2x0,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,123,327x0,4x143,108,2x143,108,2x0,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,11x143,321x0,111,2x0,111,2x0,227,374,390,111,353x0,111,2x0,344,392,408,357x0,228,376,260,10x0,358,243,390,333x0,143h,229h,245h,261h,8x143h,229h,245h,261h,2x143h,7x0,228,375,408,358,243,390,343,3x374,243,2x374,390,323x0,228h,244h,260h,4x0,229h,261h,2x0,228h,244h,260h,9x0,345,378,409,359,392,408,344,376,244,377,244,2x375,408,322x0,143h,228h,244h,260h,2x143h,2x0,228h,260h,2x143h,228h,244h,260h,2x143h,9x0,229,2x378,409,229,245,5x378,394,323x0,228h,244h,260h,4x0,227h,259h,2x0,228h,244h,260h,345x0,143h,227h,243h,259h,3x0,226h,229h,261h,2x143h,227h,243h,259h,0,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,316x0,226h,229h,261h,229h,245h,261h,2x0,227h,259h,2x226h,229h,261h,229h,245h,261h,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,317x0,227h,259h,228h,244h,260h,0,108,2x143,2x108,227h,259h,228h,244h,260h,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,316x0,229h,245h,261h,227h,243h,259h,143h,111,106,122,111,229h,245h,261h,227h,243h,259h,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,316x0,228h,244h,260h,4x0,111,107,123,111,228h,244h,260h,111,7x0,2x108,0,2x111,333x0,227h,243h,259h,4x0,108,2x143,108,227h,243h,259h,108,10x0,2x111,344x0,111,0,111,11x0,2x111,344x0,111,0,111,357x0,111,0,111,357x0,111,0,111,349x0,343,374,407,5x0,111,0,111,348x0,227,359,360,408,5x0,111,0,111,347x0,343,359,392,375,408,5x0,111,0,111,346x0,358,359,2x377,392,391,407,4x0,111,0,111,346x0,344,392,2x375,376,392,391,390,3x0,111,0,111,346x0,362,2x245,361,360,377,375,391,390,2x0,111,0,111,346x0,227,374,259,228,360,392,244,360,260,143h,129,111,0,111,346x0,344,375,408,228,376,392,360,377,260,2x0,111,0,111,346x0,345,245,409,228,376,375,392,393,394,2x0,111,0,111,349x0,229,245,378,245,261,3x0,111,0,111,346x0,243,374,259,343,243,259,5x0,111,0,111,346x0,376,377,408,344,360,408,5x0,111,0,111,346x0,2x360,260,344,376,408,5x0,111,0,111,346x0,2x378,394,344,375,408,358,374,2x243,259,111,0,111,349x0,228,376,408,344,377,376,360,260,111,0,111,346x0,227,374,407,228,392,260,345,3x245,261,111,0,111,346x0,228,375,408,344,376,260,4x0,129,111,0,111,346x0,362,245,394,362,378,261,4x143h,129,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,0,111,355x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,356x0,143,3x108,357x0,3x111,353x0,4x143,108,2x111,357x0,3x111,357x0,3x111,357x0,2x111,108,124,356x0,108,124,109,125,350x0,108,2x143,108,2x143,109,125,143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,11x143,321x0,111,106,122,111,2x0,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,122,10x143,321x0,111,107,123,111,2x0,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,123,327x0,4x143,108,2x143,108,2x0,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,11x143,321x0,111,2x0,111,2x0,227,374,390,111,9x0,358,243,390,333x0,143h,229h,245h,261h,8x143h,229h,245h,261h,2x143h,7x0,228,375,408,358,243,390,343,3x374,243,2x374,390,323x0,228h,244h,260h,4x0,229h,261h,0,228,228h,244h,260h,9x0,345,378,409,359,392,408,344,376,244,377,244,2x375,408,322x0,143h,228h,244h,260h,2x143h,2x0,228h,260h,2x143h,228h,244h,260h,2x143h,9x0,229,2x378,409,229,245,5x378,394,323x0,228h,244h,260h,4x0,227h,259h,2x0,228h,244h,260h,345x0,143h,227h,243h,259h,3x0,226h,229h,261h,2x143h,227h,243h,259h,0,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,316x0,226h,229h,261h,229h,245h,261h,2x0,227h,259h,2x226h,229h,261h,229h,245h,261h,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,317x0,227h,259h,228h,244h,260h,0,108,2x143,2x108,227h,259h,228h,244h,260h,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,316x0,229h,245h,261h,227h,243h,259h,143h,111,106,122,111,229h,245h,261h,227h,243h,259h,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,316x0,228h,244h,260h,4x0,111,107,123,111,228h,244h,260h,111,7x0,2x108,0,2x111,333x0,227h,243h,259h,4x0,108,2x143,108,227h,243h,259h,108,10x0,2x111,344x0,111,0,111,11x0,2x111,344x0,111,0,111,357x0,111,0,111,357x0,111,0,111,349x0,343,374,407,5x0,111,0,111,348x0,227,359,360,408,5x0,111,0,111,347x0,343,359,392,375,408,5x0,111,0,111,346x0,358,359,2x377,392,391,407,4x0,111,0,111,346x0,344,392,2x375,376,392,391,390,3x0,111,0,111,346x0,362,2x245,361,360,377,375,391,390,2x0,111,0,111,346x0,227,374,259,228,360,392,244,360,260,143h,129,111,0,111,346x0,344,375,408,228,376,392,360,377,260,2x0,111,0,111,346x0,345,245,409,228,376,375,392,393,394,2x0,111,0,111,349x0,229,245,378,245,261,3x0,111,0,111,346x0,243,374,259,343,243,259,5x0,111,0,111,346x0,376,377,408,344,360,408,5x0,111,0,111,346x0,2x360,260,344,376,408,5x0,111,0,111,346x0,2x378,394,344,375,408,358,374,2x243,259,111,0,111,349x0,228,376,408,344,377,376,360,260,111,0,111,346x0,227,374,407,228,392,260,345,3x245,261,111,0,111,346x0,228,375,408,344,376,260,4x0,129,111,0,111,346x0,362,245,394,362,378,261,4x143h,129,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,0,111,355x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,356x0,143,3x108,357x0,3x111,353x0,4x143,108,2x111,357x0,3x111,357x0,3x111,357x0,2x111,108,124,356x0,108,124,109,125,350x0,108,2x143,108,2x143,109,125,143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,11x143,321x0,111,106,122,111,2x0,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,122,10x143,321x0,111,107,123,111,2x0,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,123,327x0,4x143,108,2x143,108,2x0,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,11x143,321x0,111,2x0,111,2x0,227,374,390,111,9x0,358,243,390,333x0,143h,229h,245h,261h,8x143h,229h,245h,261h,2x143h,7x0,228,375,408,358,243,390,343,3x374,243,2x374,390,323x0,228h,244h,260h,4x0,229h,261h,0,228,228h,244h,260h,9x0,345,378,409,359,392,408,344,376,244,377,244,2x375,408,322x0,143h,228h,244h,260h,2x143h,2x0,228h,260h,2x143h,228h,244h,260h,2x143h,9x0,229,2x378,409,229,245,5x378,394,323x0,228h,244h,260h,4x0,227h,259h,2x0,228h,244h,260h,345x0,143h,227h,243h,259h,3x0,226h,229h,261h,2x143h,227h,243h,259h,0,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,316x0,226h,229h,261h,229h,245h,261h,2x0,227h,259h,2x226h,229h,261h,229h,245h,261h,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,317x0,227h,259h,228h,244h,260h,0,108,2x143,2x108,227h,259h,228h,244h,260h,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,316x0,229h,245h,261h,227h,243h,259h,143h,111,106,122,111,229h,245h,261h,227h,243h,259h,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,316x0,228h,244h,260h,4x0,111,107,123,111,228h,244h,260h,111,7x0,2x108,0,2x111,333x0,227h,243h,259h,4x0,108,2x143,108,227h,243h,259h,108,10x0,2x111,344x0,111,0,111,11x0,2x111,344x0,111,0,111,357x0,111,0,111,357x0,111,0,111,349x0,343,374,407,5x0,111,0,111,348x0,227,359,360,408,5x0,111,0,111,347x0,343,359,392,375,408,5x0,111,0,111,346x0,358,359,2x377,392,391,407,4x0,111,0,111,346x0,344,392,2x375,376,392,391,390,3x0,111,0,111,346x0,362,2x245,361,360,377,375,391,390,2x0,111,0,111,346x0,227,374,259,228,360,392,244,360,260,143h,129,111,0,111,346x0,344,375,408,228,376,392,360,377,260,2x0,111,0,111,346x0,345,245,409,228,376,375,392,393,394,2x0,111,0,111,349x0,229,245,378,245,261,3x0,111,0,111,346x0,243,374,259,343,243,259,5x0,111,0,111,346x0,376,377,408,344,360,408,5x0,111,0,111,346x0,2x360,260,344,376,408,5x0,111,0,111,346x0,2x378,394,344,375,408,358,374,2x243,259,111,0,111,349x0,228,376,408,344,377,376,360,260,111,0,111,346x0,227,374,407,228,392,260,345,3x245,261,111,0,111,346x0,228,375,408,344,376,260,4x0,129,111,0,111,346x0,362,245,394,362,378,261,4x143h,129,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,0,111,355x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,356x0,143,3x108,357x0,3x111,353x0,4x143,108,2x111,357x0,3x111,357x0,3x111,357x0,2x111,108,124,356x0,108,124,109,125,350x0,108,2x143,108,2x143,109,125,143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,11x143,321x0,111,106,122,111,2x0,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,122,10x143,321x0,111,107,123,111,2x0,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,123,327x0,4x143,108,2x143,108,2x0,108,2x143,108,2x143,108,2x143,108,2x143,108,358,243,390,2x143,108,2x143,108,11x143,316x0,143h,229h,245h,261h,8x143h,229h,245h,261h,2x143h,7x0,228,375,408,358,243,390,343,3x374,243,2x374,390,323x0,228h,244h,260h,4x0,229h,261h,0,344,228h,244h,260h,9x0,345,378,409,359,392,408,344,376,244,377,244,2x375,408,322x0,143h,228h,244h,260h,2x143h,2x0,228h,260h,2x143h,228h,244h,260h,2x143h,9x0,229,2x378,409,229,245,5x378,394,323x0,228h,244h,260h,4x0,227h,259h,2x0,228h,244h,260h,345x0,143h,227h,243h,259h,3x0,226h,229h,261h,2x143h,227h,243h,259h,0,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,316x0,226h,229h,261h,229h,245h,261h,2x0,227h,259h,2x226h,229h,261h,229h,245h,261h,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,317x0,227h,259h,228h,244h,260h,0,108,2x143,2x108,227h,259h,228h,244h,260h,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,316x0,229h,245h,261h,227h,243h,259h,143h,111,106,122,111,229h,245h,261h,227h,243h,259h,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,316x0,228h,244h,260h,4x0,111,107,123,111,228h,244h,260h,111,7x0,2x108,0,2x111,333x0,227h,243h,259h,4x0,108,2x143,108,227h,243h,259h,108,10x0,2x111,344x0,111,0,111,11x0,2x111,344x0,111,0,111,357x0,111,0,111,357x0,111,0,111,349x0,343,374,407,5x0,111,0,111,348x0,227,359,360,408,5x0,111,0,111,347x0,343,359,392,375,408,5x0,111,0,111,346x0,358,359,2x377,392,391,407,4x0,111,0,111,346x0,344,392,2x375,376,392,391,390,3x0,111,0,111,346x0,362,2x245,361,360,377,375,391,390,2x0,111,0,111,346x0,227,374,259,228,360,392,244,360,260,143h,129,111,0,111,346x0,344,375,408,228,376,392,360,377,260,2x0,111,0,111,346x0,345,245,409,228,376,375,392,393,394,2x0,111,0,111,349x0,229,245,378,245,261,3x0,111,0,111,346x0,243,374,259,343,243,259,5x0,111,0,111,346x0,376,377,408,344,360,408,5x0,111,0,111,346x0,2x360,260,344,376,408,5x0,111,0,111,346x0,2x378,394,344,375,408,358,374,2x243,259,111,0,111,349x0,228,376,408,344,377,376,360,260,111,0,111,346x0,227,374,407,228,392,260,345,3x245,261,111,0,111,346x0,228,375,408,344,376,260,4x0,129,111,0,111,346x0,362,245,394,362,378,261,4x143h,129,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,0,111,355x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,356x0,143,3x108,357x0,3x111,353x0,4x143,108,2x111,357x0,3x111,357x0,3x111,357x0,2x111,108,124,356x0,108,124,109,125,350x0,108,2x143,108,2x143,109,125,143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,11x143,321x0,111,106,122,111,2x0,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,122,10x143,321x0,111,107,123,111,2x0,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,123,327x0,4x143,108,2x143,108,2x0,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,11x143,321x0,111,2x0,111,2x0,227,374,390,111,353x0,111,2x0,344,392,408,357x0,228,376,260,100786x0"
+							"data": "744x0,358,243,390,333x0,143h,229h,245h,261h,8x143h,229h,245h,261h,2x143h,7x0,228,375,408,358,243,390,343,3x374,243,2x374,390,323x0,228h,244h,260h,4x0,229h,261h,2x0,228h,244h,260h,9x0,345,378,409,359,392,408,344,376,244,377,244,2x375,408,322x0,143h,228h,244h,260h,2x143h,2x0,228h,260h,2x143h,228h,244h,260h,2x143h,9x0,229,2x378,409,229,245,5x378,394,323x0,228h,244h,260h,4x0,227h,259h,2x0,228h,244h,260h,345x0,143h,227h,243h,259h,3x0,226h,229h,261h,2x143h,227h,243h,259h,0,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,316x0,226h,229h,261h,229h,245h,261h,2x0,227h,259h,2x226h,229h,261h,229h,245h,261h,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,317x0,227h,259h,228h,244h,260h,0,108,2x143,2x108,227h,259h,228h,244h,260h,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,316x0,229h,245h,261h,227h,243h,259h,143h,111,106,122,111,229h,245h,261h,227h,243h,259h,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,316x0,228h,244h,260h,4x0,111,107,123,111,228h,244h,260h,111,7x0,2x108,0,2x111,333x0,227h,243h,259h,4x0,108,2x143,108,227h,243h,259h,108,10x0,2x111,344x0,111,0,111,11x0,2x111,344x0,111,0,111,357x0,111,0,111,357x0,111,0,111,349x0,343,374,407,5x0,111,0,111,348x0,227,359,360,408,5x0,111,0,111,347x0,343,359,392,375,408,5x0,111,0,111,346x0,358,359,2x377,392,391,407,4x0,111,0,111,346x0,344,392,2x375,376,392,391,390,3x0,111,0,111,346x0,362,2x245,361,360,377,375,391,390,2x0,111,0,111,346x0,227,374,259,228,360,392,244,360,260,143h,129,111,0,111,346x0,344,375,408,228,376,392,360,377,260,2x0,111,0,111,346x0,345,245,409,228,376,375,392,393,394,2x0,111,0,111,349x0,229,245,378,245,261,3x0,111,0,111,346x0,243,374,259,343,243,259,5x0,111,0,111,346x0,376,377,408,344,360,408,5x0,111,0,111,346x0,2x360,260,344,376,408,5x0,111,0,111,346x0,2x378,394,344,375,408,358,374,2x243,259,111,0,111,349x0,228,376,408,344,377,376,360,260,111,0,111,346x0,227,374,407,228,392,260,345,3x245,261,111,0,111,346x0,228,375,408,344,376,260,4x0,129,111,0,111,346x0,362,245,394,362,378,261,4x143h,129,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,0,111,355x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,356x0,143,3x108,357x0,3x111,353x0,4x143,108,2x111,357x0,3x111,357x0,3x111,357x0,2x111,108,124,356x0,108,124,109,125,350x0,108,2x143,108,2x143,109,125,143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,11x143,321x0,111,106,122,111,2x0,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,122,10x143,321x0,111,107,123,111,2x0,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,123,327x0,4x143,108,2x143,108,2x0,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,11x143,321x0,111,2x0,111,2x0,227,374,390,111,353x0,111,2x0,344,392,408,357x0,228,376,260,10x0,358,243,390,333x0,143h,229h,245h,261h,8x143h,229h,245h,261h,2x143h,7x0,228,375,408,358,243,390,343,3x374,243,2x374,390,323x0,228h,244h,260h,4x0,229h,261h,2x0,228h,244h,260h,9x0,345,378,409,359,392,408,344,376,244,377,244,2x375,408,322x0,143h,228h,244h,260h,2x143h,2x0,228h,260h,2x143h,228h,244h,260h,2x143h,9x0,229,2x378,409,229,245,5x378,394,323x0,228h,244h,260h,4x0,227h,259h,2x0,228h,244h,260h,345x0,143h,227h,243h,259h,3x0,226h,229h,261h,2x143h,227h,243h,259h,0,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,316x0,226h,229h,261h,229h,245h,261h,2x0,227h,259h,2x226h,229h,261h,229h,245h,261h,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,317x0,227h,259h,228h,244h,260h,0,108,2x143,2x108,227h,259h,228h,244h,260h,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,316x0,229h,245h,261h,227h,243h,259h,143h,111,106,122,111,229h,245h,261h,227h,243h,259h,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,316x0,228h,244h,260h,4x0,111,107,123,111,228h,244h,260h,111,7x0,2x108,0,2x111,333x0,227h,243h,259h,4x0,108,2x143,108,227h,243h,259h,108,10x0,2x111,344x0,111,0,111,11x0,2x111,344x0,111,0,111,357x0,111,0,111,357x0,111,0,111,349x0,343,374,407,5x0,111,0,111,348x0,227,359,360,408,5x0,111,0,111,347x0,343,359,392,375,408,5x0,111,0,111,346x0,358,359,2x377,392,391,407,4x0,111,0,111,346x0,344,392,2x375,376,392,391,390,3x0,111,0,111,346x0,362,2x245,361,360,377,375,391,390,2x0,111,0,111,346x0,227,374,259,228,360,392,244,360,260,143h,129,111,0,111,346x0,344,375,408,228,376,392,360,377,260,2x0,111,0,111,346x0,345,245,409,228,376,375,392,393,394,2x0,111,0,111,349x0,229,245,378,245,261,3x0,111,0,111,346x0,243,374,259,343,243,259,5x0,111,0,111,346x0,376,377,408,344,360,408,5x0,111,0,111,346x0,2x360,260,344,376,408,5x0,111,0,111,346x0,2x378,394,344,375,408,358,374,2x243,259,111,0,111,349x0,228,376,408,344,377,376,360,260,111,0,111,346x0,227,374,407,228,392,260,345,3x245,261,111,0,111,346x0,228,375,408,344,376,260,4x0,129,111,0,111,346x0,362,245,394,362,378,261,4x143h,129,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,0,111,355x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,356x0,143,3x108,357x0,3x111,353x0,4x143,108,2x111,357x0,3x111,357x0,3x111,357x0,2x111,108,124,356x0,108,124,109,125,350x0,108,2x143,108,2x143,109,125,143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,11x143,321x0,111,106,122,111,2x0,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,122,10x143,321x0,111,107,123,111,2x0,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,123,327x0,4x143,108,2x143,108,2x0,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,11x143,321x0,111,2x0,111,2x0,227,374,390,111,353x0,111,2x0,344,392,408,357x0,228,376,260,10x0,358,243,390,333x0,143h,229h,245h,261h,8x143h,229h,245h,261h,2x143h,7x0,228,375,408,358,243,390,343,3x374,243,2x374,390,323x0,228h,244h,260h,4x0,229h,261h,2x0,228h,244h,260h,9x0,345,378,409,359,392,408,344,376,244,377,244,2x375,408,322x0,143h,228h,244h,260h,2x143h,2x0,228h,260h,2x143h,228h,244h,260h,2x143h,9x0,229,2x378,409,229,245,5x378,394,323x0,228h,244h,260h,4x0,227h,259h,2x0,228h,244h,260h,345x0,143h,227h,243h,259h,3x0,226h,229h,261h,2x143h,227h,243h,259h,0,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,316x0,226h,229h,261h,229h,245h,261h,2x0,227h,259h,2x226h,229h,261h,229h,245h,261h,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,317x0,227h,259h,228h,244h,260h,0,108,2x143,2x108,227h,259h,228h,244h,260h,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,316x0,229h,245h,261h,227h,243h,259h,143h,111,106,122,111,229h,245h,261h,227h,243h,259h,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,316x0,228h,244h,260h,4x0,111,107,123,111,228h,244h,260h,111,7x0,2x108,0,2x111,333x0,227h,243h,259h,4x0,108,2x143,108,227h,243h,259h,108,10x0,2x111,344x0,111,0,111,11x0,2x111,344x0,111,0,111,357x0,111,0,111,357x0,111,0,111,349x0,343,374,407,5x0,111,0,111,348x0,227,359,360,408,5x0,111,0,111,347x0,343,359,392,375,408,5x0,111,0,111,346x0,358,359,2x377,392,391,407,4x0,111,0,111,346x0,344,392,2x375,376,392,391,390,3x0,111,0,111,346x0,362,2x245,361,360,377,375,391,390,2x0,111,0,111,346x0,227,374,259,228,360,392,244,360,260,143h,129,111,0,111,346x0,344,375,408,228,376,392,360,377,260,2x0,111,0,111,346x0,345,245,409,228,376,375,392,393,394,2x0,111,0,111,349x0,229,245,378,245,261,3x0,111,0,111,346x0,243,374,259,343,243,259,5x0,111,0,111,346x0,376,377,408,344,360,408,5x0,111,0,111,346x0,2x360,260,344,376,408,5x0,111,0,111,346x0,2x378,394,344,375,408,358,374,2x243,259,111,0,111,349x0,228,376,408,344,377,376,360,260,111,0,111,346x0,227,374,407,228,392,260,345,3x245,261,111,0,111,346x0,228,375,408,344,376,260,4x0,129,111,0,111,346x0,362,245,394,362,378,261,4x143h,129,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,0,111,355x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,356x0,143,3x108,357x0,3x111,353x0,4x143,108,2x111,357x0,3x111,357x0,3x111,357x0,2x111,108,124,356x0,108,124,109,125,350x0,108,2x143,108,2x143,109,125,143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,11x143,321x0,111,106,122,111,2x0,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,122,10x143,321x0,111,107,123,111,2x0,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,123,327x0,4x143,108,2x143,108,2x0,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,11x143,321x0,111,2x0,111,2x0,227,374,390,111,8x0,111,106,122,111,10x0,257,322x0,143h,229h,245h,261h,8x143h,229h,245h,261h,2x143h,6x0,111,107,123,111,10x0,257,323x0,228h,244h,260h,4x0,229h,261h,0,228,228h,244h,260h,8x0,111,106,122,111,10x0,257,333x0,111,106,122,111,8x0,111,107,123,111,10x0,257,333x0,111,107,123,111,8x0,111,106,122,111,10x0,257,333x0,111,106,122,111,8x0,111,107,123,111,10x0,257,333x0,111,107,123,111,8x0,111,106,122,111,10x0,109,2x143,109,330x0,111,106,122,111,8x0,111,107,123,111,10x0,111,106,122,111,330x0,111,107,123,111,8x0,111,106,122,111,10x0,111,107,123,111,330x0,111,106,122,111,8x0,111,107,123,111,7x0,108,2x143,108,106,122,111,330x0,111,107,123,111,8x0,111,106,122,111,7x0,111,106,122,111,107,123,111,330x0,111,106,122,111,8x0,111,107,123,111,7x0,111,107,123,111,106,122,111,330x0,111,107,123,111,8x0,111,106,122,111,7x0,108,2x143,108,107,123,111,330x0,111,106,122,111,8x0,111,107,123,111,10x0,111,106,122,111,330x0,111,2x143,111,8x0,111,106,122,111,10x0,111,107,123,111,330x0,111,2x143,111,8x0,111,107,123,111,106,9x0,111,106,122,111,330x0,111,107,123,111,8x0,111,106,122,111,2x143,109,7x0,111,107,123,111,330x0,111,106,122,111,8x0,111,107,123,111,106,122,111,7x0,111,106,122,111,330x0,111,107,123,111,8x0,2x109,122,111,107,123,111,7x0,111,107,123,111,330x0,111,106,122,111,9x0,109,143,109,2x143,125,7x0,111,106,122,111,330x0,111,107,123,111,13x0,106,111,7x0,111,107,123,111,330x0,111,106,122,111,14x0,111,7x0,111,106,122,111,330x0,111,107,123,111,14x0,112,7x0,111,107,123,111,330x0,111,106,122,111,22x0,111,106,122,111,330x0,111,107,123,111,22x0,111,107,123,111,330x0,111,106,122,111,22x0,111,106,122,111,330x0,111,107,123,111,19x0,109,2x143,111,107,123,111,319x0,143h,228h,244h,260h,2x143h,2x0,228h,260h,143h,109,228h,244h,260h,2x143h,17x0,111,106,122,111,106,122,111,320x0,228h,244h,260h,4x0,227h,259h,2x0,228h,244h,260h,19x0,111,107,123,111,107,123,111,319x0,143h,227h,243h,259h,3x0,226h,229h,261h,2x143h,227h,243h,259h,0,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,316x0,226h,229h,261h,229h,245h,261h,2x0,227h,259h,2x226h,229h,261h,229h,245h,261h,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,317x0,227h,259h,228h,244h,260h,0,108,2x143,2x108,227h,259h,228h,244h,260h,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,316x0,229h,245h,261h,227h,243h,259h,143h,111,106,122,111,229h,245h,261h,227h,243h,259h,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,316x0,228h,244h,260h,4x0,111,107,123,111,228h,244h,260h,111,7x0,2x108,0,2x111,333x0,227h,243h,259h,4x0,108,2x143,108,227h,243h,259h,108,10x0,2x111,344x0,111,0,111,11x0,2x111,344x0,111,0,111,357x0,111,0,111,357x0,111,0,111,349x0,343,374,407,5x0,111,0,111,348x0,227,359,360,408,5x0,111,0,111,347x0,343,359,392,375,408,5x0,111,0,111,346x0,358,359,2x377,392,391,407,4x0,111,0,111,346x0,344,392,2x375,376,392,391,390,3x0,111,0,111,346x0,362,2x245,361,360,377,375,391,390,2x0,111,0,111,346x0,227,374,259,228,360,392,244,360,260,143h,129,111,0,111,346x0,344,375,408,228,376,392,360,377,260,2x0,111,0,111,346x0,345,245,409,228,376,375,392,393,394,2x0,111,0,111,349x0,229,245,378,245,261,3x0,111,0,111,346x0,243,374,259,343,243,259,5x0,111,0,111,346x0,376,377,408,344,360,408,5x0,111,0,111,346x0,2x360,260,344,376,408,5x0,111,0,111,346x0,2x378,394,344,375,408,358,374,2x243,259,111,0,111,349x0,228,376,408,344,377,376,360,260,111,0,111,346x0,227,374,407,228,392,260,345,3x245,261,111,0,111,346x0,228,375,408,344,376,260,4x0,129,111,0,111,346x0,362,245,394,362,378,261,4x143h,129,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,0,111,355x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,356x0,143,3x108,357x0,3x111,353x0,4x143,108,2x111,357x0,3x111,357x0,3x111,357x0,2x111,108,124,356x0,108,124,109,125,350x0,108,2x143,108,2x143,109,125,143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,11x143,321x0,111,106,122,111,2x0,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,122,10x143,321x0,111,107,123,111,2x0,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,123,327x0,4x143,108,2x143,108,2x0,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,11x143,321x0,111,2x0,111,2x0,227,374,390,111,9x0,358,243,390,333x0,143h,229h,245h,261h,8x143h,229h,245h,261h,2x143h,7x0,228,375,408,358,243,390,343,3x374,243,2x374,390,323x0,228h,244h,260h,4x0,229h,261h,0,228,228h,244h,260h,9x0,345,378,409,359,392,408,344,376,244,377,244,2x375,408,322x0,143h,228h,244h,260h,2x143h,2x0,228h,260h,2x143h,228h,244h,260h,2x143h,9x0,229,2x378,409,229,245,5x378,394,323x0,228h,244h,260h,4x0,227h,259h,2x0,228h,244h,260h,345x0,143h,227h,243h,259h,3x0,226h,229h,261h,2x143h,227h,243h,259h,0,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,316x0,226h,229h,261h,229h,245h,261h,2x0,227h,259h,2x226h,229h,261h,229h,245h,261h,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,317x0,227h,259h,228h,244h,260h,0,108,2x143,2x108,227h,259h,228h,244h,260h,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,316x0,229h,245h,261h,227h,243h,259h,143h,111,106,122,111,229h,245h,261h,227h,243h,259h,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,316x0,228h,244h,260h,4x0,111,107,123,111,228h,244h,260h,111,7x0,2x108,0,2x111,333x0,227h,243h,259h,4x0,108,2x143,108,227h,243h,259h,108,10x0,2x111,344x0,111,0,111,11x0,2x111,344x0,111,0,111,357x0,111,0,111,357x0,111,0,111,349x0,343,374,407,5x0,111,0,111,348x0,227,359,360,408,5x0,111,0,111,347x0,343,359,392,375,408,5x0,111,0,111,346x0,358,359,2x377,392,391,407,4x0,111,0,111,346x0,344,392,2x375,376,392,391,390,3x0,111,0,111,346x0,362,2x245,361,360,377,375,391,390,2x0,111,0,111,346x0,227,374,259,228,360,392,244,360,260,143h,129,111,0,111,346x0,344,375,408,228,376,392,360,377,260,2x0,111,0,111,346x0,345,245,409,228,376,375,392,393,394,2x0,111,0,111,349x0,229,245,378,245,261,3x0,111,0,111,346x0,243,374,259,343,243,259,5x0,111,0,111,346x0,376,377,408,344,360,408,5x0,111,0,111,346x0,2x360,260,344,376,408,5x0,111,0,111,346x0,2x378,394,344,375,408,358,374,2x243,259,111,0,111,349x0,228,376,408,344,377,376,360,260,111,0,111,346x0,227,374,407,228,392,260,345,3x245,261,111,0,111,346x0,228,375,408,344,376,260,4x0,129,111,0,111,346x0,362,245,394,362,378,261,4x143h,129,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,0,111,355x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,356x0,143,3x108,357x0,3x111,353x0,4x143,108,2x111,357x0,3x111,357x0,3x111,357x0,2x111,108,124,356x0,108,124,109,125,350x0,108,2x143,108,2x143,109,125,143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,11x143,321x0,111,106,122,111,2x0,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,122,10x143,321x0,111,107,123,111,2x0,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,123,327x0,4x143,108,2x143,108,2x0,108,2x143,108,2x143,108,2x143,108,2x143,108,358,243,390,2x143,108,2x143,108,11x143,316x0,143h,229h,245h,261h,8x143h,229h,245h,261h,2x143h,7x0,228,375,408,358,243,390,343,3x374,243,2x374,390,323x0,228h,244h,260h,4x0,229h,261h,0,344,228h,244h,260h,9x0,345,378,409,359,392,408,344,376,244,377,244,2x375,408,322x0,143h,228h,244h,260h,2x143h,2x0,228h,260h,2x143h,228h,244h,260h,2x143h,9x0,229,2x378,409,229,245,5x378,394,323x0,228h,244h,260h,4x0,227h,259h,2x0,228h,244h,260h,345x0,143h,227h,243h,259h,3x0,226h,229h,261h,2x143h,227h,243h,259h,0,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,316x0,226h,229h,261h,229h,245h,261h,2x0,227h,259h,2x226h,229h,261h,229h,245h,261h,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,317x0,227h,259h,228h,244h,260h,0,108,2x143,2x108,227h,259h,228h,244h,260h,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,316x0,229h,245h,261h,227h,243h,259h,143h,111,106,122,111,229h,245h,261h,227h,243h,259h,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,316x0,228h,244h,260h,4x0,111,107,123,111,228h,244h,260h,111,7x0,2x108,0,2x111,333x0,227h,243h,259h,4x0,108,2x143,108,227h,243h,259h,108,10x0,2x111,344x0,111,0,111,11x0,2x111,344x0,111,0,111,357x0,111,0,111,357x0,111,0,111,349x0,343,374,407,5x0,111,0,111,348x0,227,359,360,408,5x0,111,0,111,347x0,343,359,392,375,408,5x0,111,0,111,346x0,358,359,2x377,392,391,407,4x0,111,0,111,346x0,344,392,2x375,376,392,391,390,3x0,111,0,111,346x0,362,2x245,361,360,377,375,391,390,2x0,111,0,111,346x0,227,374,259,228,360,392,244,360,260,143h,129,111,0,111,346x0,344,375,408,228,376,392,360,377,260,2x0,111,0,111,346x0,345,245,409,228,376,375,392,393,394,2x0,111,0,111,349x0,229,245,378,245,261,3x0,111,0,111,346x0,243,374,259,343,243,259,5x0,111,0,111,346x0,376,377,408,344,360,408,5x0,111,0,111,346x0,2x360,260,344,376,408,5x0,111,0,111,346x0,2x378,394,344,375,408,358,374,2x243,259,111,0,111,349x0,228,376,408,344,377,376,360,260,111,0,111,346x0,227,374,407,228,392,260,345,3x245,261,111,0,111,346x0,228,375,408,344,376,260,4x0,129,111,0,111,346x0,362,245,394,362,378,261,4x143h,129,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,0,111,355x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,357x0,111,0,111,356x0,143,3x108,357x0,3x111,353x0,4x143,108,2x111,357x0,3x111,357x0,3x111,357x0,2x111,108,124,356x0,108,124,109,125,350x0,108,2x143,108,2x143,109,125,143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,11x143,321x0,111,106,122,111,2x0,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,106,122,111,122,10x143,321x0,111,107,123,111,2x0,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,107,123,111,123,327x0,4x143,108,2x143,108,2x0,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,2x143,108,11x143,321x0,111,2x0,111,2x0,227,374,390,111,353x0,111,2x0,344,392,408,357x0,228,376,260,100066x0"
 						},
 						"tile-width": 8,
 						"tile-height": 8,
@@ -1292,7 +1709,7 @@
 					"world": {
 						"x": 0,
 						"y": 0,
-						"width": 2860,
+						"width": 3012,
 						"height": 688,
 						"originX": 0,
 						"originY": 0,
@@ -1307,6 +1724,64 @@
 				}
 			],
 			"sid": 329467894994589,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		},
+		{
+			"name": "Player",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "playerSpawnLoc",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 79,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1450.9204077026488,
+						"y": 181.6099804421732,
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 723809198079104,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"color": [
@@ -1375,10 +1850,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 8,
-						"y": 1473,
-						"width": 3013,
-						"height": 1683,
+						"x": 51,
+						"y": 1064,
+						"width": 2901,
+						"height": 2092,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -1404,10 +1879,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 11,
+						"x": 47,
 						"y": 3111,
-						"width": 2994,
-						"height": 1044,
+						"width": 2907,
+						"height": 1173,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -1439,6 +1914,34 @@
 			"isTransparent": true,
 			"parallaxX": 1,
 			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		},
+		{
+			"name": "HUD",
+			"overriden": 1,
+			"instances": [],
+			"sid": 676008622587639,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 0,
+			"parallaxY": 0,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
 			"useRenderCells": false,

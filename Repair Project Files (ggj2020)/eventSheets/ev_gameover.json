@@ -83,28 +83,16 @@
 					}
 				},
 				{
+					"id": "destroy",
+					"objectClass": "shipWhole",
+					"sid": 198795828452450
+				},
+				{
 					"callFunction": "FadeIn",
 					"sid": 270224938450813,
 					"parameters": [
 						"FADE_TIME"
 					]
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 902633261802210,
-					"parameters": {
-						"seconds": "0.3"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 922619906820805,
-					"parameters": {
-						"variable": "hasPressed",
-						"value": "false"
-					}
 				}
 			],
 			"sid": 211924830817791,
@@ -155,6 +143,53 @@
 						}
 					],
 					"sid": 893989322195454
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "ground",
+							"sid": 228080316416869,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "ground",
+							"sid": 458182036006369
+						}
+					],
+					"sid": 934589511450476
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 969997444778604,
+							"parameters": {
+								"seconds": "0.3"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 506561855319092,
+							"parameters": {
+								"variable": "hasPressed",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 354227385696492
 				}
 			]
 		},
